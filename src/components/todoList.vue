@@ -11,6 +11,7 @@
     <div v-for="todo in todos" :key="todo.id" class="todo-item">
       {{ todo.title }}
     </div>
+    <div class="remove-item">&times;</div>
   </section>
 </template>
 
@@ -40,6 +41,10 @@ export default {
   },
   methods: {
     addTodo() {
+      if (this.newTodo.trim().length == 0) {
+        return;
+      }
+
       this.todos.push({
         id: this.idForTodo,
         title: this.newTodo,
@@ -74,5 +79,12 @@ export default {
   max-width: 500px;
   margin: 0 auto;
   text-align: left;
+}
+.remove-item {
+  cursor: pointer;
+  margin-left: 14px;
+  &:hover {
+    color: black;
+  }
 }
 </style>
