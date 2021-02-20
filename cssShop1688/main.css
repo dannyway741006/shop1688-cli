@@ -1,0 +1,146 @@
+.todo-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 10px;
+  font-size: 10px;
+  margin: 40px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-input:focus {
+  outline: 0;
+}
+
+.todo-item {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo-item .todo-item-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-item .todo-item-left .todo-item-label {
+  padding-left: 10px;
+}
+
+.todo-item .todo-item-left .todo-item-edit {
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+
+.todo-item .todo-item-left .todo-item-edit:focus {
+  outline: none;
+}
+
+.todo-item .todo-item-left .completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.extra-container {
+  max-width: 500px;
+  margin: 30px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.extra-container button {
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.extra-container button:hover {
+  background: #ff7e7e;
+}
+
+.extra-container button:focus {
+  outline: none;
+}
+
+.extra-container .active {
+  background: #ff7e7e;
+}
+
+.extra-container .fade-enter-active,
+.extra-container .fade-leave-active {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.extra-container .fade-enter,
+.extra-container .fade-leave-to {
+  opacity: 0;
+}
+
+.remove-item {
+  cursor: pointer;
+  margin-left: 14px;
+  font-size: 20px;
+}
+
+.remove-item:hover {
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+/*# sourceMappingURL=main.css.map */

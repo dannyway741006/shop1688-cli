@@ -1,0 +1,101 @@
+@import "../mixins/mixin";
+
+.todo-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 10px;
+  font-size: 10px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.todo-item {
+  // border: 1px solid red;
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+
+  .todo-item-left {
+    // border: 1px solid red;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+
+    .todo-item-label {
+      padding-left: 10px;
+    }
+
+    .todo-item-edit {
+      font-size: 20px;
+      border: 1px solid #ccc;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: grey;
+    }
+  }
+
+
+}
+
+.extra-container {
+  // border: 1px solid green;
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    margin-right: 10px;
+    padding: 10px;
+
+    &:hover {
+      background: rgb(255, 126, 126);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .active {
+    background: rgb(255, 126, 126);
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}
+
+.remove-item {
+  cursor: pointer;
+  margin-left: 14px;
+  font-size: 20px;
+  // border: 1px solid red;
+
+  &:hover {
+    color: black;
+  }
+}
