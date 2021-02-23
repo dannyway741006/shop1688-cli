@@ -143,4 +143,324 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.header {
+  background-image: url("../../imgShop1688/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1920px) {
+  .header {
+    margin: 0;
+  }
+}
+
+.logo {
+  background-color: #263240;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 512px) {
+  .logo {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.logo .logo-w50 {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 512px) {
+  .logo .logo-w50 {
+    width: 70%;
+  }
+}
+
+.logo .logo-w50 a {
+  cursor: pointer;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+@media (max-width: 768px) {
+  .logo .logo-w50 a {
+    padding: 10px;
+  }
+}
+
+.logo .logo-w50 a img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 146px;
+  max-height: 29px;
+}
+
+.logo .logo-w50 .logo-type {
+  cursor: pointer;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 16px 25px;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .logo .logo-w50 .logo-type {
+    display: none;
+  }
+}
+
+.logo .logo-w50 .logo-type:hover {
+  background-color: #A2C3CE;
+}
+
+.logo .logo-w50 .logo-type .items {
+  position: absolute;
+  top: 60px;
+  width: 200px;
+  left: 0;
+  background-color: #263240;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  top: 53px;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #ffffff;
+  height: 100vh;
+  max-height: 0;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+}
+
+.logo .logo-w50 .logo-type .items li {
+  list-style: none;
+}
+
+.logo .logo-w50 .logo-type .items li a {
+  padding: 7px 0 7px 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0;
+}
+
+.logo .logo-w50 .logo-type .items li a:hover {
+  background-color: #A2C3CE;
+}
+
+.logo .logo-w50 .logo-items:hover .items {
+  -webkit-animation-name: typeFile;
+          animation-name: typeFile;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 9999;
+}
+
+@-webkit-keyframes typeFile {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 266px;
+  }
+}
+
+@keyframes typeFile {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 266px;
+  }
+}
+
+.logo .logo-w50 .logo-links:hover .items {
+  -webkit-animation-name: typeContant;
+          animation-name: typeContant;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 9999;
+}
+
+@-webkit-keyframes typeContant {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 112px;
+  }
+}
+
+@keyframes typeContant {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 112px;
+  }
+}
+
+.logo .logo-w50 .nowTime {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo .logo-w50 .nowTime p {
+  padding: 0 5px;
+}
+
+@media (max-width: 768px) {
+  .logo .logo-w50 .nowTime p:nth-of-type(1) {
+    display: none;
+  }
+}
+
+@media (max-width: 512px) {
+  .logo .logo-w50 .nowTime p:nth-of-type(2) {
+    color: #2D2D2D;
+  }
+}
+
+.logo .logo-nowTime {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 3%;
+}
+
+@media (max-width: 512px) {
+  .logo .logo-nowTime {
+    width: 30%;
+  }
+}
+
+.logo .logo-nowTime .logo-icon {
+  height: 100%;
+  padding: 0 13px;
+}
+
+@media (max-width: 768px) {
+  .logo .logo-nowTime .logo-icon:nth-of-type(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 512px) {
+  .logo .logo-nowTime .logo-icon:nth-of-type(1) {
+    display: none;
+  }
+  .logo .logo-nowTime .logo-icon:nth-of-type(3) {
+    display: none;
+  }
+}
+
+.logo .logo-nowTime .logo-icon:nth-of-type(1) {
+  cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.logo .logo-nowTime .logo-icon:nth-of-type(1):hover {
+  background-color: #A2C3CE;
+}
+
+.logo .logo-nowTime .logo-icon img {
+  width: 100%;
+  height: 100%;
+  max-width: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#draggableArea {
+  border: 1px solid green;
+  width: 100%;
+  height: calc(100% - 53px);
+}
+
+#draggableArea article {
+  width: 100%;
+  max-width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#draggableArea article .icon {
+  padding: 30% 0;
+}
+
+#draggableArea article .icon a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#draggableArea article .icon a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#draggableArea article .icon a img {
+  width: 100%;
+  height: 100%;
+  max-width: 90px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
 /*# sourceMappingURL=main.css.map */
