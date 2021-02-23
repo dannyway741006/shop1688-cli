@@ -20,7 +20,8 @@ $card-items-bg:#262626;
 $fixed-input-bg:#263240;
 $rwd-tag-items:#2E4A6C;
 $rwd-header-bg:#5F98B4;
-
+$logo-type-hover:#A2C3CE;
+$logo-items-hover:#A2C3CE;
 
 
 //側面欄寬
@@ -87,6 +88,20 @@ $rwd-header-title:19px;
   letter-spacing: 0.6px;
   font-weight: 900;
   color: $dark;
+}
+
+@mixin logo-type-font {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: $white;
+}
+
+@mixin logo-type {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: $white;
 }
 
 @mixin font-item-name {

@@ -1,0 +1,39 @@
+@import "../mixins/mixin";
+
+.draggableArea {
+  border: 1px solid green;
+  width: 100%;
+  height: calc(100% - 53px);
+
+  article {
+    width: 100%;
+    max-width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+
+    .icon {
+      // border: 1px solid red;
+      padding: 30% 0;
+
+      a {
+        // border: 2px solid green;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          max-width: 90px;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+    }
+  }
+}

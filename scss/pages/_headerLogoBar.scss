@@ -1,0 +1,217 @@
+@import "../mixins/mixin";
+
+.logo {
+  background-color: $fixed-input-bg;
+  // border: 1px solid red;
+  width: 100%;
+  display: flex;
+
+  @include media(512px) {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+
+  .logo-w50 {
+    width: 50%;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    @include media(512px) {
+      width: 70%;
+    }
+
+
+    a {
+      cursor: pointer;
+      // border: 1px solid red;
+      margin-left: 5%;
+      margin-right: 5%;
+
+      @include media(768px) {
+        padding: 10px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: contain;
+        max-width: 146px;
+        max-height: 29px;
+      }
+    }
+
+    .logo-type {
+      cursor: pointer;
+      @include logo-type;
+      padding: 16px 25px;
+      transition: background-color 0.5s;
+      position: relative;
+
+      @include media(768px) {
+        display: none;
+      }
+
+      &:hover {
+        background-color: $logo-type-hover;
+      }
+
+      .items {
+        // border: 1px solid green;
+        position: absolute;
+        top: 60px;
+        width: 200px;
+        left: 0;
+        background-color: $fixed-input-bg;
+        border-radius: 0 0 5px 5px;
+        overflow: hidden;
+        top: 53px;
+        @include logo-type-font;
+        height: 100vh;
+        max-height: 0;
+        animation-duration: 0.8s;
+
+        li {
+
+          list-style: none;
+          // border: 1px solid gold;
+
+          a {
+            padding: 7px 0 7px 19px;
+            // border: 1px solid green;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            color: $white;
+            text-decoration: none;
+            margin: 0;
+
+            &:hover {
+              background-color: $logo-items-hover;
+            }
+          }
+        }
+      }
+    }
+
+    .logo-items {
+      &:hover {
+        .items {
+
+          animation-name: typeFile;
+          animation-fill-mode: forwards;
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          z-index: 9999;
+        }
+
+        @keyframes typeFile {
+          from {
+            max-height: 0px;
+          }
+
+          to {
+            max-height: 266px;
+          }
+        }
+      }
+    }
+
+    .logo-links {
+      &:hover {
+        .items {
+          animation-name: typeContant;
+          animation-fill-mode: forwards;
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          z-index: 9999;
+        }
+
+        @keyframes typeContant {
+          from {
+            max-height: 0px;
+          }
+
+          to {
+            max-height: 112px;
+          }
+        }
+      }
+    }
+
+    .nowTime {
+      @include logo-type;
+      display: flex;
+
+
+
+      p {
+        padding: 0 5px;
+
+        @include media(768px) {
+          &:nth-of-type(1) {
+            display: none;
+          }
+        }
+
+        @include media(512px) {
+          &:nth-of-type(2) {
+            color: $dark;
+          }
+        }
+      }
+    }
+  }
+
+  .logo-nowTime {
+    justify-content: flex-end;
+    padding-right: 3%;
+
+    @include media(512px) {
+      width: 30%;
+    }
+
+
+    .logo-icon {
+      // border: 1px solid red;
+      height: 100%;
+      padding: 0 13px;
+
+      @include media(768px) {
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+
+      @include media(512px) {
+        &:nth-of-type(1) {
+          display: none;
+        }
+
+        &:nth-of-type(3) {
+          display: none;
+        }
+      }
+
+      &:nth-of-type(1) {
+        cursor: pointer;
+        transition: background-color 0.5s;
+
+        &:hover {
+          background-color: $logo-type-hover;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 25px;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+
+
+}
