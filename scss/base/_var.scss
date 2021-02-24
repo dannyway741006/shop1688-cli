@@ -41,6 +41,13 @@ $rwd-header-title:19px;
   color: $dark;
 }
 
+@mixin section1-h2 {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: $dark;
+}
+
 @mixin font-h3 {
   font-size: 38px;
   letter-spacing: 0.6px;

@@ -160,6 +160,12 @@
   }
 }
 
+@media (max-width: 512px) {
+  .header {
+    background-position: right;
+  }
+}
+
 .logo {
   background-color: #263240;
   width: 100%;
@@ -170,7 +176,7 @@
 
 @media (max-width: 512px) {
   .logo {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0);
   }
 }
 
@@ -214,6 +220,8 @@
      object-fit: contain;
   max-width: 146px;
   max-height: 29px;
+  -webkit-filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
 }
 
 .logo .logo-w50 .logo-type {
@@ -412,13 +420,13 @@
      object-position: center;
 }
 
-.draggableArea {
+#draggableArea {
   border: 1px solid green;
   width: 100%;
   height: calc(100% - 53px);
 }
 
-.draggableArea article {
+#draggableArea .area-one {
   width: 100%;
   max-width: 100px;
   position: absolute;
@@ -428,11 +436,11 @@
           transform: translateY(-50%);
 }
 
-.draggableArea article .icon {
+#draggableArea .area-one .icon {
   padding: 30% 0;
 }
 
-.draggableArea article .icon a {
+#draggableArea .area-one .icon a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,9 +453,20 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.draggableArea article .icon a img {
+#draggableArea .area-one .icon a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s cubic-bezier(0.8, -2, 0.2, 4);
+  transition: all 0.5s cubic-bezier(0.8, -2, 0.2, 4);
+}
+
+#draggableArea .area-one .icon a img {
   width: 100%;
   height: 100%;
   max-width: 90px;
@@ -455,5 +474,260 @@
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+  -webkit-filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+#draggableArea .area-one .icon h2 {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #2D2D2D;
+  padding-top: 10px;
+}
+
+#draggableArea .area-two {
+  width: 100%;
+  max-width: 1280px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#draggableArea .area-two .header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #E3E3E3;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  border: 1px solid black;
+  border-right: none;
+}
+
+#draggableArea .area-two .header-title .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 120px);
+  padding: 0 15px;
+}
+
+#draggableArea .area-two .header-title .title h2 {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #2D2D2D;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 180px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#draggableArea .area-two .header-title .title .line {
+  width: 50%;
+  height: 1px;
+  background-color: black;
+}
+
+#draggableArea .area-two .header-title .control {
+  width: 40px;
+  height: 100%;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  background-color: #A2C3CE;
+}
+
+#draggableArea .area-two .header-title .control:nth-of-type(2) {
+  position: relative;
+}
+
+#draggableArea .area-two .header-title .control:nth-of-type(2)::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: black;
+  width: 55%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#draggableArea .area-two .header-title .control:nth-of-type(3) {
+  border: none;
+  position: relative;
+}
+
+#draggableArea .area-two .header-title .control:nth-of-type(3)::after {
+  content: '';
+  position: absolute;
+  height: 45%;
+  border: 2px solid black;
+  width: 45%;
+  left: 50%;
+  top: 50%;
+  border-radius: 3px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#draggableArea .area-two .header-title .control:nth-of-type(4) {
+  position: relative;
+  cursor: pointer;
+}
+
+#draggableArea .area-two .header-title .control:nth-of-type(4)::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: black;
+  width: 55%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#draggableArea .area-two .header-title .control:nth-of-type(4)::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: black;
+  width: 55%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#draggableArea .area-two .header-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  background-color: #E3E3E3;
+}
+
+#draggableArea .area-two .header-bottom .arrow {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 8px;
+}
+
+#draggableArea .area-two .header-bottom .--arrow {
+  position: relative;
+}
+
+#draggableArea .area-two .header-bottom .--arrow .pos {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#draggableArea .area-two .header-bottom .web-domin {
+  border-radius: 100px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #2D2D2D;
+  padding: 10PX 28px;
+  margin: 8px 0;
+  width: 100%;
+  max-width: 1090px;
+}
+
+#draggableArea .area-two .logo-section {
+  border: 1px solid black;
+  border-top: none;
+  background-color: #ffffff;
+}
+
+#draggableArea .area-two .logo-section .link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 10px 0 0;
+}
+
+#draggableArea .area-two .logo-section .link a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #ffffff;
+  color: #2D2D2D;
+  font-weight: 600;
+}
+
+#draggableArea .area-two .logo-section .link a img {
+  margin-right: 5px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  max-width: 20px;
 }
 /*# sourceMappingURL=main.css.map */

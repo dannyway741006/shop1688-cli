@@ -13,4 +13,8 @@
   @include media(1920px) {
     margin: 0;
   }
+
+  @include media(512px) {
+    background-position: right;
+  }
 }
