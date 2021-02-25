@@ -730,4 +730,69 @@
      object-position: center;
   max-width: 20px;
 }
+
+#draggableArea .area-two .logo-animation .prototype {
+  width: 651px;
+  height: 306px;
+  max-width: 85%;
+  max-height: 35vw;
+  border: 1px solid red;
+  position: relative;
+  margin: 0 auto;
+}
+
+#draggableArea .area-two .logo-animation .bg-1,
+#draggableArea .area-two .logo-animation .bg-2,
+#draggableArea .area-two .logo-animation .bg-3,
+#draggableArea .area-two .logo-animation .bg-4,
+#draggableArea .area-two .logo-animation .bg-5,
+#draggableArea .area-two .logo-animation .bg-6,
+#draggableArea .area-two .logo-animation .bg-7,
+#draggableArea .area-two .logo-animation .bg-8,
+#draggableArea .area-two .logo-animation .bg-9,
+#draggableArea .area-two .logo-animation .bg-10,
+#draggableArea .area-two .logo-animation .bg-11,
+#draggableArea .area-two .logo-animation .bg-12,
+#draggableArea .area-two .logo-animation .bg-13,
+#draggableArea .area-two .logo-animation .bg-14,
+#draggableArea .area-two .logo-animation .bg-15,
+#draggableArea .area-two .logo-animation .bg-16,
+#draggableArea .area-two .logo-animation .bg-17,
+#draggableArea .area-two .logo-animation .bg-18,
+#draggableArea .area-two .logo-animation .bg-19,
+#draggableArea .area-two .logo-animation .bg-20,
+#draggableArea .area-two .logo-animation .bg-s,
+#draggableArea .area-two .logo-animation .bg-h,
+#draggableArea .area-two .logo-animation .bg-o,
+#draggableArea .area-two .logo-animation .bg-p,
+#draggableArea .area-two .logo-animation .bg-no1,
+#draggableArea .area-two .logo-animation .bg-no6,
+#draggableArea .area-two .logo-animation .bg-no8,
+#draggableArea .area-two .logo-animation .bg-no8_2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#draggableArea .area-two .logo-animation .bg-5 {
+  background-image: url("../../imgShop1688/css_sprites.png");
+  background-size: 675.968992248062% 582.9457364341085%;
+  max-width: 10vw;
+  max-height: 10vw;
+  background-position: -1.34589502018843% -78.65168539325843%;
+  border: 1px solid red;
+  top: 47%;
+  right: 0;
+}
+
+#draggableArea .area-two .logo-animation .bg-9 {
+  background-image: url("../../imgShop1688/css_sprites.png");
+  background-size: 361.8257261410788% 361.8257261410788%;
+  max-width: 241px;
+  max-height: 241px;
+  background-position: -1.58478605388273% -1.58478605388273%;
+  border: 1px solid red;
+  bottom: 0;
+  left: 10%;
+}
 /*# sourceMappingURL=main.css.map */
