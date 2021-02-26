@@ -1,7 +1,7 @@
 <template>
   <section class="logo">
     <article class="logo-w50">
-      <a><img src="../../imgShop1688/logo.png" alt="logo" /></a>
+      <a><img src="../../imgShop1688/logo.png" alt="logo"/></a>
       <div class="logo-type logo-items">
         File
         <ul class="items">
@@ -18,9 +18,15 @@
         Contact
         <ul class="items">
           <li>
-            <a href="https://www.master-mkt.com.tw/" target="_blank">大師策略行銷</a>
+            <a href="https://www.master-mkt.com.tw/" target="_blank"
+              >大師策略行銷</a
+            >
           </li>
-          <li><a href="https://www.ksdon818.com/" target="_blank">凱斯東網路行銷</a></li>
+          <li>
+            <a href="https://www.ksdon818.com/" target="_blank"
+              >凱斯東網路行銷</a
+            >
+          </li>
           <li>
             <a href="https://www.aosiman-marketing.com/" target="_blank"
               >奧斯曼網路行銷</a
@@ -30,8 +36,12 @@
       </div>
     </article>
     <article class="logo-w50 logo-nowTime">
-      <div class="logo-icon"><img src="../../imgShop1688/search.png" alt="icon" /></div>
-      <div class="logo-icon"><img src="../../imgShop1688/voice.png" alt="icon" /></div>
+      <div class="logo-icon">
+        <img src="../../imgShop1688/search.png" alt="icon" />
+      </div>
+      <div class="logo-icon">
+        <img src="../../imgShop1688/voice.png" alt="icon" />
+      </div>
       <div class="logo-icon">
         <img src="../../imgShop1688/clock.png" alt="icon" />
       </div>

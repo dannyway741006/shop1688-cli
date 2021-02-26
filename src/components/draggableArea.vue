@@ -21,9 +21,7 @@
     <article class="area-two" id="square5">
       <div class="header-title">
         <div class="title">
-          <span class="line"></span>
           <h2>在地商家一站全搜</h2>
-          <span class="line"></span>
         </div>
         <div class="control"></div>
         <div class="control"></div>
@@ -56,35 +54,34 @@
         </div>
         <div class="logo-animation">
           <div class="prototype">
-            <!-- <img src="../../imgShop1688/icon/banner.png" alt="prototype" /> -->
-            <!-- <div class="bg-1">1</div>
-            <div class="bg-2">2</div>
-            <div class="bg-3">3</div>
-            <div class="bg-4">4</div> -->
-            <!-- <div class="bg-5">5</div>
-            <div class="bg-6">6</div>
-            <div class="bg-7">7</div>
-            <div class="bg-8">8</div> -->
-            <div class="bg-9">9</div>
-            <!-- <div class="bg-10">10</div>
-            <div class="bg-11">11</div>
-            <div class="bg-12">12</div>
-            <div class="bg-13">13</div>
-            <div class="bg-14">14</div>
-            <div class="bg-15">15</div>
-            <div class="bg-16">16</div>
-            <div class="bg-17">17</div>
-            <div class="bg-18">18</div>
-            <div class="bg-19">19</div>
-            <div class="bg-20">20</div>
-            <div class="bg-s">s</div>
-            <div class="bg-h">h</div>
-            <div class="bg-o">o</div>
-            <div class="bg-p">p</div>
-            <div class="bg-no1">no1</div>
-            <div class="bg-no6">no6</div>
-            <div class="bg-no8">no8</div>
-            <div class="bg-no8_2">no88</div> -->
+            <div class="bg-1"></div>
+            <div class="bg-2"></div>
+            <div class="bg-3"></div>
+            <div class="bg-4"></div>
+            <div class="bg-5"></div>
+            <div class="bg-6"></div>
+            <div class="bg-7"></div>
+            <div class="bg-8"></div>
+            <div class="bg-9"></div>
+            <div class="bg-10"></div>
+            <div class="bg-11"></div>
+            <div class="bg-12"></div>
+            <div class="bg-13"></div>
+            <div class="bg-14"></div>
+            <div class="bg-15"></div>
+            <div class="bg-16"></div>
+            <div class="bg-17"></div>
+            <div class="bg-18"></div>
+            <div class="bg-19"></div>
+            <div class="bg-20"></div>
+            <div class="bg-s"></div>
+            <div class="bg-h"></div>
+            <div class="bg-o"></div>
+            <div class="bg-p"></div>
+            <div class="bg-no1"></div>
+            <div class="bg-no6"></div>
+            <div class="bg-no8"></div>
+            <div class="bg-no8_2"></div>
           </div>
         </div>
       </div>

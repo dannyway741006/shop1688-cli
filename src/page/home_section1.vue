@@ -15,7 +15,7 @@ export default {
   name: "home_section1",
   components: {
     HeaderLogoBar,
-    DraggableArea,
-  },
+    DraggableArea
+  }
 };
 </script>

@@ -22,7 +22,7 @@ import HomeSection1 from "@/page/home_section1.vue";
 export default {
   name: "App",
   components: {
-    HomeSection1,
-  },
+    HomeSection1
+  }
 };
 </script>

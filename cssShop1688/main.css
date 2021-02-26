@@ -243,7 +243,7 @@
 }
 
 .logo .logo-w50 .logo-type:hover {
-  background-color: #A2C3CE;
+  background-color: #B1B1B1;
 }
 
 .logo .logo-w50 .logo-type .items {
@@ -255,7 +255,7 @@
   border-radius: 0 0 5px 5px;
   overflow: hidden;
   top: 53px;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 0.6px;
   font-weight: 600;
   color: #ffffff;
@@ -407,7 +407,7 @@
 }
 
 .logo .logo-nowTime .logo-icon:nth-of-type(1):hover {
-  background-color: #A2C3CE;
+  background-color: #B1B1B1;
 }
 
 .logo .logo-nowTime .logo-icon img {
@@ -486,6 +486,12 @@
   padding-top: 10px;
 }
 
+@media (max-width: 512px) {
+  #draggableArea .area-one .icon h2 {
+    font-size: 16px;
+  }
+}
+
 #draggableArea .area-two {
   width: 100%;
   max-width: 1280px;
@@ -496,13 +502,26 @@
           transform: translate(-50%, -50%);
 }
 
+@media (max-width: 1280px) {
+  #draggableArea .area-two {
+    width: 88%;
+  }
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-two {
+    top: 25%;
+    width: 96%;
+  }
+}
+
 #draggableArea .area-two .header-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: #E3E3E3;
   width: 100%;
-  height: 35px;
+  height: 36px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   border: 1px solid black;
@@ -513,14 +532,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: calc(100% - 120px);
-  padding: 0 15px;
+  width: calc(100% - 108px);
+  padding-left: 36px;
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(#F6EFEF), to(#AEAEAE)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #F6EFEF 0%, #AEAEAE 100%) 0% 0% no-repeat padding-box;
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-two .header-title .title {
+    width: calc(100% - 36px);
+  }
 }
 
 #draggableArea .area-two .header-title .title h2 {
@@ -528,32 +555,30 @@
   letter-spacing: 0.6px;
   font-weight: 600;
   color: #2D2D2D;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 180px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-#draggableArea .area-two .header-title .title .line {
-  width: 50%;
-  height: 1px;
-  background-color: black;
+@media (max-width: 512px) {
+  #draggableArea .area-two .header-title .title h2 {
+    font-size: 16px;
+  }
 }
 
 #draggableArea .area-two .header-title .control {
-  width: 40px;
+  width: 36px;
   height: 100%;
   border: 1px solid black;
   border-top: none;
   border-bottom: none;
-  background-color: #A2C3CE;
+  background-color: #B1B1B1;
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-two .header-title .control:nth-of-type(2) {
+    display: none;
+  }
+  #draggableArea .area-two .header-title .control:nth-of-type(3) {
+    display: none;
+  }
 }
 
 #draggableArea .area-two .header-title .control:nth-of-type(2) {
@@ -580,9 +605,9 @@
 #draggableArea .area-two .header-title .control:nth-of-type(3)::after {
   content: '';
   position: absolute;
-  height: 45%;
+  height: 40%;
   border: 2px solid black;
-  width: 45%;
+  width: 40%;
   left: 50%;
   top: 50%;
   border-radius: 3px;
@@ -636,6 +661,12 @@
   background-color: #E3E3E3;
 }
 
+@media (max-width: 512px) {
+  #draggableArea .area-two .header-bottom {
+    padding: 0 14px;
+  }
+}
+
 #draggableArea .area-two .header-bottom .arrow {
   height: 100%;
   display: -webkit-box;
@@ -648,6 +679,12 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0 8px;
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-two .header-bottom .arrow {
+    display: none;
+  }
 }
 
 #draggableArea .area-two .header-bottom .--arrow {
@@ -682,6 +719,15 @@
   max-width: 1090px;
 }
 
+@media (max-width: 512px) {
+  #draggableArea .area-two .header-bottom .web-domin {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px 13px;
+    margin: 6px 0;
+  }
+}
+
 #draggableArea .area-two .logo-section {
   border: 1px solid black;
   border-top: none;
@@ -698,7 +744,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 10px 0 0;
+  padding: 20px 32px 0px 0;
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-two .logo-section .link {
+    padding: 16px 13.8px 42px 0;
+  }
 }
 
 #draggableArea .area-two .logo-section .link a {
@@ -712,7 +764,7 @@
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 0.6px;
   font-weight: 600;
   color: #ffffff;
@@ -731,12 +783,19 @@
   max-width: 20px;
 }
 
+@media (max-width: 512px) {
+  #draggableArea .area-two .logo-section .link a img {
+    max-width: 24px;
+  }
+}
+
 #draggableArea .area-two .logo-animation .prototype {
   width: 651px;
   height: 306px;
-  max-width: 85%;
-  max-height: 35vw;
-  border: 1px solid red;
+  max-width: 49vw;
+  max-height: 23vw;
+  min-width: 297px;
+  min-height: 140px;
   position: relative;
   margin: 0 auto;
 }
@@ -769,30 +828,397 @@
 #draggableArea .area-two .logo-animation .bg-no6,
 #draggableArea .area-two .logo-animation .bg-no8,
 #draggableArea .area-two .logo-animation .bg-no8_2 {
+  background-image: url("../../imgShop1688/css_sprites.png");
   width: 100%;
   height: 100%;
   position: absolute;
+  opacity: 0;
+}
+
+#draggableArea .area-two .logo-animation .bg-1 {
+  background-size: 528.4848484848485% 455.7575757575758%;
+  width: 165px;
+  height: 165px;
+  max-width: 13vw;
+  max-height: 13vw;
+  min-width: 79.3px;
+  min-height: 79.3px;
+  background-position: 1.41442715700141% 46.16695059625213%;
+  top: 4%;
+  left: 10%;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: bg-1;
+          animation-name: bg-1;
+}
+
+@-webkit-keyframes bg-1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bg-1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#draggableArea .area-two .logo-animation .bg-2 {
+  background-size: 681.25% 587.5%;
+  background-position: 21.37096774193548% 78.52564102564103%;
+  width: 128px;
+  height: 128px;
+  max-width: 10vw;
+  max-height: 10vw;
+  min-width: 61px;
+  min-height: 61px;
+  top: 29%;
+  left: 0;
+}
+
+#draggableArea .area-two .logo-animation .bg-3 {
+  background-size: 1025.882352941176% 884.7058823529412%;
+  background-position-x: 1.27064803049555%;
+  background-position-y: 95.80209895052474%;
+  width: 85px;
+  height: 85px;
+  max-width: 7vw;
+  max-height: 7vw;
+  min-width: 42.69px;
+  min-height: 42.69px;
+  top: 3%;
+  left: 55%;
+}
+
+#draggableArea .area-two .logo-animation .bg-4 {
+  background-size: 528.4848484848485% 455.7575757575758%;
+  background-position: 53.74823196605375% 46.2457337883959%;
+  width: 165px;
+  height: 165px;
+  max-height: 13vw;
+  max-width: 13vw;
+  min-width: 79.3px;
+  min-height: 79.3px;
+  top: 36%;
+  left: 60%;
 }
 
 #draggableArea .area-two .logo-animation .bg-5 {
-  background-image: url("../../imgShop1688/css_sprites.png");
   background-size: 675.968992248062% 582.9457364341085%;
+  width: 129px;
+  height: 129px;
   max-width: 10vw;
   max-height: 10vw;
-  background-position: -1.34589502018843% -78.65168539325843%;
-  border: 1px solid red;
+  background-position: 1.34589502018843% 78.65168539325843%;
+  min-width: 61px;
+  min-height: 61px;
   top: 47%;
   right: 0;
 }
 
+#draggableArea .area-two .logo-animation .bg-6 {
+  background-size: 481.767955801105% 415.4696132596685%;
+  background-position: 39.21852387843705% 1.75131348511384%;
+  width: 181px;
+  height: 181px;
+  max-width: 14vw;
+  max-height: 14vw;
+  min-width: 85.39px;
+  min-height: 85.39px;
+  top: 2%;
+  left: 32%;
+}
+
+#draggableArea .area-two .logo-animation .bg-7 {
+  background-size: 714.7540983606557% 616.3934426229508%;
+  background-position: 40.93333333333333% 77.77777777777778%;
+  width: 122px;
+  height: 122px;
+  max-width: 10vw;
+  max-height: 10vw;
+  min-width: 61px;
+  min-height: 61px;
+  top: 53%;
+  left: 3%;
+}
+
+#draggableArea .area-two .logo-animation .bg-8 {
+  background-size: 814.9532710280374% 702.803738317757%;
+  background-position: 84.70588235294118% 26.66666666666667%;
+  width: 107px;
+  height: 107px;
+  max-width: 8vw;
+  max-height: 8vw;
+  min-width: 48.8px;
+  min-height: 48.8px;
+  top: 15%;
+  right: 16%;
+}
+
 #draggableArea .area-two .logo-animation .bg-9 {
-  background-image: url("../../imgShop1688/css_sprites.png");
-  background-size: 361.8257261410788% 361.8257261410788%;
-  max-width: 241px;
-  max-height: 241px;
-  background-position: -1.58478605388273% -1.58478605388273%;
-  border: 1px solid red;
+  background-size: 361.8257261410788% 312.0331950207469%;
+  width: 241px;
+  height: 241px;
+  max-width: 18vw;
+  max-height: 18vw;
+  background-position: 1.58478605388273% 1.58478605388273%;
+  min-width: 109.8px;
+  min-height: 109.8px;
   bottom: 0;
   left: 10%;
+}
+
+#draggableArea .area-two .logo-animation .bg-10 {
+  background-size: 555.484848% 482.0512820512821%;
+  background-position: 65.92178770949721% 1.67785234899329%;
+  width: 156px;
+  height: 156px;
+  max-width: 12vw;
+  max-height: 12vw;
+  top: 19%;
+  right: 26%;
+  min-width: 73.19px;
+  min-height: 73.19px;
+}
+
+#draggableArea .area-two .logo-animation .bg-11 {
+  background-size: 528.4848484848485% 455.7575757575758%;
+  background-position: 27.58132956152758% 46.2457337883959%;
+  width: 165px;
+  height: 165px;
+  min-width: 79.3px;
+  min-height: 79.3px;
+  left: 40%;
+  top: 42%;
+  max-height: 13vw;
+  max-width: 13vw;
+}
+
+#draggableArea .area-two .logo-animation .bg-12 {
+  background-size: 738.9830508474576% 637.2881355932203%;
+  background-position: 85.94164456233422% 1.5552099533437%;
+  min-width: 54.89px;
+  min-height: 54.89px;
+  width: 118px;
+  max-width: 9vw;
+  height: 118px;
+  max-height: 9vw;
+  top: 28%;
+  right: 5%;
+}
+
+#draggableArea .area-two .logo-animation .bg-13 {
+  background-size: 2027.906976744186% 1748.837209302326%;
+  background-position: 68.15440289505428% 48.66008462623413%;
+  width: 43px;
+  height: 43px;
+  max-width: 10vw;
+  max-height: 10vw;
+  min-width: 43px;
+  min-height: 43px;
+  top: 13%;
+  right: 28%;
+}
+
+#draggableArea .area-two .logo-animation .bg-14 {
+  background-size: 7266.666666666667% 6266.666666666667%;
+  background-position: 79.88372093023256% 58.10810810810811%;
+  width: 12px;
+  height: 12px;
+  max-width: 1vw;
+  max-height: 1vw;
+  top: 39%;
+  right: 0%;
+  min-width: 6.09px;
+  min-height: 6.09px;
+}
+
+#draggableArea .area-two .logo-animation .bg-15 {
+  background-size: 3633.333333333333% 3133.333333333333%;
+  background-position: 98.34905660377358% 96.01648351648352%;
+  width: 24px;
+  height: 24px;
+  max-width: 2vw;
+  max-height: 2vw;
+  top: 26%;
+  left: 8%;
+  min-width: 12.19px;
+  min-height: 12.19px;
+}
+
+#draggableArea .area-two .logo-animation .bg-16 {
+  background-size: 1855.31914893617% 1600%;
+  background-position: 95.27272727272727% 88.22695035460993%;
+  width: 47px;
+  height: 47px;
+  max-width: 4vw;
+  max-height: 4vw;
+  top: 14%;
+  left: 16%;
+  min-width: 24.39px;
+  min-height: 24.39px;
+}
+
+#draggableArea .area-two .logo-animation .bg-17 {
+  background-size: 3114.285714285714% 2685.714285714286%;
+  background-position: 093.12796208530806% 96.54696132596685%;
+  width: 28px;
+  height: 28px;
+  max-width: 3vw;
+  max-height: 3vw;
+  top: 23%;
+  right: 8%;
+  min-width: 18.3px;
+  min-height: 18.3px;
+}
+
+#draggableArea .area-two .logo-animation .bg-18 {
+  background-size: 3114.285714285714% 2685.714285714286%;
+  background-position: 93.12796208530806% 96.54696132596685%;
+  width: 28px;
+  height: 28px;
+  max-width: 3vw;
+  max-height: 3vw;
+  top: 33%;
+  right: 32%;
+  min-width: 18.3px;
+  min-height: 18.3px;
+}
+
+#draggableArea .area-two .logo-animation .bg-19 {
+  background-size: 4589.473684210526% 3957.894736842105%;
+  background-position: 75.96717467760844% 58.66302864938608%;
+  width: 19px;
+  height: 19px;
+  max-width: 2vw;
+  max-height: 2vw;
+  bottom: 47%;
+  right: 1%;
+  min-width: 12.19px;
+  min-height: 12.19px;
+}
+
+#draggableArea .area-two .logo-animation .bg-20 {
+  background-size: 8720% 7520%;
+  background-position: 83.41067285382831% 57.95148247978437%;
+  width: 10px;
+  height: 10px;
+  max-width: 2vw;
+  max-height: 2vw;
+  top: 50%;
+  left: 50%;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+#draggableArea .area-two .logo-animation .bg-s {
+  background-size: 1147.368421052632% 723.0769230769231%;
+  background-position: 98.74371859296482% 1.54320987654321%;
+  width: 76px;
+  height: 104px;
+  max-width: 6vw;
+  max-height: 8vw;
+  top: 35%;
+  left: 6%;
+  min-width: 36.59px;
+  min-height: 48.8px;
+}
+
+#draggableArea .area-two .logo-animation .bg-h {
+  background-size: 792.7272727272727% 835.5555555555556%;
+  background-position: 85.03937007874016% 48.33836858006042%;
+  width: 110px;
+  height: 90px;
+  max-width: 9vw;
+  max-height: 8vw;
+  top: 61%;
+  left: 16%;
+  min-width: 54.89px;
+  min-height: 48.8px;
+}
+
+#draggableArea .area-two .logo-animation .bg-o {
+  background-size: 1321.212121212121% 759.5959595959596%;
+  background-position: 97.51861042183623% 58.65237366003063%;
+  width: 66px;
+  height: 99px;
+  max-width: 5vw;
+  max-height: 7vw;
+  top: 31%;
+  left: 29%;
+  min-width: 30.5px;
+  min-height: 42.69px;
+}
+
+#draggableArea .area-two .logo-animation .bg-p {
+  background-size: 880.8080808080808% 844.9438202247191%;
+  background-position: 58.08538163001294% 73.90648567119155%;
+  width: 99px;
+  height: 89px;
+  max-width: 7vw;
+  max-height: 7vw;
+  top: 60%;
+  left: 39%;
+  min-width: 42.69px;
+  min-height: 42.69px;
+}
+
+#draggableArea .area-two .logo-animation .bg-no1 {
+  background-size: 1362.5% 752%;
+  background-position: 97.27722772277228% 76.99386503067485%;
+  width: 64px;
+  height: 100px;
+  max-width: 5vw;
+  max-height: 8vw;
+  top: 26%;
+  left: 49%;
+  min-width: 30.5px;
+  min-height: 48.8px;
+}
+
+#draggableArea .area-two .logo-animation .bg-no6 {
+  background-size: 872% 928.3950617283951%;
+  background-position: 73.57512953367876% 73.02533532041729%;
+  width: 100px;
+  height: 81px;
+  max-width: 7vw;
+  max-height: 6vw;
+  top: 56%;
+  left: 61%;
+  min-width: 42.69px;
+  min-height: 36.59px;
+}
+
+#draggableArea .area-two .logo-animation .bg-no8 {
+  background-size: 1301.492537313433% 709.4339622641509%;
+  background-position: 97.63975155279503% 20.74303405572755%;
+  width: 67px;
+  height: 106px;
+  max-width: 5vw;
+  max-height: 8vw;
+  top: 22%;
+  right: 20%;
+  min-width: 30.5px;
+  min-height: 48.8px;
+}
+
+#draggableArea .area-two .logo-animation .bg-no8_2 {
+  background-size: 1341.538461538462% 730.0970873786408%;
+  background-position: 97.39776951672862% 40.06163328197227%;
+  width: 65px;
+  height: 103px;
+  max-width: 5vw;
+  max-height: 8vw;
+  min-width: 30.5px;
+  min-height: 48.8px;
+  top: 47%;
+  right: 7%;
 }
 /*# sourceMappingURL=main.css.map */
