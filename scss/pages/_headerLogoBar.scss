@@ -5,6 +5,7 @@
   // border: 1px solid red;
   width: 100%;
   display: flex;
+  max-height: 48px;
 
   @include media(512px) {
     background-color: rgba($color: #000000, $alpha: 0.0);
@@ -70,7 +71,7 @@
         overflow: hidden;
         top: 53px;
         @include logo-type-font;
-        height: 100vh;
+        // height: 100vh;
         max-height: 0;
         animation-duration: 0.8s;
 
@@ -176,9 +177,9 @@
     .logo-icon {
       // border: 1px solid red;
       height: 100%;
-      padding: 0 13px;
+      padding: 0 20px;
 
-      @include media(768px) {
+      @include media(1024px) {
         &:nth-of-type(2) {
           display: none;
         }
@@ -207,6 +208,7 @@
         width: 100%;
         height: 100%;
         max-width: 25px;
+        min-width: 22px;
         object-fit: contain;
         object-position: center;
       }
