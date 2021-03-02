@@ -60,7 +60,7 @@ export default {
       scale: 1
     })
 
-    gsap.to('.bubble-logo', {
+    gsap.to('.bubble-move', {
 
 
       delay: 2.5,
@@ -145,7 +145,7 @@ export default {
       //10 / (y - (h / 2)) * 100;             
       // console.log(y + ' | ' + h + ' | ' + t);
 
-      gsap.to('.bubble-logo', 1, {
+      gsap.to('.bubble-move', 1, {
         x: t + "%",
         y: l + "%"
       });
@@ -153,12 +153,3 @@ export default {
     }
   },
 };
-
-// parallax(e) {
-//   document.querySelectorAll(".bubble-logo").forEach((layer) => {
-//     const speed = layer.getAttribute("data-speed");
-//     const x = (window.innerWidth - e.pageX * speed) / 100;
-//     const y = (window.innerHeight - e.pageY * speed) / 100;
-//     layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
-//   });
-// },

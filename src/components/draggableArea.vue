@@ -55,7 +55,7 @@
         <div class="logo-animation">
           <div class="prototype" @mousemove="parallax">
             <div class="bg-1 bubble-left"></div>
-            <div class="bg-2 bubble-left"></div>
+            <div class="bg-2 bubble-left bubble-move"></div>
             <div class="bg-3 bubble-left"></div>
             <div class="bg-4 bubble-left"></div>
             <div class="bg-5 bubble-left"></div>
@@ -63,9 +63,9 @@
             <div class="bg-7 bubble-bottom"></div>
             <div class="bg-8 bubble-bottom"></div>
             <div class="bg-9 bubble-bottom"></div>
-            <div class="bg-10 bubble-bottom"></div>
+            <div class="bg-10 bubble-bottom bubble-move"></div>
             <div class="bg-11 bubble-bottom"></div>
-            <div class="bg-12 bubble-bottom"></div>
+            <div class="bg-12 bubble-bottom bubble-move"></div>
             <div class="bg-13 bubble-bottom bubble"></div>
             <div class="bg-14 bubble-right bubble"></div>
             <div class="bg-15 bubble-right bubble"></div>
@@ -81,14 +81,14 @@
             <div class="bg-18 bubble-right bubble"></div>
             <div class="bg-19 bubble-right bubble"></div>
             <div class="bg-20 bubble-right"></div>
-            <div class="bg-s bubble-logo"></div>
-            <div class="bg-h bubble-logo"></div>
-            <div class="bg-o bubble-logo"></div>
-            <div class="bg-p bubble-logo"></div>
-            <div class="bg-no1 bubble-logo"></div>
-            <div class="bg-no6 bubble-logo"></div>
-            <div class="bg-no8 bubble-logo"></div>
-            <div class="bg-no8_2 bubble-logo"></div>
+            <div class="bg-s bubble-move"></div>
+            <div class="bg-h bubble-move"></div>
+            <div class="bg-o bubble-move"></div>
+            <div class="bg-p bubble-move"></div>
+            <div class="bg-no1 bubble-move"></div>
+            <div class="bg-no6 bubble-move"></div>
+            <div class="bg-no8 bubble-move"></div>
+            <div class="bg-no8_2 bubble-move"></div>
           </div>
           <SearchBox />
         </div>
