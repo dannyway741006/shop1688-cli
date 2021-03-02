@@ -172,6 +172,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-height: 48px;
 }
 
 @media (max-width: 512px) {
@@ -243,23 +244,21 @@
 }
 
 .logo .logo-w50 .logo-type:hover {
-  background-color: #B1B1B1;
+  background-color: #A7D0C9;
 }
 
 .logo .logo-w50 .logo-type .items {
   position: absolute;
-  top: 60px;
+  top: 50px;
   width: 200px;
   left: 0;
   background-color: #263240;
   border-radius: 0 0 5px 5px;
   overflow: hidden;
-  top: 53px;
   font-size: 14px;
   letter-spacing: 0.6px;
   font-weight: 600;
   color: #ffffff;
-  height: 100vh;
   max-height: 0;
   -webkit-animation-duration: 0.8s;
           animation-duration: 0.8s;
@@ -282,7 +281,7 @@
 }
 
 .logo .logo-w50 .logo-type .items li a:hover {
-  background-color: #A2C3CE;
+  background-color: #A7D0C9;
 }
 
 .logo .logo-w50 .logo-items:hover .items {
@@ -382,10 +381,10 @@
 
 .logo .logo-nowTime .logo-icon {
   height: 100%;
-  padding: 0 13px;
+  padding: 0 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .logo .logo-nowTime .logo-icon:nth-of-type(2) {
     display: none;
   }
@@ -407,13 +406,14 @@
 }
 
 .logo .logo-nowTime .logo-icon:nth-of-type(1):hover {
-  background-color: #B1B1B1;
+  background-color: #A7D0C9;
 }
 
 .logo .logo-nowTime .logo-icon img {
   width: 100%;
   height: 100%;
   max-width: 25px;
+  min-width: 22px;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: center;
@@ -467,9 +467,10 @@
 }
 
 #draggableArea .area-one .icon a img {
-  width: 100%;
+  width: 90px;
   height: 100%;
-  max-width: 90px;
+  max-width: 8vw;
+  min-width: 49px;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: center;
@@ -489,6 +490,18 @@
 @media (max-width: 512px) {
   #draggableArea .area-one .icon h2 {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-one .icon h2 {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 400px) {
+  #draggableArea .area-one .icon h2 {
+    font-size: 14px;
   }
 }
 
@@ -569,7 +582,7 @@
   border: 1px solid black;
   border-top: none;
   border-bottom: none;
-  background-color: #B1B1B1;
+  background-color: #A7D0C9;
 }
 
 @media (max-width: 512px) {
@@ -713,7 +726,7 @@
   letter-spacing: 0.6px;
   font-weight: 600;
   color: #2D2D2D;
-  padding: 10PX 28px;
+  padding: 1PX 23px;
   margin: 8px 0;
   width: 100%;
   max-width: 1090px;
@@ -828,11 +841,56 @@
 #draggableArea .area-two .logo-animation .bg-no6,
 #draggableArea .area-two .logo-animation .bg-no8,
 #draggableArea .area-two .logo-animation .bg-no8_2 {
+  position: absolute;
   background-image: url("../../imgShop1688/css_sprites.png");
   width: 100%;
   height: 100%;
-  position: absolute;
-  opacity: 0;
+}
+
+#draggableArea .area-two .logo-animation .bg-1,
+#draggableArea .area-two .logo-animation .bg-2,
+#draggableArea .area-two .logo-animation .bg-3,
+#draggableArea .area-two .logo-animation .bg-4,
+#draggableArea .area-two .logo-animation .bg-5,
+#draggableArea .area-two .logo-animation .bg-6 {
+  opacity: 1;
+  -webkit-transform: translateX(-100px) scale(0);
+          transform: translateX(-100px) scale(0);
+}
+
+#draggableArea .area-two .logo-animation .bg-7,
+#draggableArea .area-two .logo-animation .bg-8,
+#draggableArea .area-two .logo-animation .bg-9,
+#draggableArea .area-two .logo-animation .bg-10,
+#draggableArea .area-two .logo-animation .bg-11,
+#draggableArea .area-two .logo-animation .bg-12 {
+  opacity: 1;
+  -webkit-transform: translateY(-200px) scale(0);
+          transform: translateY(-200px) scale(0);
+}
+
+#draggableArea .area-two .logo-animation .bg-15,
+#draggableArea .area-two .logo-animation .bg-16,
+#draggableArea .area-two .logo-animation .bg-17,
+#draggableArea .area-two .logo-animation .bg-18,
+#draggableArea .area-two .logo-animation .bg-19,
+#draggableArea .area-two .logo-animation .bg-20 {
+  opacity: 1;
+  -webkit-transform: translateX(100px) scale(0);
+          transform: translateX(100px) scale(0);
+}
+
+#draggableArea .area-two .logo-animation .bg-s,
+#draggableArea .area-two .logo-animation .bg-h,
+#draggableArea .area-two .logo-animation .bg-o,
+#draggableArea .area-two .logo-animation .bg-p,
+#draggableArea .area-two .logo-animation .bg-no1,
+#draggableArea .area-two .logo-animation .bg-no6,
+#draggableArea .area-two .logo-animation .bg-no8,
+#draggableArea .area-two .logo-animation .bg-no8_2 {
+  opacity: 1;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 #draggableArea .area-two .logo-animation .bg-1 {
@@ -846,27 +904,35 @@
   background-position: 1.41442715700141% 46.16695059625213%;
   top: 4%;
   left: 10%;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
   -webkit-animation-name: bg-1;
           animation-name: bg-1;
+  -webkit-animation: 1.5s cubic-bezier(0.8, -2, 0.2, 4);
+          animation: 1.5s cubic-bezier(0.8, -2, 0.2, 4);
 }
 
 @-webkit-keyframes bg-1 {
   from {
     opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   to {
     opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes bg-1 {
   from {
     opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   to {
     opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -1060,7 +1126,7 @@
   height: 47px;
   max-width: 4vw;
   max-height: 4vw;
-  top: 14%;
+  top: 8%;
   left: 16%;
   min-width: 24.39px;
   min-height: 24.39px;
@@ -1220,5 +1286,33 @@
   min-height: 48.8px;
   top: 47%;
   right: 7%;
+}
+
+.searchBox {
+  border: 1px solid red;
+  height: 60px;
+  width: 720px;
+  margin: 44px auto 0;
+  border-radius: 200px;
+  max-width: 50vw;
+  max-height: 30vw;
+  max-height: 5vw;
+  min-width: 380px;
+  min-height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 512px) {
+  .searchBox {
+    margin-top: 22px;
+  }
+}
+
+.inputBox {
+  border: 1px solid red;
+  width: 50%;
+  border-radius: 200px;
 }
 /*# sourceMappingURL=main.css.map */

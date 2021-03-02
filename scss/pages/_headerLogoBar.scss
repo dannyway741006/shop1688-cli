@@ -63,13 +63,13 @@
       .items {
         // border: 1px solid green;
         position: absolute;
-        top: 60px;
+        top: 50px;
         width: 200px;
         left: 0;
         background-color: $fixed-input-bg;
         border-radius: 0 0 5px 5px;
         overflow: hidden;
-        top: 53px;
+
         @include logo-type-font;
         // height: 100vh;
         max-height: 0;
