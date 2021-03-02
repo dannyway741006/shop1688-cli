@@ -65,7 +65,7 @@
             <div class="bg-9 bubble-bottom"></div>
             <div class="bg-10 bubble-bottom bubble-move"></div>
             <div class="bg-11 bubble-bottom"></div>
-            <div class="bg-12 bubble-bottom bubble-move"></div>
+            <div class="bg-12 bubble-bottom"></div>
             <div class="bg-13 bubble-bottom bubble"></div>
             <div class="bg-14 bubble-right bubble"></div>
             <div class="bg-15 bubble-right bubble"></div>
