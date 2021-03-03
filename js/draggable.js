@@ -11,18 +11,15 @@ import {
 gsap.registerPlugin(Draggable);
 // console.log(Draggable);
 // import Vue and vue-parallax-js
-import Vue from 'vue'
-import VueParallaxJs from 'vue-parallax-js'
-
-// add vue-parallax-js to vue
-Vue.use(VueParallaxJs)
 
 
+import DockBox from "@/components/dockBox.vue";
 import SearchBox from "@/components/searchBox.vue";
 export default {
   name: "draggableArea",
   components: {
     SearchBox,
+    DockBox
   },
   props: {
     msg: String,
@@ -143,7 +140,7 @@ export default {
       var l = -(x - w) / (w / 20) - 10;
       var t = -(y - h) / (h / 30) - 10;
       //10 / (y - (h / 2)) * 100;             
-      // console.log(y + ' | ' + h + ' | ' + t);
+      console.log(y + ' | ' + h + ' | ' + t);
 
       gsap.to('.bubble-move', 1, {
         x: t + "%",

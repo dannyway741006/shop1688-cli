@@ -255,7 +255,7 @@
   background-color: #263240;
   border-radius: 0 0 5px 5px;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.6px;
   font-weight: 600;
   color: #ffffff;
@@ -745,6 +745,9 @@
   border: 1px solid black;
   border-top: none;
   background-color: #ffffff;
+  height: 654px;
+  max-height: 44vw;
+  min-height: 441.31px;
 }
 
 #draggableArea .area-two .logo-section .link {
@@ -777,7 +780,7 @@
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.6px;
   font-weight: 600;
   color: #ffffff;
@@ -811,6 +814,29 @@
   min-height: 140px;
   position: relative;
   margin: 0 auto;
+  cursor: pointer;
+}
+
+#draggableArea .area-two .logo-animation .three-shop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 26px;
+}
+
+#draggableArea .area-two .logo-animation .three-shop a {
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  font-weight: 900;
+  text-decoration: none;
+  color: #2D2D2D;
+}
+
+#draggableArea .area-two .logo-animation .three-shop a:nth-of-type(2) {
+  padding: 0 24px;
 }
 
 #draggableArea .area-two .logo-animation .bg-1,
@@ -1288,20 +1314,56 @@
   right: 7%;
 }
 
-.searchBox {
+#draggableArea .testbox {
   border: 1px solid red;
+  width: 200px;
+  height: 300px;
+  background-color: goldenrod;
+  position: absolute;
+  bottom: 0;
+}
+
+.searchBox {
+  border: 2px solid #16453E;
   height: 60px;
   width: 720px;
   margin: 44px auto 0;
   border-radius: 200px;
   max-width: 50vw;
-  max-height: 30vw;
   max-height: 5vw;
-  min-width: 380px;
+  min-width: 420px;
   min-height: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #F1FFFD;
+  -webkit-box-shadow: inset 0px 3px 6px #00000030;
+          box-shadow: inset 0px 3px 6px #00000030;
+}
+
+.searchBox::before {
+  height: 80%;
+  width: 0.5px;
+  background-color: black;
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.searchBox:hover::before {
+  opacity: 0;
 }
 
 @media (max-width: 512px) {
@@ -1310,9 +1372,253 @@
   }
 }
 
+.searchBox .inputBox-button {
+  position: absolute;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  max-width: 4vw;
+  max-height: 4vw;
+  min-width: 37px;
+  min-height: 37px;
+  border-radius: 200px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 6px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .searchBox .inputBox-button {
+    right: 4px;
+  }
+}
+
+.searchBox .inputBox-button .buttonBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.searchBox .inputBox-button .buttonBox button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 200px;
+}
+
+.searchBox .inputBox-button .buttonBox button img {
+  width: 26.21px;
+  height: 27.12px;
+  max-width: 2vw;
+  max-height: 2vw;
+  min-width: 21px;
+  min-height: 22px;
+}
+
+.searchBox .inputBox-button .buttonBox .button-color1 {
+  background: transparent linear-gradient(8deg, #16453E 0%, #5A9186 100%) 0% 0% no-repeat padding-box;
+}
+
+.searchBox .inputBox-button .buttonBox .button-color2 {
+  background: linear-gradient(145deg, #244d46 0%, #697c77 100%);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.searchBox .inputBox-button .buttonBox:hover .button-color2 {
+  opacity: 1;
+}
+
 .inputBox {
-  border: 1px solid red;
   width: 50%;
   border-radius: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+  position: relative;
+  padding: 0px 16px 0px 23px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+@media (max-width: 1024px) {
+  .inputBox {
+    padding: 0px 16px 0px 10px;
+  }
+}
+
+.inputBox .inputBox-icon {
+  height: 100%;
+  width: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inputBox .inputBox-icon .inputBox-houseIcon {
+  width: 45px;
+  height: 40px;
+  max-width: 3vw;
+  max-height: 3vw;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.inputBox .inputBox-icon .inputBox-mapIcon {
+  width: 38.4px;
+  height: 40px;
+  max-width: 3vw;
+  max-height: 3vw;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.inputBox .inputBox-input {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 0 2% 3%;
+}
+
+@media (max-width: 1024px) {
+  .inputBox .inputBox-input {
+    padding: 0 0 2% 5%;
+  }
+}
+
+.inputBox .inputBox-input .inputBox-labeltype {
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .inputBox .inputBox-input .inputBox-labeltype {
+    left: 10%;
+  }
+}
+
+.inputBox .inputBox-input .inputBox-labelcity {
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .inputBox .inputBox-input .inputBox-labelcity {
+    left: 10%;
+  }
+}
+
+.inputBox .inputBox-input input {
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #2D2D2D;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  opacity: 0;
+  outline: none;
+  border: 0;
+}
+
+.inputBox .inputBox-input input:hover {
+  background-color: #ffffff;
+}
+
+.inputBox .inputBox-input input:focus {
+  height: auto;
+  opacity: 1;
+}
+
+.inputBox .inputBox-input input:valid {
+  height: auto;
+  opacity: 1;
+}
+
+.inputBox .inputBox-input input:focus ~ label {
+  top: 15px;
+  left: 5%;
+  font-size: 14px;
+  color: #16453E;
+  font-weight: 900;
+}
+
+@media (max-width: 1024px) {
+  .inputBox .inputBox-input input:focus ~ label {
+    top: 10px;
+    left: 7%;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-weight: 900;
+  }
+}
+
+.inputBox .inputBox-input input:valid ~ label {
+  top: 15px;
+  left: 3%;
+  font-size: 14px;
+  color: #16453E;
+  font-weight: 900;
+}
+
+@media (max-width: 1024px) {
+  .inputBox .inputBox-input input:valid ~ label {
+    top: 10px;
+    left: 5%;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    font-weight: 900;
+  }
+}
+
+.inputBox:hover {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 3px 6px #00000030;
+          box-shadow: 0px 3px 6px #00000030;
 }
 /*# sourceMappingURL=main.css.map */

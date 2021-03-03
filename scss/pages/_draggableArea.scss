@@ -266,6 +266,9 @@
       border: 1px solid black;
       border-top: none;
       background-color: #ffffff;
+      height: 654px;
+      max-height: 44vw;
+      min-height: 441.31px;
 
       .link {
         // border: 1px solid red;
@@ -304,6 +307,8 @@
       }
     }
 
+
+
     .logo-animation {
 
 
@@ -317,6 +322,26 @@
         // border: 1px solid red;
         position: relative;
         margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .three-shop {
+        display: flex;
+        // border: 1px solid red;
+        justify-content: center;
+        margin-top: 26px;
+
+        a {
+          @include font-input;
+          text-decoration: none;
+          color: $dark;
+
+          &:nth-of-type(2) {
+            padding: 0 24px;
+          }
+        }
+
+
       }
 
       .bg-1,
@@ -796,6 +821,15 @@
         right: 7%;
       }
     }
+  }
+
+  .testbox {
+    border: 1px solid red;
+    width: 200px;
+    height: 300px;
+    background-color: goldenrod;
+    position: absolute;
+    bottom: 0;
   }
 }
 

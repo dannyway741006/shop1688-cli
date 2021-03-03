@@ -91,9 +91,16 @@
             <div class="bg-no8_2 bubble-move"></div>
           </div>
           <SearchBox />
+          <div class="three-shop">
+            <a href="#">川老爺麻辣鍋</a>
+            <a href="#">更有意思手作烘焙</a>
+            <a href="#">魚骨頭Cafe</a>
+          </div>
         </div>
       </div>
     </article>
+    <DockBox />
+    <!-- <div class="testbox"></div> -->
   </section>
 </template>
 <style lang="scss">
