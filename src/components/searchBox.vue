@@ -30,11 +30,11 @@
       <div class="buttonBox">
         <button class="button-color1">
           <img src="../../imgShop1688/icon/searchBtn.png" />
-          <!-- <p>{{ webBtnSearch }}</p> -->
+          <p>搜尋</p>
         </button>
         <button class="button-color2">
           <img src="../../imgShop1688/icon/searchBtn.png" />
-          <!-- <p>{{ webBtnSearch }}</p> -->
+          <p>搜尋</p>
         </button>
       </div>
     </div>

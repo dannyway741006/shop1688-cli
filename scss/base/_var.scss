@@ -106,8 +106,17 @@ $rwd-header-title:19px;
   letter-spacing: 0.6px;
   font-weight: 600;
   color: $white;
+}
 
+@mixin link-font {
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: $dark;
 
+  @include media(320px) {
+    font-size: 12px;
+  }
 }
 
 @mixin logo-type {

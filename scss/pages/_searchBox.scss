@@ -17,6 +17,23 @@
   background-color: $searchBox-bg;
   box-shadow: inset $shadow;
 
+  @include media(512px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    // height: 100vh;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    min-width: 100%;
+    border: none;
+    background: none;
+    box-shadow: none;
+
+
+
+  }
+
   &::before {
     height: 80%;
     width: 0.5px;
@@ -27,6 +44,10 @@
     top: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s;
+
+    @include media(512px) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -61,6 +82,16 @@
       right: 4px;
     }
 
+    @include media(512px) {
+      width: 320px;
+      height: 48px;
+      max-width: 71vw;
+      max-height: 11vw;
+      min-width: 71vw;
+      min-height: 11vw;
+      transform: translate(0);
+      position: static;
+    }
 
     // background-color: royalblue;
     .buttonBox {
@@ -68,6 +99,7 @@
       width: 100%;
       height: 100%;
       position: relative;
+
 
       button {
         position: absolute;
@@ -91,6 +123,17 @@
           min-width: 21px;
           min-height: 22px;
 
+        }
+
+        p {
+          display: none;
+          @include logo-type-font;
+          color: #ffffff;
+          margin-left: 12px;
+
+          @include media(512px) {
+            display: block;
+          }
         }
       }
 
@@ -129,6 +172,20 @@
 
   @include media(1024px) {
     padding: 0px 16px 0px 10px;
+  }
+
+  @include media(512px) {
+    width: 320px;
+    height: 48px;
+    max-width: 71vw;
+    max-height: 11vw;
+    min-width: 71vw;
+    min-height: 43px;
+    margin-bottom: 5vw;
+
+    // &:nth-of-type(2) {
+    //   margin-bottom: 72px;
+    // }
   }
 
   .inputBox-icon {
@@ -171,6 +228,10 @@
       padding: 0 0 2% 5%;
     }
 
+    @include media(512px) {
+      padding: 0 0 2% 3%;
+    }
+
     .inputBox-labeltype {
       position: absolute;
       left: 6%;
@@ -182,6 +243,14 @@
       @include media(768px) {
         left: 10%;
       }
+
+      @include media(512px) {
+        left: 3%;
+      }
+    }
+
+    .inputTitle {
+      @include rwd-font-btn;
     }
 
     .inputBox-labelcity {
@@ -194,6 +263,10 @@
 
       @include media(768px) {
         left: 10%;
+      }
+
+      @include media(512px) {
+        left: 3%;
       }
     }
 
@@ -208,6 +281,10 @@
 
       &:hover {
         background-color: #ffffff;
+      }
+
+      @include media(512px) {
+        @include rwd-font-btn;
       }
 
     }
@@ -234,6 +311,12 @@
         left: 7%;
         @include font-input;
       }
+
+      @include media(512px) {
+        top: 10px;
+        left: 3%;
+        @include font-input;
+      }
     }
 
     input:valid~label {
@@ -246,6 +329,12 @@
       @include media(1024px) {
         top: 10px;
         left: 5%;
+        @include font-input;
+      }
+
+      @include media(512px) {
+        top: 10px;
+        left: 3%;
         @include font-input;
       }
     }

@@ -140,13 +140,12 @@ export default {
       var l = -(x - w) / (w / 20) - 10;
       var t = -(y - h) / (h / 30) - 10;
       //10 / (y - (h / 2)) * 100;             
-      console.log(y + ' | ' + h + ' | ' + t);
+      // console.log(y + ' | ' + h + ' | ' + t);
 
       gsap.to('.bubble-move', 1, {
         x: t + "%",
         y: l + "%"
       });
-
     }
   },
 };
