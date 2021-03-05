@@ -1,26 +1,347 @@
 @import "../mixins/mixin";
 
 .searchBox {
-  border: 1px solid red;
+  border: 2px solid #16453E;
   height: 60px;
   width: 720px;
   margin: 44px auto 0;
   border-radius: 200px;
   max-width: 50vw;
-  max-height: 30vw;
   max-height: 5vw;
-  min-width: 380px;
+  min-width: 420px;
   min-height: 45px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $searchBox-bg;
+  box-shadow: inset $shadow;
+
+  @include media(512px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    // height: 100vh;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    min-width: 100%;
+    border: none;
+    background: none;
+    box-shadow: none;
+
+
+
+  }
+
+  &::before {
+    height: 80%;
+    width: 0.5px;
+    background-color: black;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+
+    @include media(512px) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+
+  }
 
   @include media(512px) {
     margin-top: 22px;
   }
+
+  .inputBox-button {
+    position: absolute;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    max-width: 4vw;
+    max-height: 4vw;
+    min-width: 37px;
+    min-height: 37px;
+    // border: 1px solid red;
+    border-radius: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 6px;
+    z-index: 2;
+    cursor: pointer;
+
+    @include media(1024px) {
+      right: 4px;
+    }
+
+    @include media(512px) {
+      width: 320px;
+      height: 48px;
+      max-width: 71vw;
+      max-height: 11vw;
+      min-width: 71vw;
+      min-height: 11vw;
+      transform: translate(0);
+      position: static;
+    }
+
+    // background-color: royalblue;
+    .buttonBox {
+      // border: 3px solid goldenrod;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        @include btnReset;
+        // border: 1px solid gold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 200px;
+
+        img {
+          width: 26.21px;
+          height: 27.12px;
+          max-width: 2vw;
+          max-height: 2vw;
+          min-width: 21px;
+          min-height: 22px;
+
+        }
+
+        p {
+          display: none;
+          @include logo-type-font;
+          color: #ffffff;
+          margin-left: 12px;
+
+          @include media(512px) {
+            display: block;
+          }
+        }
+      }
+
+      .button-color1 {
+        background: transparent linear-gradient(8deg, #16453E 0%, #5A9186 100%) 0% 0% no-repeat padding-box;
+
+      }
+
+      .button-color2 {
+        background: linear-gradient(145deg, #244d46 0%, #697c77 100%);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:hover {
+        .button-color2 {
+          opacity: 1;
+        }
+      }
+    }
+
+
+  }
 }
 
 .inputBox {
-  border: 1px solid red;
+  // border: 1px solid #16453E;
   width: 50%;
   border-radius: 200px;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+  padding: 0px 16px 0px 23px;
+  transition: all 0.2s;
 
+  @include media(1024px) {
+    padding: 0px 16px 0px 10px;
+  }
+
+  @include media(512px) {
+    width: 320px;
+    height: 48px;
+    max-width: 71vw;
+    max-height: 11vw;
+    min-width: 71vw;
+    min-height: 43px;
+    margin-bottom: 5vw;
+
+    // &:nth-of-type(2) {
+    //   margin-bottom: 72px;
+    // }
+  }
+
+  .inputBox-icon {
+    height: 100%;
+    width: 45px;
+    // border: 1px solid green;
+    display: flex;
+    align-items: center;
+
+    .inputBox-houseIcon {
+      width: 45px;
+      height: 40px;
+      max-width: 3vw;
+      max-height: 3vw;
+      min-width: 32px;
+      min-height: 32px;
+
+    }
+
+    .inputBox-mapIcon {
+      width: 38.4px;
+      height: 40px;
+      max-width: 3vw;
+      max-height: 3vw;
+      min-width: 32px;
+      min-height: 32px;
+    }
+  }
+
+  .inputBox-input {
+    // border: 1px solid green;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 2% 3%;
+
+    @include media(1024px) {
+      padding: 0 0 2% 5%;
+    }
+
+    @include media(512px) {
+      padding: 0 0 2% 3%;
+    }
+
+    .inputBox-labeltype {
+      position: absolute;
+      left: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.25s;
+      z-index: 0;
+
+      @include media(768px) {
+        left: 10%;
+      }
+
+      @include media(512px) {
+        left: 3%;
+      }
+    }
+
+    .inputTitle {
+      @include rwd-font-btn;
+    }
+
+    .inputBox-labelcity {
+      position: absolute;
+      left: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.25s;
+      z-index: 0;
+
+      @include media(768px) {
+        left: 10%;
+      }
+
+      @include media(512px) {
+        left: 3%;
+      }
+    }
+
+    input {
+      @include searchBar-font-size;
+      width: 100%;
+      z-index: 1;
+      height: 100%;
+      opacity: 0;
+      outline: none;
+      border: 0;
+
+      &:hover {
+        background-color: #ffffff;
+      }
+
+      @include media(512px) {
+        @include rwd-font-btn;
+      }
+
+    }
+
+    input:focus {
+      height: auto;
+      opacity: 1;
+    }
+
+    input:valid {
+      height: auto;
+      opacity: 1;
+    }
+
+    input:focus~label {
+      top: 15px;
+      left: 5%;
+      font-size: font(1);
+      color: $blue;
+      font-weight: 900;
+
+      @include media(1024px) {
+        top: 10px;
+        left: 7%;
+        @include font-input;
+      }
+
+      @include media(512px) {
+        top: 10px;
+        left: 3%;
+        @include font-input;
+      }
+    }
+
+    input:valid~label {
+      top: 15px;
+      left: 3%;
+      font-size: font(1);
+      color: $blue;
+      font-weight: 900;
+
+      @include media(1024px) {
+        top: 10px;
+        left: 5%;
+        @include font-input;
+      }
+
+      @include media(512px) {
+        top: 10px;
+        left: 3%;
+        @include font-input;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #ffffff;
+    box-shadow: $shadow;
+  }
 }

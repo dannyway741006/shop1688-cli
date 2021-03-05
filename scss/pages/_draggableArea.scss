@@ -1,9 +1,10 @@
 @import "../mixins/mixin";
 
 #draggableArea {
-  border: 1px solid green;
+  // border: 1px solid green;
   width: 100%;
   height: calc(100% - 53px);
+
 
   .area-one {
     width: 100%;
@@ -62,7 +63,14 @@
         }
       }
     }
+
+    .js-icon {
+      transform: scale(0);
+      opacity: 0;
+    }
   }
+
+
 
   .area-two {
     width: 100%;
@@ -72,6 +80,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    // display: none;
 
     @include media(1280px) {
       width: 88%;
@@ -80,6 +89,11 @@
     @include media(512px) {
       top: 25%;
       width: 96%;
+    }
+
+    @include media(375px) {
+      top: 25%;
+      width: 100%;
     }
 
     .header-title {
@@ -210,6 +224,10 @@
         padding: 0 14px;
       }
 
+      @include media(375px) {
+        display: none;
+      }
+
       .arrow {
 
 
@@ -262,10 +280,26 @@
       }
     }
 
+
+
     .logo-section {
+      overflow: auto;
       border: 1px solid black;
       border-top: none;
       background-color: #ffffff;
+      height: 67vh;
+      // height: 654px;
+      // max-height: 44vw;
+      min-height: 400px;
+
+
+      @include media(512px) {
+        // height: auto;
+        // max-height: 100%;
+        // min-height: 300px;
+        height: calc(100vh - 215px);
+
+      }
 
       .link {
         // border: 1px solid red;
@@ -278,13 +312,17 @@
           padding: 16px 13.8px 42px 0;
         }
 
+        @include media(375px) {
+          padding: 5px 13.8px 15px 0;
+        }
+
         a {
           // border: 1px solid red;
           display: flex;
           justify-content: center;
           align-items: center;
           text-decoration: none;
-          @include logo-type-font;
+          @include link-font;
           color: $dark;
           font-weight: 600;
 
@@ -296,16 +334,21 @@
             object-position: center;
             max-width: 20px;
 
-            @include media(512px) {
-              max-width: 24px;
+            @include media(320px) {
+              max-width: 16px;
             }
           }
         }
       }
     }
 
+
+
     .logo-animation {
 
+      @include media(320px) {
+        overflow: hidden;
+      }
 
       .prototype {
         width: 651px;
@@ -317,6 +360,29 @@
         // border: 1px solid red;
         position: relative;
         margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .three-shop {
+        display: flex;
+        // border: 1px solid red;
+        justify-content: center;
+        margin: 26px 0;
+
+        a {
+          @include font-input;
+          text-decoration: none;
+          color: $dark;
+
+          &:nth-of-type(2) {
+            padding: 0 24px;
+          }
+        }
+
+        @include media(512px) {
+          margin: 3% 0;
+        }
+
       }
 
       .bg-1,
@@ -796,6 +862,21 @@
         right: 7%;
       }
     }
+  }
+
+  .center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .testbox {
+    border: 1px solid red;
+    width: 200px;
+    height: 300px;
+    background-color: goldenrod;
+    position: absolute;
+    bottom: 0;
   }
 }
 
