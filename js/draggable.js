@@ -9,15 +9,9 @@ import {
   Draggable
 } from "gsap/Draggable.js";
 gsap.registerPlugin(Draggable);
-<<<<<<< HEAD
-// console.log(Draggable);
-// import Vue and vue-parallax-js
-
-=======
->>>>>>> 76cbbd89115a6c66f144b1b6222cd443496fd563
 
 
-import VueDragResize from 'vue-drag-resize'
+
 import DockBox from "@/components/dockBox.vue";
 import SearchBox from "@/components/searchBox.vue";
 export default {
@@ -25,7 +19,7 @@ export default {
   components: {
     SearchBox,
     DockBox,
-    VueDragResize
+
   },
   props: {
     msg: String,
