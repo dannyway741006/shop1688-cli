@@ -504,6 +504,12 @@
   }
 }
 
+#draggableArea .area-one .js-icon {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+
 #draggableArea .area-two {
   width: 100%;
   max-width: 1280px;
@@ -512,7 +518,6 @@
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  display: none;
 }
 
 @media (max-width: 1280px) {
@@ -755,19 +760,17 @@
 }
 
 #draggableArea .area-two .logo-section {
+  overflow: auto;
   border: 1px solid black;
   border-top: none;
   background-color: #ffffff;
-  height: 654px;
-  max-height: 44vw;
-  min-height: 441.31px;
+  height: 67vh;
+  min-height: 400px;
 }
 
 @media (max-width: 512px) {
   #draggableArea .area-two .logo-section {
-    height: auto;
-    max-height: 100%;
-    min-height: 300px;
+    height: calc(100vh - 215px);
   }
 }
 
@@ -838,6 +841,12 @@
   }
 }
 
+@media (max-width: 320px) {
+  #draggableArea .area-two .logo-animation {
+    overflow: hidden;
+  }
+}
+
 #draggableArea .area-two .logo-animation .prototype {
   width: 651px;
   height: 306px;
@@ -857,7 +866,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 26px;
+  margin: 26px 0;
 }
 
 #draggableArea .area-two .logo-animation .three-shop a {
@@ -1353,6 +1362,13 @@
   right: 7%;
 }
 
+#draggableArea .center {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 #draggableArea .testbox {
   border: 1px solid red;
   width: 200px;
@@ -1792,11 +1808,12 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0;
 }
 
 .dockBox .dock-position {
@@ -1814,7 +1831,7 @@
 .dockBox .dock-position .dock-search {
   width: 96px;
   height: 100%;
-  max-width: 5vw;
+  max-width: 7vw;
   max-height: 5vw;
   min-height: 70px;
   min-width: 70px;
@@ -1853,13 +1870,39 @@
   position: absolute;
   width: 28.32px;
   height: 28.32px;
-  background-image: url("../../imgShop1688/icon/search.png");
-  background: transparent linear-gradient(8deg, #16453E 0%, #5A9186 100%) 0% 0% no-repeat padding-box;
+  max-width: 4vw;
+  max-height: 4vw;
+  background-image: url("../../imgShop1688/icon/searchBtn.png");
+  background-repeat: no-repeat;
+  background-size: 15px 16px;
+  background-position: center;
   right: 0%;
   top: 0%;
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%) scale(1);
+          transform: translate(50%, -50%) scale(1);
   border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dockBox .dock-position .dock-search li::before {
+  content: '';
+  position: absolute;
+  width: 28.32px;
+  height: 28.32px;
+  max-width: 4vw;
+  max-height: 4vw;
+  background-image: linear-gradient(8deg, #16453E 0%, #5A9186 100%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  right: 0%;
+  top: 0%;
+  -webkit-transform: translate(50%, -50%) scale(1);
+          transform: translate(50%, -50%) scale(1);
+  border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .dockBox .dock-position .dock-search li img {
@@ -1878,6 +1921,20 @@
 .dockBox .dock-position .dock-search li:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  -webkit-transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+  transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+}
+
+.dockBox .dock-position .dock-search li:hover:after {
+  -webkit-transform: translate(50%, -50%) scale(1.1);
+          transform: translate(50%, -50%) scale(1.1);
+  -webkit-transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+  transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+}
+
+.dockBox .dock-position .dock-search li:hover::before {
+  -webkit-transform: translate(50%, -50%) scale(1.1);
+          transform: translate(50%, -50%) scale(1.1);
   -webkit-transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
   transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
 }

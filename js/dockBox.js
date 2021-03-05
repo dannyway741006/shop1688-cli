@@ -1,3 +1,16 @@
+// import {
+//   gsap
+// } from 'gsap';
+// import {
+//   CSSPlugin
+// } from 'gsap/CSSPlugin'
+// gsap.registerPlugin(CSSPlugin);
+// import {
+//   Draggable
+// } from "gsap/Draggable.js";
+// gsap.registerPlugin(Draggable);
+
+
 export default {
   name: "DockBox",
   props: {
@@ -9,6 +22,7 @@ export default {
 
     };
   },
+
   methods: {
     add1() {
       this.$refs.child2.setAttribute("class", "active");

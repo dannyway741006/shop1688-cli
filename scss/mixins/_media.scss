@@ -4,3 +4,10 @@
     @content;
   }
 }
+
+//rwd @include media(max-height)
+@mixin mediaHeight($size) {
+  @media(max-height:$size) {
+    @content;
+  }
+}

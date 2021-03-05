@@ -1,19 +1,19 @@
 <template>
   <section id="draggableArea">
     <article class="area-one">
-      <div class="icon" id="square1">
+      <div class="icon js-icon" id="square1">
         <a href="#"><img src="../../imgShop1688/icon/star.png" /></a>
         <h2>熱門商家</h2>
       </div>
-      <div class="icon" id="square2">
+      <div class="icon js-icon" id="square2">
         <a href="#"><img src="../../imgShop1688/icon/choose.png" /></a>
         <h2>精選商家</h2>
       </div>
-      <div class="icon" id="square3">
+      <div class="icon js-icon" id="square3">
         <a href="#"><img src="../../imgShop1688/icon/len.png" /></a>
         <h2>全部商家</h2>
       </div>
-      <div class="icon" id="square4">
+      <div class="icon js-icon" id="square4">
         <a href="#"><img src="../../imgShop1688/icon/join.png" /></a>
         <h2>成為商家</h2>
       </div>

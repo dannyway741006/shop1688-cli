@@ -1,8 +1,8 @@
 <template>
-  <article class="dockBox">
+  <article class="dockBox js-up-dock">
     <div class="dock-position">
       <ul class="dock-search">
-        <li>
+        <li class="js-icon">
           <img src="../../imgShop1688/icon/search.png" alt="search" />
         </li>
       </ul>
