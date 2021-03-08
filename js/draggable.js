@@ -11,7 +11,7 @@ import {
 gsap.registerPlugin(Draggable);
 
 
-import VueDragResize from 'vue-drag-resize'
+
 import DockBox from "@/components/dockBox.vue";
 import SearchBox from "@/components/searchBox.vue";
 export default {
@@ -19,7 +19,7 @@ export default {
   components: {
     SearchBox,
     DockBox,
-    VueDragResize
+
   },
   props: {
     msg: String,
