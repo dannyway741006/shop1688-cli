@@ -1,16 +1,3 @@
-// import {
-//   gsap
-// } from 'gsap';
-// import {
-//   CSSPlugin
-// } from 'gsap/CSSPlugin'
-// gsap.registerPlugin(CSSPlugin);
-// import {
-//   Draggable
-// } from "gsap/Draggable.js";
-// gsap.registerPlugin(Draggable);
-
-
 export default {
   name: "DockBox",
   props: {
@@ -24,6 +11,60 @@ export default {
   },
 
   methods: {
+    controlOpen() {
+
+      const Area = document.querySelector('#draggableArea');
+      const headerRect = Area.getBoundingClientRect();
+      if (headerRect.width >= 512) {
+
+        const imgScale = document.querySelector('.img-scale')
+        const controlType = document.querySelector('.control-type')
+        const windowItem = document.querySelector('.area-two-outline');
+        const areaTwo = document.querySelector('.area-two');
+        windowItem.style.transform = `translate(-50%, -50%) scale(${1})`
+        windowItem.style.top = `${46}%`
+        windowItem.style.left = `${50}%`
+        areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+        windowItem.style.opacity = `1`
+        controlType.style.width = `${0}%`
+        imgScale.style.transform = ` scale(${0})`
+      } else {
+        const windowItem = document.querySelector('.area-two-outline');
+        const areaTwo = document.querySelector('.area-two');
+        windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
+        windowItem.style.top = `${49}px`
+        windowItem.style.left = `${50}%`
+        areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+        windowItem.style.opacity = `1`
+      }
+    },
+    controlSmallOpen() {
+
+      const Area = document.querySelector('#draggableArea');
+      const headerRect = Area.getBoundingClientRect();
+      if (headerRect.width >= 512) {
+        const imgScale = document.querySelector('.img-scale')
+        const controlType = document.querySelector('.control-type')
+        const windowItem = document.querySelector('.area-two-outline');
+        const areaTwo = document.querySelector('.area-two');
+        windowItem.style.transform = `translate(-50%, -50%) scale(${1})`
+        windowItem.style.top = `${46}%`
+        windowItem.style.left = `${50}%`
+        windowItem.style.opacity = `1`
+        areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+        controlType.style.width = `${0}%`
+        imgScale.style.transform = ` scale(${0})`
+      } else {
+        const windowItem = document.querySelector('.area-two-outline');
+        const areaTwo = document.querySelector('.area-two');
+        windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
+        windowItem.style.top = `${49}px`
+        windowItem.style.left = `${50}%`
+
+        windowItem.style.opacity = `1`
+        areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+      }
+    },
     add1() {
       this.$refs.child2.setAttribute("class", "active");
     },
