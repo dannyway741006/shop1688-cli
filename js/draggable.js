@@ -152,7 +152,7 @@ export default {
 
   methods: {
     controlBig() {
-      console.log('click');
+
       const windowItem = document.querySelector('.area-two-outline');
       const headerLogo = document.querySelector('.logo');
       const headerTitle = document.querySelector('.header-title');
