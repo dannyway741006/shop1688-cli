@@ -26,18 +26,16 @@ export default {
   },
   data() {
     return {
-      screenWidth: document.body.clientWidth // 這裡是給到了一個預設值 （這個很重要）
+      isActive: true,
     };
   },
-
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   mounted() {
-    const that = this
-    window.onresize = () => {
-      return (() => {
-        window.screenWidth = document.body.clientWidth
-        that.screenWidth = window.screenWidth
-      })()
-    }
+    this.lastWidth = this.$refs.watchResize.clientWidth;
+    console.log(this.lastWidth);
+    window.addEventListener('resize', this.handleResize);
 
     let object = {
       el: '.bubble',
@@ -151,25 +149,65 @@ export default {
       // radius: 15,
     });
   },
-  watch: {
-    screenWidth(val) {
-      if (!this.timer) {
-        this.screenWidth = val
-        this.timer = true
-        let that = this
-        setTimeout(function () {
-          // that.screenWidth = that.$store.state.canvasWidth
-          console.log(that.screenWidth)
-          // that.init()
-          that.timer = false
-        }, 400)
-      }
-      let test = document.querySelector('.area-two');
-      console.log(test);
-      test.classList.add('center');
-    }
-  },
+
   methods: {
+
+    handleResize() {
+      if (this.$refs.watchResize.clientWidth !== this.lastWidth) {
+        let test = document.querySelector('.js-area-two');
+        console.log(test);
+        test.classList.add('center');
+      }
+
+    },
+    controlClose() {
+      this.isActive = false;
+      const icon = document.querySelector('.dock-search');
+      const windowItem = document.querySelector('.js-area-two')
+      const iconRect = icon.getBoundingClientRect()
+      windowItem.style.transform = `translate(-50%, -50%) scale(0.3)`
+      windowItem.style.top = `${iconRect.top + iconRect.height / 2}px`
+      windowItem.style.left = `${iconRect.left + iconRect.width / 2}px`
+      windowItem.style.opacity = `1`
+    },
+    controlOpen() {
+      // const icon = document.querySelector('.dock-search');
+      const windowItem = document.querySelector('.js-area-two')
+      const areaTwo = document.querySelector('.area-two')
+      // const iconRect = icon.getBoundingClientRect()
+      windowItem.style.transform = `translate(-50%, -50%) scale(1)`
+      windowItem.style.top = `${50}%`
+      windowItem.style.left = `${50}%`
+      windowItem.style.opacity = `1`
+
+      areaTwo.style.transform = `translate(-50%, -50%)`
+
+    },
+
+
+    // closeWeb() {
+    //   const icon = document.querySelector('.shop-web')
+    //   const squareIcon = document.querySelector('.square-shop-web')
+    //   const windowItem = document.querySelector('.shop1688-web')
+    //   const close = document.querySelector('.touch-close')
+    //   const iconRect = icon.getBoundingClientRect()
+    //   const squareIconRect = squareIcon.getBoundingClientRect()
+    //   const windowRect = windowItem.getBoundingClientRect()
+    //   const header = document.querySelector('.header');
+    //   const headerRect = header.getBoundingClientRect();
+    //   if (headerRect.width > 770) {
+    //     windowItem.style.transform = `translate(-50%, -50%) scale(${0})`
+    //     windowItem.style.top = `${iconRect.top + iconRect.height / 2}px`
+    //     windowItem.style.left = `${iconRect.left + iconRect.width / 2}px`
+    //     windowItem.style.opacity = `0`
+    //   } else {
+    //     windowItem.style.transform = `translate(-50%, -50%) scale(${0})`
+    //     windowItem.style.top = `${squareIconRect.top + squareIconRect.height / 2}px`
+    //     windowItem.style.left = `${squareIconRect.left + squareIconRect.width / 2}px`
+    //     windowItem.style.opacity = `0`
+    //   }
+
+    // },
     parallax(e) {
       let x = e.parallax ? e.parallax[0].clientX : e.clientX,
         y = e.parallax ? e.parallax[0].clientY : e.clientY;
