@@ -26,17 +26,13 @@ export default {
   },
   data() {
     return {
-      isActive: true,
+
     };
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
   },
   mounted() {
-    this.lastWidth = this.$refs.watchResize.clientWidth;
-    console.log(this.lastWidth);
-    window.addEventListener('resize', this.handleResize);
-
     let object = {
       el: '.bubble',
       duration: 5
@@ -82,8 +78,6 @@ export default {
     })
 
     gsap.to('.bubble-move', {
-
-
       delay: 2.5,
       // y: "random(-200,200)",
       opacity: 1,
@@ -113,7 +107,6 @@ export default {
         repeat: -1
       }
     });
-
     // console.log(headerRect.width);
     let draggableArea = document.querySelector("#draggableArea");
     Draggable.create("#square1", {
@@ -141,73 +134,79 @@ export default {
       zIndex: 500,
       // radius: 15,
     });
-    Draggable.create("#square5", {
-      bounds: draggableArea,
-      dragClickables: false,
-      type: "x,y",
-      zIndex: 500,
-      // radius: 15,
-    });
+
+    const Area = document.querySelector('#draggableArea');
+    const headerRect = Area.getBoundingClientRect();
+    if (headerRect.width >= 512) {
+      Draggable.create("#square5", {
+        bounds: draggableArea,
+        dragClickables: false,
+        type: "x,y",
+        zIndex: 500,
+        edgeResistance: 0,
+        // radius: 15,
+
+
+
+      });
+    }
   },
 
   methods: {
+    controlBig() {
 
-    handleResize() {
-      if (this.$refs.watchResize.clientWidth !== this.lastWidth) {
-        let test = document.querySelector('.js-area-two');
-        console.log(test);
-        test.classList.add('center');
-      }
+      const windowItem = document.querySelector('.area-two-outline');
+      const headerLogo = document.querySelector('.logo');
+      const headerLogoRect = headerLogo.getBoundingClientRect();
+      const headerTitle = document.querySelector('.header-title');
+      const headerTitleRect = headerTitle.getBoundingClientRect();
+      const logoSection = document.querySelector('.logo-section');
 
+      const headerBottom = document.querySelector('.header-bottom');
+      const headerBottomRect = headerBottom.getBoundingClientRect();
+      const dockPosition = document.querySelector('.dock-position');
+      const dockPositionRect = dockPosition.getBoundingClientRect();
+      windowItem.style.top = `${headerLogoRect.height}px`;
+      windowItem.style.transform = `translate(-50%, 0%)`
+      windowItem.style.width = `${100}%`;
+      windowItem.style.maxWidth = `${100}%`;
+      windowItem.style.left = `${50}%`;
+      console.log(headerBottomRect.height)
+      console.log(headerTitleRect.height)
+      logoSection.style.height = `calc(${100}vh - ${headerTitleRect.height}px - ${headerBottomRect.height}px - ${headerLogoRect.height}px - ${dockPositionRect.height}px) `
+    },
+    Small() {
+      console.log("click")
+      const imgScale = document.querySelector('.img-scale')
+      const controlType = document.querySelector('.control-type')
+      const windowItem = document.querySelector('.area-two-outline');
+      const small = document.querySelector('.control-type');
+      const smallRect = small.getBoundingClientRect()
+      const areaTwo = document.querySelector('.area-two');
+      windowItem.style.transform = `translate(-50%, -50%) scale(${0})`
+      windowItem.style.top = `${smallRect.top + smallRect.height / 2}px`
+      windowItem.style.left = `${smallRect.left + smallRect.width / 2}px`
+      areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+      areaTwo.style.top = `${smallRect.top + smallRect.height / 2}px`
+      areaTwo.style.left = `${smallRect.left + smallRect.width / 2}px`
+      controlType.style.width = `${100}%`
+      windowItem.style.opacity = `1`
+      imgScale.style.transform = ` scale(${1})`
     },
     controlClose() {
-      this.isActive = false;
+      const windowItem = document.querySelector('.area-two-outline');
       const icon = document.querySelector('.dock-search');
-      const windowItem = document.querySelector('.js-area-two')
       const iconRect = icon.getBoundingClientRect()
-      windowItem.style.transform = `translate(-50%, -50%) scale(0.3)`
+      const areaTwo = document.querySelector('.area-two');
+      windowItem.style.transform = `translate(-50%, -50%) scale(${0.05})`
       windowItem.style.top = `${iconRect.top + iconRect.height / 2}px`
       windowItem.style.left = `${iconRect.left + iconRect.width / 2}px`
-      windowItem.style.opacity = `1`
-    },
-    controlOpen() {
-      // const icon = document.querySelector('.dock-search');
-      const windowItem = document.querySelector('.js-area-two')
-      const areaTwo = document.querySelector('.area-two')
-      // const iconRect = icon.getBoundingClientRect()
-      windowItem.style.transform = `translate(-50%, -50%) scale(1)`
-      windowItem.style.top = `${50}%`
-      windowItem.style.left = `${50}%`
-      windowItem.style.opacity = `1`
-
-      areaTwo.style.transform = `translate(-50%, -50%)`
+      areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+      areaTwo.style.top = `${iconRect.top + iconRect.height / 2}px`
+      areaTwo.style.left = `${iconRect.left + iconRect.width / 2}px`
+      windowItem.style.opacity = `0`
 
     },
-
-
-    // closeWeb() {
-    //   const icon = document.querySelector('.shop-web')
-    //   const squareIcon = document.querySelector('.square-shop-web')
-    //   const windowItem = document.querySelector('.shop1688-web')
-    //   const close = document.querySelector('.touch-close')
-    //   const iconRect = icon.getBoundingClientRect()
-    //   const squareIconRect = squareIcon.getBoundingClientRect()
-    //   const windowRect = windowItem.getBoundingClientRect()
-    //   const header = document.querySelector('.header');
-    //   const headerRect = header.getBoundingClientRect();
-    //   if (headerRect.width > 770) {
-    //     windowItem.style.transform = `translate(-50%, -50%) scale(${0})`
-    //     windowItem.style.top = `${iconRect.top + iconRect.height / 2}px`
-    //     windowItem.style.left = `${iconRect.left + iconRect.width / 2}px`
-    //     windowItem.style.opacity = `0`
-    //   } else {
-    //     windowItem.style.transform = `translate(-50%, -50%) scale(${0})`
-    //     windowItem.style.top = `${squareIconRect.top + squareIconRect.height / 2}px`
-    //     windowItem.style.left = `${squareIconRect.left + squareIconRect.width / 2}px`
-    //     windowItem.style.opacity = `0`
-    //   }
-
-    // },
     parallax(e) {
       let x = e.parallax ? e.parallax[0].clientX : e.clientX,
         y = e.parallax ? e.parallax[0].clientY : e.clientY;

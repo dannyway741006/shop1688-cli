@@ -1,7 +1,7 @@
 <template>
   <article class="dockBox js-up-dock">
     <div class="dock-position">
-      <ul class="dock-search">
+      <ul class="dock-search" @click.stop="controlOpen">
         <li class="js-icon">
           <img src="../../imgShop1688/icon/search.png" alt="search" />
         </li>
@@ -45,6 +45,15 @@
           <a href="#" @mousemove.stop="add7" @mouseleave.stop="removeAdd7">
             <img ref="child7" src="../../imgShop1688/icon/talk.png" alt="talk" />
           </a>
+        </li>
+        <li class="control-type" @click.stop="controlSmallOpen">
+          <a href="#" class="control-small">
+            <img
+              class="img-scale"
+              ref="child8"
+              src="../../imgShop1688/icon/s.png"
+              alt="banner"
+          /></a>
         </li>
       </ul>
     </div>
