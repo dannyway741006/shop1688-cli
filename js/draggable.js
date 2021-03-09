@@ -34,6 +34,7 @@ export default {
   },
 
   mounted() {
+    window.addEventListener('resize', this.resizeHandler);
     let object = {
       el: '.bubble',
       duration: 5
@@ -144,14 +145,29 @@ export default {
         dragClickables: false,
         type: "x,y",
         zIndex: 500,
-        edgeResistance: 0,
+        edgeResistance: 0.5,
+        throwProps: true
         // radius: 15,
-
-
-
       });
     }
   },
+  // watch: {
+  //   test() {
+  //     const Area = document.querySelector('#draggableArea');
+  //     const headerRect = Area.getBoundingClientRect();
+  //     if (headerRect.width >= 512) {
+  //       Draggable.create("#square5", {
+  //         bounds: draggableArea,
+  //         dragClickables: false,
+  //         type: "x,y",
+  //         zIndex: 500,
+  //         edgeResistance: 0,
+  //         // radius: 15,
+  //       });
+  //     }
+
+  //   }
+  // },
   computed: {
     ...mapState([
       'isLoading',
@@ -162,6 +178,9 @@ export default {
     ...mapMutations([
       'isLoadingChangeTrue'
     ]),
+    resizeHandler() {
+
+    },
     controlBig() {
       this.$store.commit('isLoadingChangeTrue');
       console.log(this.$store.state.isLoading);
