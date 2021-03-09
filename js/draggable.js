@@ -9,7 +9,10 @@ import {
   Draggable
 } from "gsap/Draggable.js";
 gsap.registerPlugin(Draggable);
-
+import {
+  mapState,
+  mapMutations
+} from 'vuex';
 
 
 import DockBox from "@/components/dockBox.vue";
@@ -26,12 +29,10 @@ export default {
   },
   data() {
     return {
-
+      controlSmall: false,
     };
   },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize);
-  },
+
   mounted() {
     let object = {
       el: '.bubble',
@@ -151,17 +152,25 @@ export default {
       });
     }
   },
+  computed: {
+    ...mapState([
+      'isLoading',
+    ]),
 
+  },
   methods: {
+    ...mapMutations([
+      'isLoadingChangeTrue'
+    ]),
     controlBig() {
-
+      this.$store.commit('isLoadingChangeTrue');
+      console.log(this.$store.state.isLoading);
       const windowItem = document.querySelector('.area-two-outline');
       const headerLogo = document.querySelector('.logo');
-      const headerLogoRect = headerLogo.getBoundingClientRect();
       const headerTitle = document.querySelector('.header-title');
       const headerTitleRect = headerTitle.getBoundingClientRect();
       const logoSection = document.querySelector('.logo-section');
-
+      const headerLogoRect = headerLogo.getBoundingClientRect();
       const headerBottom = document.querySelector('.header-bottom');
       const headerBottomRect = headerBottom.getBoundingClientRect();
       const dockPosition = document.querySelector('.dock-position');
