@@ -12,11 +12,9 @@ export default {
 
   methods: {
     controlOpen() {
-
       const Area = document.querySelector('#draggableArea');
       const headerRect = Area.getBoundingClientRect();
       if (headerRect.width >= 512) {
-
         const imgScale = document.querySelector('.img-scale')
         const controlType = document.querySelector('.control-type')
         const windowItem = document.querySelector('.area-two-outline');

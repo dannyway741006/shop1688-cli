@@ -26,10 +26,12 @@ export default {
   },
   data() {
     return {
-      controlSmall: false,
+
     };
   },
-
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   mounted() {
     let object = {
       el: '.bubble',
@@ -155,10 +157,11 @@ export default {
 
       const windowItem = document.querySelector('.area-two-outline');
       const headerLogo = document.querySelector('.logo');
+      const headerLogoRect = headerLogo.getBoundingClientRect();
       const headerTitle = document.querySelector('.header-title');
       const headerTitleRect = headerTitle.getBoundingClientRect();
       const logoSection = document.querySelector('.logo-section');
-      const headerLogoRect = headerLogo.getBoundingClientRect();
+
       const headerBottom = document.querySelector('.header-bottom');
       const headerBottomRect = headerBottom.getBoundingClientRect();
       const dockPosition = document.querySelector('.dock-position');
