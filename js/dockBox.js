@@ -44,8 +44,6 @@ export default {
         windowItem.style.opacity = `1`
         controlType.style.width = `${0}%`
         imgScale.style.transform = ` scale(${0})`
-
-
       }
 
 
