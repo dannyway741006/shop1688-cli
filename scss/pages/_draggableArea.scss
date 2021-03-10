@@ -3,8 +3,9 @@
 #draggableArea {
   // border: 1px solid green;
   width: 100%;
+  // max-width: 1920px;
   height: calc(100% - 53px);
-
+  position: relative;
 
   .area-one {
     width: 100%;
@@ -18,6 +19,10 @@
     .icon {
       // border: 1px solid red;
       padding: 30% 0;
+      position: relative;
+
+
+
 
 
       a {
@@ -70,10 +75,12 @@
     }
   }
 
+
+
   .area-two-outline {
     width: 100%;
     max-width: 1280px;
-    border: 4px solid green;
+    // border: 4px solid rgba($color: #000000, $alpha: 1);
     position: absolute;
     left: 50%;
     top: 46%;
@@ -81,14 +88,6 @@
     // display: none;
     transition: all 0.3s;
 
-    // @include media(1400px) {
-    //   max-width: 100%;
-
-    //   border: 4px solid red;
-    //   top: 48px;
-    //   left: 50%;
-    //   transform: translate(-50%, 0%);
-    // }
 
     @include media(1280px) {
       width: 88%;
@@ -330,10 +329,10 @@
           // height: 654px;
           // max-height: 44vw;
           min-height: 400px;
+          transition: all 0.3s;
+          position: relative;
 
-          // @include media(1400px) {
-          //   height: calc(100vh - 126px);
-          // }
+
 
           @include media(512px) {
             // height: auto;
@@ -383,6 +382,7 @@
             }
           }
         }
+
 
 
 
@@ -910,14 +910,60 @@
 
   }
 
-
-
-
-  .center {
-    position: absolute;
-    top: 50%;
+  .active-area-two-outline {
+    width: 100%;
+    max-width: 1920px;
+    top: 0px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
+
+    // @include media(1280px) {
+    //   width: 88%;
+    // }
+
+    @include media(512px) {
+      top: 49px;
+      width: 96%;
+      transform: translate(-50%, 0%);
+
+    }
+
+    @include media(375px) {
+      // top: 49px;
+      width: 100%;
+      // transform: translate(-50%, -50%);
+    }
+
+    .area-two-position {
+      // border: 3px solid red;
+      // position: relative;
+
+      .area-two {
+        // position: absolute;
+        transform: translate(0%, 0%) !important;
+
+        .header-bottom {
+          .web-domin {
+            max-width: 100%;
+          }
+        }
+
+        .logo-section {
+          height: 100vh;
+          max-height: calc(100vh - 126px);
+
+          @include media(512px) {
+            // height: auto;
+            // max-height: 100%;
+            // min-height: 300px;
+            height: calc(100vh - 215px);
+
+          }
+        }
+      }
+    }
+
+
   }
 
   .testbox {

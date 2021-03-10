@@ -1,5 +1,5 @@
 <template>
-  <section id="draggableArea">
+  <section id="draggableArea" ref="watchResize">
     <article class="area-one">
       <div class="icon js-icon" id="square1">
         <a href="#"><img src="../../imgShop1688/icon/star.png" /></a>
@@ -18,7 +18,7 @@
         <h2>成為商家</h2>
       </div>
     </article>
-    <article class="area-two-outline">
+    <article class="area-two-outline" :class="{ 'active-area-two-outline': isLoading }">
       <div class="area-two-position">
         <div class="area-two" id="square5">
           <div class="header-title">
