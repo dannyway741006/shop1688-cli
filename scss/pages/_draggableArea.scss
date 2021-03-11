@@ -13,8 +13,37 @@
     position: absolute;
     top: 50%;
     left: 2%;
-    // border: 1px solid red;
+    border: 1px solid red;
     transform: translateY(-50%);
+
+    @include media(1024px) {
+      border: 1px solid red;
+      // background-color: beige;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      max-width: 95%;
+      display: flex;
+      height: 100px;
+
+      // .icon {
+      //   border: 1px solid gray;
+
+      // a {
+      //   border: 2px solid green;
+
+      //   // img {
+      //   //   width: 90px;
+      //   //   height: 100%;
+      //   //   max-width: 7vw;
+      //   //   min-width: 49px;
+      //   //   object-fit: contain;
+      //   //   object-position: center;
+      //   //   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+      //   // }
+      // }
+      // }
+    }
 
     .icon {
       // border: 1px solid red;
@@ -70,8 +99,8 @@
     }
 
     .js-icon {
-      transform: scale(0);
-      opacity: 0;
+      transform: scale(1);
+      opacity: 1;
     }
   }
 

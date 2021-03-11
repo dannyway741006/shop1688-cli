@@ -423,6 +423,7 @@
 #draggableArea {
   width: 100%;
   height: calc(100% - 53px);
+  position: relative;
 }
 
 #draggableArea .area-one {
@@ -431,12 +432,29 @@
   position: absolute;
   top: 50%;
   left: 2%;
+  border: 1px solid red;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
+@media (max-width: 1024px) {
+  #draggableArea .area-one {
+    border: 1px solid red;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+    max-width: 95%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100px;
+  }
+}
+
 #draggableArea .area-one .icon {
   padding: 30% 0;
+  position: relative;
 }
 
 #draggableArea .area-one .icon a {
@@ -505,15 +523,14 @@
 }
 
 #draggableArea .area-one .js-icon {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  opacity: 0;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
 }
 
 #draggableArea .area-two-outline {
   width: 100%;
   max-width: 1280px;
-  border: 4px solid green;
   position: absolute;
   left: 50%;
   top: 46%;
@@ -531,7 +548,7 @@
 
 @media (max-width: 512px) {
   #draggableArea .area-two-outline {
-    top: 49px;
+    top: 0px;
     width: 96%;
     -webkit-transform: translate(-50%, 0%);
             transform: translate(-50%, 0%);
@@ -610,6 +627,16 @@
   background-color: #A7D0C9;
 }
 
+#draggableArea .area-two-outline .area-two-position .area-two .header-title .control button {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#draggableArea .area-two-outline .area-two-position .area-two .header-title .control button:hover {
+  -webkit-box-shadow: inset 17px 9px 20px #00000030;
+          box-shadow: inset 17px 9px 20px #00000030;
+}
+
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control .control-big {
   width: 100%;
   height: 100%;
@@ -632,6 +659,46 @@
   border-radius: 3px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+#draggableArea .area-two-outline .area-two-position .area-two .header-title .control .active-control-big {
+  width: 100%;
+  height: 100%;
+  background-color: #A7D0C9;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  position: relative;
+}
+
+#draggableArea .area-two-outline .area-two-position .area-two .header-title .control .active-control-big::after {
+  content: '';
+  position: absolute;
+  height: 40%;
+  border: 2px solid black;
+  width: 40%;
+  left: 55%;
+  top: 45%;
+  border-radius: 3px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+#draggableArea .area-two-outline .area-two-position .area-two .header-title .control .active-control-big::before {
+  content: '';
+  position: absolute;
+  height: 40%;
+  border: 2px solid black;
+  background-color: #A7D0C9;
+  width: 40%;
+  left: 45%;
+  top: 55%;
+  border-radius: 3px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control .control-small {
@@ -796,6 +863,9 @@
   background-color: #ffffff;
   height: 67vh;
   min-height: 400px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
 }
 
 @media (max-width: 512px) {
@@ -1392,12 +1462,48 @@
   right: 7%;
 }
 
-#draggableArea .center {
-  position: absolute;
-  top: 50%;
+#draggableArea .active-area-two-outline {
+  width: 100%;
+  max-width: 1920px;
+  top: 0px;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+@media (max-width: 512px) {
+  #draggableArea .active-area-two-outline {
+    top: 0px;
+    width: 96%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+}
+
+@media (max-width: 375px) {
+  #draggableArea .active-area-two-outline {
+    width: 100%;
+  }
+}
+
+#draggableArea .active-area-two-outline .area-two-position .area-two {
+  -webkit-transform: translate(0%, 0%) !important;
+          transform: translate(0%, 0%) !important;
+}
+
+#draggableArea .active-area-two-outline .area-two-position .area-two .header-bottom .web-domin {
+  max-width: 100%;
+}
+
+#draggableArea .active-area-two-outline .area-two-position .area-two .logo-section {
+  height: 100vh;
+  max-height: calc(100vh - 126px);
+}
+
+@media (max-width: 512px) {
+  #draggableArea .active-area-two-outline .area-two-position .area-two .logo-section {
+    height: calc(100vh - 215px);
+  }
 }
 
 #draggableArea .testbox {
@@ -1836,6 +1942,7 @@
   height: 96px;
   max-width: 95vw;
   max-height: 7vw;
+  border: 1px solid #464438;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -1845,6 +1952,7 @@
   display: -ms-flexbox;
   display: flex;
   opacity: 0;
+  display: none;
 }
 
 .dockBox .dock-position {
@@ -1878,6 +1986,8 @@
           align-items: flex-end;
   border-radius: 12px 12px 0px 0px;
   background-color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .dockBox .dock-position .dock-search li {
@@ -1953,22 +2063,87 @@
 .dockBox .dock-position .dock-search li:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
-  transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .dockBox .dock-position .dock-search li:hover:after {
   -webkit-transform: translate(50%, -50%) scale(1.1);
           transform: translate(50%, -50%) scale(1.1);
-  -webkit-transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
-  transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .dockBox .dock-position .dock-search li:hover::before {
   -webkit-transform: translate(50%, -50%) scale(1.1);
           transform: translate(50%, -50%) scale(1.1);
-  -webkit-transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
-  transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.dockBox .dock-position .active-control-close li img {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.dockBox .dock-position .active-control-close li:hover img {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.dockBox .dock-position .active-control-close li:hover:after {
+  -webkit-transform: translate(-50%, -50%) scale(1.1);
+          transform: translate(-50%, -50%) scale(1.1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dockBox .dock-position .active-control-close li:hover::before {
+  -webkit-transform: translate(-50%, -50%) scale(1.1);
+          transform: translate(-50%, -50%) scale(1.1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dockBox .dock-position .active-control-close li:after {
+  width: 60px;
+  height: 60px;
+  max-width: 4vw;
+  max-height: 4vw;
+  min-width: 45px;
+  min-height: 45px;
+  background-size: 26px 27px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.dockBox .dock-position .active-control-close li::before {
+  width: 60px;
+  height: 60px;
+  max-width: 4vw;
+  max-height: 4vw;
+  min-width: 45px;
+  min-height: 45px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.dockBox .dock-position .active-dock-search {
+  background-color: rgba(110, 139, 137, 0.7);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .dockBox .dock-position .dock {
@@ -2000,6 +2175,8 @@
   z-index: -1;
   bottom: 0;
   min-height: 70px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .dockBox .dock-position .dock .control-type {
@@ -2027,6 +2204,10 @@
           transform: scale(0);
 }
 
+.dockBox .dock-position .dock .control-type:hover {
+  overflow: visible !important;
+}
+
 .dockBox .dock-position .dock .control-type:hover img {
   width: 90px;
   height: 90px;
@@ -2036,6 +2217,59 @@
   list-style: none;
   width: 100%;
   height: 100%;
+  position: relative;
+}
+
+.dockBox .dock-position .dock li:hover::after {
+  content: attr(showhints);
+  position: absolute;
+  margin: 0px auto;
+  width: auto;
+  max-width: auto;
+  height: auto;
+  text-align: center;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  color: #000;
+  padding: 6px;
+  white-space: nowrap;
+  border-radius: 6px;
+  z-index: 999;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 16px;
+  -webkit-box-shadow: 0px 3px 6px #00000030;
+          box-shadow: 0px 3px 6px #00000030;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock li:hover::after {
+    top: -58px;
+    font-size: 14px;
+  }
+}
+
+.dockBox .dock-position .dock li:hover:before {
+  content: "";
+  position: absolute;
+  border-top: solid 8px white;
+  border-left: solid 8px transparent;
+  border-right: solid 8px transparent;
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock li:hover:before {
+    top: -30px;
+  }
 }
 
 .dockBox .dock-position .dock li a {
@@ -2104,5 +2338,20 @@
     max-width: 5vw;
     min-width: 45px;
   }
+}
+
+.dockBox .dock-position .active-dock::after {
+  background-color: rgba(110, 139, 137, 0.7);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.dockBox .dock-position .active-dock li:hover::after {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #FFFFFF;
+}
+
+.dockBox .dock-position .active-dock li:hover:before {
+  border-top: solid 8px rgba(0, 0, 0, 0.9);
 }
 /*# sourceMappingURL=main.css.map */

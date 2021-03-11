@@ -37,7 +37,7 @@ export default {
     let draggableArea = document.querySelector("#draggableArea");
     Draggable.create("#square6", {
       bounds: draggableArea,
-      dragClickables: true,
+      dragClickables: false,
       type: "x,y",
       zIndex: 500,
       edgeResistance: 0.5,
