@@ -1,4 +1,16 @@
 import {
+  gsap
+} from 'gsap';
+import {
+  CSSPlugin
+} from 'gsap/CSSPlugin'
+gsap.registerPlugin(CSSPlugin);
+import {
+  Draggable
+} from "gsap/Draggable.js";
+gsap.registerPlugin(Draggable);
+
+import {
   mapState,
   mapMutations
 } from 'vuex';
@@ -17,34 +29,36 @@ export default {
   computed: {
     ...mapState([
       'isLoading',
+      'isControlClose'
     ]),
 
+  },
+  mounted() {
+    let draggableArea = document.querySelector("#draggableArea");
+    Draggable.create("#square6", {
+      bounds: draggableArea,
+      dragClickables: true,
+      type: "x,y",
+      zIndex: 500,
+      edgeResistance: 0.5,
+      throwProps: true
+      // radius: 15,
+    });
   },
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
+      'isControlCloseChangeTrue'
 
     ]),
 
     controlOpen() {
-      // this.$store.commit('isLoadingChangeFalse')
-      console.log(this.$store.state.isLoading);
-      if (this.$store.state.isLoading === true) {
-        const imgScale = document.querySelector('.img-scale')
-        const controlType = document.querySelector('.control-type')
-        const windowItem = document.querySelector('.area-two-outline');
-        const areaTwo = document.querySelector('.area-two');
-        windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
-        windowItem.style.top = `${0}px`
-        windowItem.style.left = `${50}%`
-        areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
-        windowItem.style.opacity = `1`
-        controlType.style.width = `${0}%`
-        imgScale.style.transform = ` scale(${0})`
-      } else {
-        const Area = document.querySelector('#draggableArea');
-        const headerRect = Area.getBoundingClientRect();
-        if (headerRect.width >= 512) {
+      console.log('asdfasdf')
+      if (this.$store.state.isControlClose === true) {
+        this.$store.commit('isControlCloseChangeTrue');
+        // this.$store.commit('isLoadingChangeFalse')
+        console.log(this.$store.state.isLoading);
+        if (this.$store.state.isLoading === true) {
           const imgScale = document.querySelector('.img-scale')
           const controlType = document.querySelector('.control-type')
           const windowItem = document.querySelector('.area-two-outline');
@@ -57,13 +71,29 @@ export default {
           controlType.style.width = `${0}%`
           imgScale.style.transform = ` scale(${0})`
         } else {
-          const windowItem = document.querySelector('.area-two-outline');
-          const areaTwo = document.querySelector('.area-two');
-          windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
-          windowItem.style.top = `${49}px`
-          windowItem.style.left = `${50}%`
-          areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
-          windowItem.style.opacity = `1`
+          const Area = document.querySelector('#draggableArea');
+          const headerRect = Area.getBoundingClientRect();
+          if (headerRect.width >= 512) {
+            const imgScale = document.querySelector('.img-scale')
+            const controlType = document.querySelector('.control-type')
+            const windowItem = document.querySelector('.area-two-outline');
+            const areaTwo = document.querySelector('.area-two');
+            windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
+            windowItem.style.top = `${0}px`
+            windowItem.style.left = `${50}%`
+            areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+            windowItem.style.opacity = `1`
+            controlType.style.width = `${0}%`
+            imgScale.style.transform = ` scale(${0})`
+          } else {
+            const windowItem = document.querySelector('.area-two-outline');
+            const areaTwo = document.querySelector('.area-two');
+            windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
+            windowItem.style.top = `${0}px`
+            windowItem.style.left = `${50}%`
+            areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+            windowItem.style.opacity = `1`
+          }
         }
       }
     },

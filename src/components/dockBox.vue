@@ -3,7 +3,11 @@
     <div class="dock-position">
       <ul
         class="dock-search"
-        :class="{ 'active-dock-search': isLoading }"
+        id="square6"
+        :class="{
+          'active-dock-search': isLoading,
+          'active-control-close': isControlClose,
+        }"
         @click.stop="controlOpen"
       >
         <li class="js-icon">

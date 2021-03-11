@@ -38,8 +38,8 @@
       background-color: rgba(255, 255, 255, 0.7);
       transition: all 1s;
 
-      li {
 
+      li {
         list-style: none;
         // border: 1px solid greenyellow;
         width: 100%;
@@ -49,7 +49,6 @@
         align-items: flex-end;
         position: relative;
         padding-bottom: 8%;
-
 
         &:after {
           content: '';
@@ -65,9 +64,7 @@
           right: 0%;
           top: 0%;
           transform: translate(50%, -50%) scale(1);
-
           border-radius: 50%;
-
           transition: all 0.5s;
         }
 
@@ -86,8 +83,7 @@
           top: 0%;
           transform: translate(50%, -50%) scale(1);
           border-radius: 50%;
-
-          transition: all 1s;
+          transition: all 0.5s;
         }
 
         img {
@@ -105,20 +101,72 @@
         &:hover {
           img {
             transform: scale(1.1);
-            transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
+            transition: all 0.3s;
           }
 
           &:after {
             transform: translate(50%, -50%) scale(1.1);
-            transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
-
+            transition: all 0.3s;
           }
 
           &::before {
             transform: translate(50%, -50%) scale(1.1);
-            transition: all 0.5s cubic-bezier(0.8, -4, 0.2, 4);
-
+            transition: all 0.3s;
           }
+        }
+      }
+    }
+
+    .active-control-close {
+      li {
+        img {
+          transform: scale(0);
+          opacity: 1;
+          transition: all 0.2s;
+        }
+
+        &:hover {
+          img {
+            transform: scale(0);
+          }
+
+          &:after {
+            transform: translate(-50%, -50%) scale(1.1);
+            transition: all 0.5s;
+          }
+
+          &::before {
+            transform: translate(-50%, -50%) scale(1.1);
+            transition: all 0.5s;
+          }
+        }
+
+        &:after {
+          width: 60px;
+          height: 60px;
+          max-width: 4vw;
+          max-height: 4vw;
+          min-width: 45px;
+          min-height: 45px;
+          background-size: 26px 27px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.2s;
+        }
+
+        &::before {
+          width: 60px;
+          height: 60px;
+          max-width: 4vw;
+          max-height: 4vw;
+          min-width: 45px;
+          min-height: 45px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          transition: all 0.2s;
         }
       }
     }
@@ -129,7 +177,6 @@
     }
 
     .dock {
-
       display: flex;
       height: auto;
       width: calc(100% - 120px);
@@ -218,15 +265,36 @@
             border-radius: 6px;
             z-index: 999;
             transition: all 1s;
-            top: -50%;
+            top: -50px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 14px;
+            font-size: 16px;
+            box-shadow: $shadow;
+            z-index: 1;
 
             @include media(768px) {
-              top: -70px;
+              top: -58px;
+              font-size: 14px;
             }
           }
+
+          &:before {
+            content: "";
+            position: absolute;
+            border-top: solid 8px rgb(255, 255, 255);
+            border-left: solid 8px transparent;
+            border-right: solid 8px transparent;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+
+            @include media(768px) {
+              top: -30px;
+            }
+          }
+
+
         }
 
         a {
@@ -296,12 +364,22 @@
     }
 
     .active-dock {
-
-
-
       &::after {
         background-color: rgba(110, 139, 137, 0.7);
         transition: all 1s;
+      }
+
+      li {
+        &:hover {
+          &::after {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #FFFFFF;
+          }
+
+          &:before {
+            border-top: solid 8px rgba(0, 0, 0, 0.9);
+          }
+        }
       }
     }
   }

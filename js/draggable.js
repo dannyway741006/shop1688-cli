@@ -141,7 +141,8 @@ export default {
       type: "x,y",
       zIndex: 500,
       edgeResistance: 0.5,
-      throwProps: true
+      throwProps: true,
+
       // radius: 15,
     });
 
@@ -158,12 +159,13 @@ export default {
         // radius: 15,
       });
     }
+
   },
 
   computed: {
     ...mapState([
       'isLoading',
-      'logoSectionMask'
+      'isControlClose'
     ]),
 
   },
@@ -171,6 +173,7 @@ export default {
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
+      'isControlCloseChangeTrue'
 
     ]),
 
@@ -205,6 +208,7 @@ export default {
       controlType.style.transform = ` scale(${1})`
     },
     controlClose() {
+      this.$store.commit('isControlCloseChangeTrue');
       const windowItem = document.querySelector('.area-two-outline');
       const icon = document.querySelector('.dock-search');
       const iconRect = icon.getBoundingClientRect()

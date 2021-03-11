@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isLoading: false,
+    isControlClose: false,
 
   },
 
@@ -13,6 +14,9 @@ export default new Vuex.Store({
   mutations: {
     isLoadingChangeTrue(state) {
       state.isLoading = !state.isLoading
+    },
+    isControlCloseChangeTrue(state) {
+      state.isControlClose = !state.isControlClose
     },
 
 

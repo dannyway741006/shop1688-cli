@@ -29,7 +29,11 @@
               <button class="control-small" @click.stop="Small"></button>
             </div>
             <div class="control">
-              <button class="control-big" @click.stop="controlBig"></button>
+              <button
+                class="control-big"
+                :class="{ 'active-control-big': isLoading }"
+                @click.stop="controlBig"
+              ></button>
             </div>
             <div class="control">
               <button class="control-close" @click.stop="controlClose"></button>
