@@ -110,45 +110,48 @@ export default {
       }
     });
     // console.log(headerRect.width);
-    let draggableArea = document.querySelector("#draggableArea");
-    Draggable.create("#square1", {
-      bounds: draggableArea,
-      dragClickables: true,
-      type: "x,y",
-      edgeResistance: 0.5,
-      throwProps: true
-      // radius: 15,
-    });
-    Draggable.create("#square2", {
-      bounds: draggableArea,
-      dragClickables: true,
-      type: "x,y",
-      edgeResistance: 0.5,
-      throwProps: true
-      // radius: 15,
-    });
-    Draggable.create("#square3", {
-      bounds: draggableArea,
-      dragClickables: true,
-      type: "x,y",
-      edgeResistance: 0.5,
-      throwProps: true
-      // radius: 15,
-    });
-    Draggable.create("#square4", {
-      bounds: draggableArea,
-      dragClickables: true,
-      type: "x,y",
-      zIndex: 500,
-      edgeResistance: 0.5,
-      throwProps: true,
 
-      // radius: 15,
-    });
+
 
     const Area = document.querySelector('#draggableArea');
     const headerRect = Area.getBoundingClientRect();
     if (headerRect.width >= 512) {
+
+      let draggableArea = document.querySelector("#draggableArea");
+      Draggable.create("#square1", {
+        bounds: draggableArea,
+        dragClickables: true,
+        type: "x,y",
+        edgeResistance: 0.5,
+        throwProps: true
+        // radius: 15,
+      });
+      Draggable.create("#square2", {
+        bounds: draggableArea,
+        dragClickables: true,
+        type: "x,y",
+        edgeResistance: 0.5,
+        throwProps: true
+        // radius: 15,
+      });
+      Draggable.create("#square3", {
+        bounds: draggableArea,
+        dragClickables: true,
+        type: "x,y",
+        edgeResistance: 0.5,
+        throwProps: true
+        // radius: 15,
+      });
+      Draggable.create("#square4", {
+        bounds: draggableArea,
+        dragClickables: true,
+        type: "x,y",
+        zIndex: 500,
+        edgeResistance: 0.5,
+        throwProps: true,
+
+        // radius: 15,
+      });
       Draggable.create("#square5", {
         bounds: draggableArea,
         dragClickables: false,

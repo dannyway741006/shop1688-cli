@@ -244,7 +244,7 @@
 }
 
 .logo .logo-w50 .logo-type:hover {
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
 }
 
 .logo .logo-w50 .logo-type .items {
@@ -406,7 +406,7 @@
 }
 
 .logo .logo-nowTime .logo-icon:nth-of-type(1):hover {
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
 }
 
 .logo .logo-nowTime .logo-icon img {
@@ -432,16 +432,53 @@
   position: absolute;
   top: 50%;
   left: 2%;
+  border: 1px solid red;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  display: none;
+}
+
+@media (max-height: 759px) {
+  #draggableArea .area-one {
+    top: 0;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-one {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 95%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 80px;
+    max-height: 22vw;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+    background-color: rgba(35, 75, 67, 0.7);
+    border-radius: 15px;
+  }
 }
 
 #draggableArea .area-one .icon {
-  padding: 30% 0;
+  padding: 1vw 0;
   position: relative;
 }
 
+@media (max-width: 512px) {
+  #draggableArea .area-one .icon {
+    height: 100%;
+    padding: 0;
+  }
+}
+
 #draggableArea .area-one .icon a {
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,26 +495,85 @@
           transform: scale(1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-}
-
-#draggableArea .area-one .icon a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: all 0.5s cubic-bezier(0.8, -2, 0.2, 4);
-  transition: all 0.5s cubic-bezier(0.8, -2, 0.2, 4);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #draggableArea .area-one .icon a img {
-  width: 90px;
-  height: 100%;
+  width: 70px;
+  height: 70px;
   max-width: 7vw;
-  min-width: 49px;
+  max-height: 7vw;
+  min-height: 40px;
+  min-width: 40px;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
   -webkit-filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#draggableArea .area-one .icon a img:nth-of-type(1) {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+@media (max-height: 759px) {
+  #draggableArea .area-one .icon a img {
+    width: 50px;
+    height: 50px;
+    max-width: 7vw;
+    max-height: 7vw;
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+@media (max-width: 396px) {
+  #draggableArea .area-one .icon a img {
+    min-height: 35px;
+    min-width: 35px;
+  }
+}
+
+#draggableArea .area-one .icon a img:nth-of-type(2) {
+  width: 80px;
+  height: 80px;
+  max-width: 7vw;
+  min-width: 48px;
+  height: auto;
+  min-height: auto;
+  z-index: -1;
+}
+
+@media (max-width: 396px) {
+  #draggableArea .area-one .icon a img:nth-of-type(2) {
+    min-width: 48px;
+  }
+}
+
+#draggableArea .area-one .icon a:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s cubic-bezier(0.8, -2, 0.2, 4);
+  transition: all 0.5s cubic-bezier(0.8, -2, 0.2, 4);
+}
+
+#draggableArea .area-one .icon a:hover img:nth-of-type(1) {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+@media (max-width: 512px) {
+  #draggableArea .area-one .icon a:hover img:nth-of-type(1) {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
 }
 
 #draggableArea .area-one .icon h2 {
@@ -494,9 +590,17 @@
   }
 }
 
+@media (max-width: 396px) {
+  #draggableArea .area-one .icon h2 {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 512px) {
   #draggableArea .area-one .icon h2 {
     color: #ffffff;
+    padding-top: 0px;
+    padding-bottom: 3px;
   }
 }
 
@@ -602,13 +706,19 @@
   }
 }
 
+@media (max-width: 396px) {
+  #draggableArea .area-two-outline .area-two-position .area-two .header-title .title h2 {
+    font-size: 14px;
+  }
+}
+
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control {
   width: 36px;
   height: 100%;
   border: 1px solid black;
   border-top: none;
   border-bottom: none;
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
 }
 
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control button {
@@ -624,7 +734,7 @@
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control .control-big {
   width: 100%;
   height: 100%;
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
   position: relative;
   cursor: pointer;
   outline: none;
@@ -648,7 +758,7 @@
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control .active-control-big {
   width: 100%;
   height: 100%;
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
   position: relative;
   cursor: pointer;
   outline: none;
@@ -675,7 +785,7 @@
   position: absolute;
   height: 40%;
   border: 2px solid black;
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
   width: 40%;
   left: 45%;
   top: 55%;
@@ -688,7 +798,7 @@
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control .control-small {
   width: 100%;
   height: 100%;
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
   position: relative;
   cursor: pointer;
   outline: none;
@@ -710,7 +820,7 @@
 #draggableArea .area-two-outline .area-two-position .area-two .header-title .control .control-close {
   width: 100%;
   height: 100%;
-  background-color: #A7D0C9;
+  background-color: #B1B1B1;
   position: relative;
   cursor: pointer;
   outline: none;
@@ -853,6 +963,12 @@
 }
 
 @media (max-width: 512px) {
+  #draggableArea .area-two-outline .area-two-position .area-two .logo-section {
+    height: calc(100vh - 215px);
+  }
+}
+
+@media (max-width: 396px) {
   #draggableArea .area-two-outline .area-two-position .area-two .logo-section {
     height: calc(100vh - 215px);
   }
@@ -1926,6 +2042,7 @@
   height: 96px;
   max-width: 95vw;
   max-height: 7vw;
+  border: 3px solid #e9c600;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -1935,6 +2052,14 @@
   display: -ms-flexbox;
   display: flex;
   opacity: 0;
+}
+
+@media (max-width: 1024px) {
+  .dockBox {
+    max-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(110, 139, 137, 0.5);
+  }
 }
 
 .dockBox .dock-position {
@@ -1949,7 +2074,7 @@
           align-items: flex-end;
 }
 
-.dockBox .dock-position .dock-search {
+.dockBox .dock-position .dock-search-box {
   width: 96px;
   height: 100%;
   max-width: 7vw;
@@ -1957,6 +2082,10 @@
   min-height: 70px;
   min-width: 70px;
   position: absolute;
+}
+
+.dockBox .dock-position .dock-search {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1970,6 +2099,12 @@
   background-color: rgba(255, 255, 255, 0.7);
   -webkit-transition: all 1s;
   transition: all 1s;
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-search {
+    border-radius: 12px;
+  }
 }
 
 .dockBox .dock-position .dock-search li {
@@ -2123,7 +2258,7 @@
 }
 
 .dockBox .dock-position .active-dock-search {
-  background-color: rgba(110, 139, 137, 0.7);
+  background-color: rgba(110, 139, 137, 0.5);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -2323,7 +2458,7 @@
 }
 
 .dockBox .dock-position .active-dock::after {
-  background-color: rgba(110, 139, 137, 0.7);
+  background-color: rgba(110, 139, 137, 0.5);
   -webkit-transition: all 1s;
   transition: all 1s;
 }

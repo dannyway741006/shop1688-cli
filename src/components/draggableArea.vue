@@ -2,20 +2,32 @@
   <section id="draggableArea" ref="watchResize">
     <article class="area-one">
       <div class="icon js-icon" id="square1">
-        <a href="#"><img src="../../imgShop1688/icon/star.png" /></a>
-        <h2>熱門商家</h2>
+        <a href="#"
+          ><img src="../../imgShop1688/icon/star.png" />
+          <img src="../../imgShop1688/icon/bottom.png" />
+          <h2>熱門商家</h2></a
+        >
       </div>
       <div class="icon js-icon" id="square2">
-        <a href="#"><img src="../../imgShop1688/icon/choose.png" /></a>
-        <h2>精選商家</h2>
+        <a href="#"
+          ><img src="../../imgShop1688/icon/choose.png" />
+          <img src="../../imgShop1688/icon/bottom.png" />
+          <h2>精選商家</h2></a
+        >
       </div>
       <div class="icon js-icon" id="square3">
-        <a href="#"><img src="../../imgShop1688/icon/len.png" /></a>
-        <h2>全部商家</h2>
+        <a href="#"
+          ><img src="../../imgShop1688/icon/len.png" />
+          <img src="../../imgShop1688/icon/bottom.png" />
+          <h2>全部商家</h2></a
+        >
       </div>
       <div class="icon js-icon" id="square4">
-        <a href="#"><img src="../../imgShop1688/icon/join.png" /></a>
-        <h2>成為商家</h2>
+        <a href="#"
+          ><img src="../../imgShop1688/icon/join.png" />
+          <img src="../../imgShop1688/icon/bottom.png" />
+          <h2>成為商家</h2></a
+        >
       </div>
     </article>
     <article class="area-two-outline" :class="{ 'active-area-two-outline': isLoading }">

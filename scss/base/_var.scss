@@ -20,7 +20,7 @@ $card-items-bg:#262626;
 $fixed-input-bg:#263240;
 $rwd-tag-items:#2E4A6C;
 $rwd-header-bg:#5F98B4;
-$logo-type-hover:#A7D0C9;
+$logo-type-hover:#B1B1B1;
 $logo-items-hover:#A7D0C9;
 $searchBox-bg:#F1FFFD;
 
@@ -49,6 +49,10 @@ $rwd-header-title:19px;
 
   @include media(512px) {
     font-size: 16px;
+  }
+
+  @include media(396px) {
+    font-size: 14px;
   }
 }
 

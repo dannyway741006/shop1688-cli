@@ -31,19 +31,26 @@ export default {
       'isLoading',
       'isControlClose'
     ]),
-
   },
   mounted() {
-    let draggableArea = document.querySelector("#draggableArea");
-    Draggable.create("#square6", {
-      bounds: draggableArea,
-      dragClickables: false,
-      type: "x,y",
-      zIndex: 500,
-      edgeResistance: 0.5,
-      throwProps: true
-      // radius: 15,
-    });
+    const Area = document.querySelector('#draggableArea');
+    const headerRect = Area.getBoundingClientRect();
+    if (headerRect.width <= 512) {
+      let draggableArea = document.querySelector("#draggableArea");
+      Draggable.create("#square6", {
+        bounds: draggableArea,
+        dragClickables: true,
+        type: "x,y",
+        zIndex: 500,
+        edgeResistance: 0.5,
+        throwProps: true,
+        onClick: () => {
+          // console.log('asdfasdfasd')
+          this.controlOpen();
+        }
+        // radius: 15,
+      });
+    }
   },
   methods: {
     ...mapMutations([
@@ -66,6 +73,7 @@ export default {
           windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
           windowItem.style.top = `${0}px`
           windowItem.style.left = `${50}%`
+
           areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
           windowItem.style.opacity = `1`
           controlType.style.width = `${0}%`
