@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .todo-input {
   width: 100%;
   max-width: 500px;
@@ -427,15 +428,89 @@
 }
 
 @media (max-width: 512px) {
+  #draggableArea .menu-mask {
+    border: 2px solid green;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    display: none;
+  }
+  #draggableArea .active-menu-mask {
+    display: block;
+    z-index: 1500;
+  }
   #draggableArea .rwd-menu-btn {
     position: fixed;
     bottom: 20%;
     right: 10px;
     width: 45px;
+    max-width: 10vw;
+    min-width: 35px;
     height: 45px;
-    background-color: gold;
-    border: 4px solid green;
-    z-index: 99;
+    max-height: 10vw;
+    min-height: 35px;
+    background-color: rgba(62, 62, 62, 0.7);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  #draggableArea .rwd-menu-btn:hover {
+    z-index: -1 !important;
+  }
+  #draggableArea .rwd-menu-btn::after {
+    content: '';
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #draggableArea .rwd-menu-btn::before {
+    content: '';
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-animation-name: btnRoom;
+            animation-name: btnRoom;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+  @-webkit-keyframes btnRoom {
+    from {
+      width: 50%;
+      height: 50%;
+    }
+    to {
+      width: 63%;
+      height: 63%;
+    }
+  }
+  @keyframes btnRoom {
+    from {
+      width: 50%;
+      height: 50%;
+    }
+    to {
+      width: 63%;
+      height: 63%;
+    }
   }
 }
 
@@ -445,7 +520,6 @@
   position: absolute;
   top: 50%;
   left: 2%;
-  border: 1px solid red;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -2076,11 +2150,11 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%) scale(0);
             transform: translate(-50%, -50%) scale(0);
-    overflow: hidden;
     border-radius: 30px;
-    -webkit-transition: all 1s;
-    transition: all 1s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
     opacity: 0;
+    z-index: 3;
   }
 }
 
@@ -2099,6 +2173,7 @@
 @media (max-width: 512px) {
   .dockBox .dock-position {
     position: static;
+    border-radius: 30px;
   }
 }
 
@@ -2321,6 +2396,7 @@
     min-height: 100%;
     max-height: 100%;
     position: static;
+    border-radius: 30px;
   }
 }
 
@@ -2351,6 +2427,7 @@
         -ms-flex-align: start;
             align-items: flex-start;
     position: static;
+    border-radius: 30px;
   }
 }
 
@@ -2370,6 +2447,7 @@
 @media (max-width: 512px) {
   .dockBox .dock-position .dock-box .dock::after {
     background-color: rgba(133, 133, 133, 0.8);
+    border-radius: 30px;
   }
 }
 
@@ -2627,7 +2705,28 @@
 
 .active-dockBox {
   opacity: 1;
+  z-index: 1600;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
+  position: relative;
+}
+
+.active-dockBox::after {
+  content: '商家分類';
+  position: absolute;
+  font-size: 32px;
+  letter-spacing: 0.6px;
+  font-weight: 900;
+  color: #2D2D2D;
+  left: 50%;
+  top: -20%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+@media (max-width: 396px) {
+  .active-dockBox::after {
+    font-size: 24px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

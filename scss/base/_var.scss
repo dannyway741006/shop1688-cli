@@ -82,6 +82,10 @@ $rwd-header-title:19px;
   letter-spacing: 0.6px;
   font-weight: 900;
   color: $dark;
+
+  @include media(396px) {
+    font-size: 24px;
+  }
 }
 
 @mixin font-input {

@@ -26,10 +26,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    overflow: hidden;
+    // overflow: hidden;
     border-radius: 30px;
-    transition: all 1s;
+    transition: all 0.3s;
     opacity: 0;
+    z-index: 3;
   }
 
   .dock-position {
@@ -42,6 +43,7 @@
 
     @include media(512px) {
       position: static;
+      border-radius: 30px;
     }
 
     .dock-search-box {
@@ -228,6 +230,7 @@
         min-height: 100%;
         max-height: 100%;
         position: static;
+        border-radius: 30px;
         // border: 5px solid rosybrown;
       }
 
@@ -249,6 +252,7 @@
           justify-content: space-between;
           align-items: flex-start;
           position: static;
+          border-radius: 30px;
 
         }
 
@@ -268,6 +272,7 @@
           @include media(512px) {
             // min-height: 100%;
             background-color: rgba(133, 133, 133, 0.8);
+            border-radius: 30px;
           }
         }
 
@@ -504,5 +509,16 @@
   opacity: 1;
   // top: 50%;
   // left: 50%;
+  z-index: 1600;
   transform: translate(-50%, -50%) scale(1);
+  position: relative;
+
+  &::after {
+    content: '商家分類';
+    position: absolute;
+    @include font-tab-title;
+    left: 50%;
+    top: -20%;
+    transform: translate(-50%, 0);
+  }
 }

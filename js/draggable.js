@@ -47,14 +47,7 @@ export default {
       scale: 1,
       ease: "back"
     })
-    // gsap.to('.js-up-dock', {
-    //   y: 0,
-    //   duration: 2,
-    //   opacity: 1,
-    //   stagger: 0.3,
-    //   scale: 1,
-    //   ease: "back"
-    // })
+
 
     gsap.to('.bubble-left', {
       x: 0,
@@ -115,9 +108,32 @@ export default {
 
     const Area = document.querySelector('#draggableArea');
     const headerRect = Area.getBoundingClientRect();
+
+    let draggableArea = document.querySelector("#draggableArea");
+    Draggable.create("#square7", {
+      bounds: draggableArea,
+      dragClickables: true,
+      type: "x,y",
+      edgeResistance: 0.5,
+      throwProps: true,
+
+      onClick: () => {
+        this.menuBtn();
+
+      }
+      // radius: 15,
+    });
     if (headerRect.width >= 512) {
 
       let draggableArea = document.querySelector("#draggableArea");
+      gsap.to('.js-up-dock', {
+        y: 0,
+        duration: 2,
+        opacity: 1,
+        stagger: 0.3,
+        scale: 1,
+        ease: "back"
+      })
       Draggable.create("#square1", {
         bounds: draggableArea,
         dragClickables: true,
@@ -169,6 +185,7 @@ export default {
     ...mapState([
       'isLoading',
       'isControlClose',
+      'isMenu'
 
     ]),
 
@@ -184,6 +201,7 @@ export default {
     menuBtn() {
       this.$store.commit('isMenuChange')
       console.log(this.$store.state.isMenu);
+
     },
     controlBig() {
 

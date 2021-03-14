@@ -1,6 +1,11 @@
 <template>
   <section id="draggableArea" ref="watchResize">
-    <div class="rwd-menu-btn" @click.stop="menuBtn"></div>
+    <div
+      class="menu-mask"
+      :class="{ 'active-menu-mask': isMenu }"
+      @click.stop="menuBtn"
+    ></div>
+    <div id="square7" class="rwd-menu-btn" @click.stop="menuBtn"></div>
     <article class="area-one">
       <div class="icon js-icon" id="square1">
         <a href="#"
