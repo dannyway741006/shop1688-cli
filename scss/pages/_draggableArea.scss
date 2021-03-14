@@ -7,6 +7,20 @@
   height: calc(100% - 53px);
   position: relative;
 
+  @include media(512px) {
+    .rwd-menu-btn {
+      position: fixed;
+      bottom: 20%;
+      right: 10px;
+      width: 45px;
+      height: 45px;
+      background-color: gold;
+      border: 4px solid green;
+      z-index: 99;
+    }
+
+  }
+
   .area-one {
     width: 100%;
     max-width: 100px;
@@ -15,7 +29,7 @@
     left: 2%;
     border: 1px solid red;
     transform: translateY(-50%);
-    display: none;
+    // display: none;
 
     @include mediaHeight(759px) {
       top: 0;

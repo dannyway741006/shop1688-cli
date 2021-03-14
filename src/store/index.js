@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     isLoading: false,
     isControlClose: false,
-
+    isMenu: false
   },
 
 
@@ -18,6 +18,9 @@ export default new Vuex.Store({
     isControlCloseChangeTrue(state) {
       state.isControlClose = !state.isControlClose
     },
+    isMenuChange(state) {
+      state.isMenu = !state.isMenu
+    }
 
 
   },

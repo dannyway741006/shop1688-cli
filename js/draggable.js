@@ -47,14 +47,14 @@ export default {
       scale: 1,
       ease: "back"
     })
-    gsap.to('.js-up-dock', {
-      y: 0,
-      duration: 2,
-      opacity: 1,
-      stagger: 0.3,
-      scale: 1,
-      ease: "back"
-    })
+    // gsap.to('.js-up-dock', {
+    //   y: 0,
+    //   duration: 2,
+    //   opacity: 1,
+    //   stagger: 0.3,
+    //   scale: 1,
+    //   ease: "back"
+    // })
 
     gsap.to('.bubble-left', {
       x: 0,
@@ -168,7 +168,8 @@ export default {
   computed: {
     ...mapState([
       'isLoading',
-      'isControlClose'
+      'isControlClose',
+
     ]),
 
   },
@@ -176,13 +177,16 @@ export default {
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
-      'isControlCloseChangeTrue'
+      'isControlCloseChangeTrue',
+      'isMenuChange'
 
     ]),
-
+    menuBtn() {
+      this.$store.commit('isMenuChange')
+      console.log(this.$store.state.isMenu);
+    },
     controlBig() {
 
-      console.log("asfdf");
       if (this.$store.state.isLoading === false) {
         this.$store.commit('isLoadingChangeTrue');
       } else {
@@ -200,7 +204,7 @@ export default {
       const smallRect = controlType.getBoundingClientRect()
       const areaTwo = document.querySelector('.area-two');
       windowItem.style.transform = `translate(-56%, -58%) scale(${0})`
-      windowItem.style.top = `${smallRect.top + smallRect.height /2}px`
+      windowItem.style.top = `${smallRect.top + smallRect.height / 2}px`
       windowItem.style.left = `${smallRect.left + smallRect.width / 2}px`
       areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
       areaTwo.style.top = `${smallRect.top + smallRect.height / 2}px`

@@ -29,7 +29,9 @@ export default {
   computed: {
     ...mapState([
       'isLoading',
-      'isControlClose'
+      'isControlClose',
+      'isMenu'
+
     ]),
   },
   mounted() {
@@ -55,7 +57,8 @@ export default {
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
-      'isControlCloseChangeTrue'
+      'isControlCloseChangeTrue',
+      'isMenuChange'
 
     ]),
 
