@@ -110,21 +110,21 @@ export default {
     const Area = document.querySelector('#draggableArea');
     const headerRect = Area.getBoundingClientRect();
 
-    let draggableArea = document.querySelector("#draggableArea");
-    Draggable.create("#square7", {
-      bounds: draggableArea,
-      dragClickables: true,
-      type: "x,y",
-      edgeResistance: 0.5,
-      throwProps: true,
-
-      onClick: () => {
-        this.menuBtn();
-
-      }
-      // radius: 15,
-    });
     // let draggableArea = document.querySelector("#draggableArea");
+    // Draggable.create("#square7", {
+    //   bounds: draggableArea,
+    //   dragClickables: true,
+    //   type: "x,y",
+    //   edgeResistance: 0.5,
+    //   throwProps: true,
+
+    //   onClick: () => {
+    //     this.menuBtn();
+
+    //   }
+    //   // radius: 15,
+    // });
+    let draggableArea = document.querySelector("#draggableArea");
     Draggable.create("#square6", {
       bounds: draggableArea,
       dragClickables: true,
@@ -213,6 +213,11 @@ export default {
       'isMenuChange'
 
     ]),
+    menuBtn() {
+      this.$store.commit("isMenuChange");
+
+      console.log(this.$store.state.isMenu);
+    },
     controlOpen() {
       console.log('click')
       let test = document.querySelector('#square6')
@@ -261,13 +266,7 @@ export default {
         }
       }
     },
-    menuBtn() {
-      this.$store.commit('isMenuChange');
-      let rwdMenuBtn = document.querySelector('.rwd-menu-btn');
-      rwdMenuBtn.style.transform = `translate3d(0)`
-      console.log(this.$store.state.isMenu);
 
-    },
     controlBig() {
 
       if (this.$store.state.isLoading === false) {

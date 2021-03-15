@@ -5,7 +5,7 @@
       :class="{ 'active-menu-mask': isMenu }"
       @click.stop="menuBtn"
     ></div>
-    <div id="square7" class="rwd-menu-btn" @click.stop="menuBtn"></div>
+    <!-- <div id="square7" class="rwd-menu-btn" @click.stop="menuBtn"></div> -->
     <article class="area-one">
       <div class="icon js-icon" id="square1">
         <a href="#"
@@ -36,7 +36,10 @@
         >
       </div>
     </article>
-    <article class="area-two-outline" :class="{ 'active-area-two-outline': isLoading }">
+    <article
+      class="area-two-outline"
+      :class="{ 'active-area-two-outline': isLoading }"
+    >
       <div class="area-two-position">
         <div class="area-two" id="square5">
           <div class="header-title">
@@ -72,7 +75,11 @@
             </div>
             <div class="arrow --arrow">
               <img src="../../imgShop1688/down-button.png" alt="dom-img" />
-              <img class="pos" src="../../imgShop1688/arrow.png" alt="dom-img" />
+              <img
+                class="pos"
+                src="../../imgShop1688/arrow.png"
+                alt="dom-img"
+              />
             </div>
           </div>
           <div class="logo-section">
