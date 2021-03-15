@@ -36,10 +36,7 @@
         >
       </div>
     </article>
-    <article
-      class="area-two-outline"
-      :class="{ 'active-area-two-outline': isLoading }"
-    >
+    <article class="area-two-outline" :class="{ 'active-area-two-outline': isLoading }">
       <div class="area-two-position">
         <div class="area-two" id="square5">
           <div class="header-title">
@@ -75,11 +72,7 @@
             </div>
             <div class="arrow --arrow">
               <img src="../../imgShop1688/down-button.png" alt="dom-img" />
-              <img
-                class="pos"
-                src="../../imgShop1688/arrow.png"
-                alt="dom-img"
-              />
+              <img class="pos" src="../../imgShop1688/arrow.png" alt="dom-img" />
             </div>
           </div>
           <div class="logo-section">
@@ -140,6 +133,12 @@
     </article>
 
     <DockBox />
+    <DocksearchBox
+      id="square6"
+      class="dock-phone"
+      @click.stop="controlOpen"
+    ></DocksearchBox>
+
     <!-- <div class="testbox"></div> -->
   </section>
 </template>

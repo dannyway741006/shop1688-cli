@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .todo-input {
   width: 100%;
   max-width: 500px;
@@ -426,16 +427,115 @@
   position: relative;
 }
 
+#draggableArea .dock-phone {
+  display: none;
+}
+
+@media (max-width: 512px) {
+  #draggableArea .dock-phone {
+    display: block;
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 512px) {
+  #draggableArea .menu-mask {
+    border: 2px solid green;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    display: none;
+  }
+  #draggableArea .active-menu-mask {
+    display: block;
+    z-index: 1500;
+  }
+  #draggableArea .rwd-menu-btn {
+    position: fixed;
+    bottom: 20%;
+    right: 10px;
+    width: 45px;
+    max-width: 10vw;
+    min-width: 35px;
+    height: 45px;
+    max-height: 10vw;
+    min-height: 35px;
+    background-color: rgba(62, 62, 62, 0.7);
+    z-index: 2000;
+    border-radius: 10px;
+  }
+  #draggableArea .rwd-menu-btn:hover {
+    z-index: 2000 !important;
+  }
+  #draggableArea .rwd-menu-btn::after {
+    content: '';
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  #draggableArea .rwd-menu-btn::before {
+    content: '';
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-animation-name: btnRoom;
+            animation-name: btnRoom;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+  @-webkit-keyframes btnRoom {
+    from {
+      width: 50%;
+      height: 50%;
+    }
+    to {
+      width: 63%;
+      height: 63%;
+    }
+  }
+  @keyframes btnRoom {
+    from {
+      width: 50%;
+      height: 50%;
+    }
+    to {
+      width: 63%;
+      height: 63%;
+    }
+  }
+}
+
 #draggableArea .area-one {
   width: 100%;
   max-width: 100px;
   position: absolute;
   top: 50%;
   left: 2%;
-  border: 1px solid red;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  display: none;
 }
 
 @media (max-height: 759px) {
@@ -640,6 +740,7 @@
     width: 96%;
     -webkit-transform: translate(-50%, 0%);
             transform: translate(-50%, 0%);
+    z-index: 1;
   }
 }
 
@@ -2042,7 +2143,6 @@
   height: 96px;
   max-width: 95vw;
   max-height: 7vw;
-  border: 3px solid #e9c600;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -2054,11 +2154,22 @@
   opacity: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 512px) {
   .dockBox {
-    max-width: 100vw;
-    min-height: 100vh;
-    background-color: rgba(110, 139, 137, 0.5);
+    position: fixed;
+    width: 100%;
+    max-width: 85%;
+    height: 100vh;
+    max-height: 100vw;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    border-radius: 30px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0;
+    z-index: 3;
   }
 }
 
@@ -2074,17 +2185,394 @@
           align-items: flex-end;
 }
 
-.dockBox .dock-position .dock-search-box {
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-web {
+    display: none;
+  }
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position {
+    position: fixed;
+    border-radius: 30px;
+  }
+}
+
+.dockBox .dock-position .dock-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: calc(100% - 120px);
+  max-width: 86vw;
+  min-width: 400px;
+  max-height: 7vw;
+  min-height: 65px;
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    position: fixed;
+    border-radius: 30px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    position: static;
+    border-radius: 30px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock::after {
+  width: 100%;
+  content: '';
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px 12px 0px 0px;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock::after {
+    background-color: rgba(133, 133, 133, 0.8);
+    border-radius: 30px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock .control-type {
+  width: 0%;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dockBox .dock-position .dock-box .dock .control-type a img {
+  width: 70px;
+  max-width: 5vw;
+  min-width: 50px;
+  height: 70px;
+  max-height: 5vw;
+  min-width: 50px;
+  min-height: 50px;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.dockBox .dock-position .dock-box .dock .control-type:hover {
+  overflow: visible !important;
+}
+
+.dockBox .dock-position .dock-box .dock .control-type:hover img {
+  width: 90px;
+  height: 90px;
+}
+
+.dockBox .dock-position .dock-box .dock li {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  min-height: 75px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock-box .dock li {
+    min-height: 55px;
+  }
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock li {
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li:hover::after {
+  content: attr(showhints);
+  position: absolute;
+  margin: 0px auto;
+  width: auto;
+  max-width: auto;
+  height: auto;
+  text-align: center;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  color: #000;
+  padding: 6px;
+  white-space: nowrap;
+  border-radius: 6px;
+  z-index: 999;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  top: -40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  font-size: 16px;
+  -webkit-box-shadow: 0px 3px 6px #00000030;
+          box-shadow: 0px 3px 6px #00000030;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock-box .dock li:hover::after {
+    top: -25%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock li:hover::after {
+    display: none;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li:hover:before {
+  content: "";
+  position: absolute;
+  border-top: solid 8px white;
+  border-left: solid 8px transparent;
+  border-right: solid 8px transparent;
+  top: -33%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock-box .dock li:hover:before {
+    top: -15%;
+  }
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock li:hover:before {
+    display: none;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 6px;
+  height: 100%;
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock li a {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    color: #2D2D2D;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 512px) and (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 512px) and (max-width: 396px) {
+  .dockBox .dock-position .dock-box .dock li a {
+    font-size: 14px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li a p {
+  display: none;
+}
+
+@media (max-width: 512px) {
+  .dockBox .dock-position .dock-box .dock li a p {
+    display: block;
+    padding-top: 4px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li a img {
+  width: 65px;
+  max-width: 5vw;
+  min-width: 50px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock-box .dock li a img {
+    width: 60px;
+    max-width: 5vw;
+    min-width: 45px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li a:hover img {
+  width: 90px;
+  max-width: 6vw;
+  min-width: 75px;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock-box .dock li a:hover img {
+    width: 60px;
+    max-width: 5vw;
+    min-width: 45px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li a .active {
+  width: 75px;
+  max-width: 5vw;
+  min-width: 65px;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock-box .dock li a .active {
+    width: 60px;
+    max-width: 5vw;
+    min-width: 45px;
+  }
+}
+
+.dockBox .dock-position .dock-box .dock li a .removeactive {
+  width: 65px;
+  max-width: 5vw;
+  min-width: 50px;
+}
+
+@media (max-width: 768px) {
+  .dockBox .dock-position .dock-box .dock li a .removeactive {
+    width: 60px;
+    max-width: 5vw;
+    min-width: 45px;
+  }
+}
+
+.dockBox .dock-position .dock-box .active-dock::after {
+  background-color: rgba(110, 139, 137, 0.5);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.dockBox .dock-position .dock-box .active-dock li:hover::after {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #FFFFFF;
+}
+
+.dockBox .dock-position .dock-box .active-dock li:hover:before {
+  border-top: solid 8px rgba(0, 0, 0, 0.9);
+}
+
+.active-dockBox {
+  opacity: 1;
+  z-index: 1600;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  position: fixed;
+}
+
+.active-dockBox::after {
+  content: '商家分類';
+  position: absolute;
+  font-size: 32px;
+  letter-spacing: 0.6px;
+  font-weight: 900;
+  color: #2D2D2D;
+  left: 50%;
+  top: -20%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+@media (max-width: 396px) {
+  .active-dockBox::after {
+    font-size: 24px;
+  }
+}
+
+.dock-search-box {
   width: 96px;
   height: 100%;
   max-width: 7vw;
-  max-height: 5vw;
-  min-height: 70px;
+  max-height: 7vw;
+  min-height: 65px;
   min-width: 70px;
   position: absolute;
 }
 
-.dockBox .dock-position .dock-search {
+.dock-search {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2102,12 +2590,12 @@
 }
 
 @media (max-width: 512px) {
-  .dockBox .dock-position .dock-search {
-    border-radius: 12px;
+  .dock-search {
+    border-radius: 10px;
   }
 }
 
-.dockBox .dock-position .dock-search li {
+.dock-search li {
   list-style: none;
   width: 100%;
   height: 100%;
@@ -2124,7 +2612,7 @@
   padding-bottom: 8%;
 }
 
-.dockBox .dock-position .dock-search li:after {
+.dock-search li:after {
   content: '';
   position: absolute;
   width: 28.32px;
@@ -2144,7 +2632,7 @@
   transition: all 0.5s;
 }
 
-.dockBox .dock-position .dock-search li::before {
+.dock-search li::before {
   content: '';
   position: absolute;
   width: 28.32px;
@@ -2164,7 +2652,7 @@
   transition: all 0.5s;
 }
 
-.dockBox .dock-position .dock-search li img {
+.dock-search li img {
   width: 60px;
   height: 70px;
   max-width: 5vw;
@@ -2177,28 +2665,28 @@
   transition: all 0.5s;
 }
 
-.dockBox .dock-position .dock-search li:hover img {
+.dock-search li:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.dockBox .dock-position .dock-search li:hover:after {
+.dock-search li:hover:after {
   -webkit-transform: translate(50%, -50%) scale(1.1);
           transform: translate(50%, -50%) scale(1.1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.dockBox .dock-position .dock-search li:hover::before {
+.dock-search li:hover::before {
   -webkit-transform: translate(50%, -50%) scale(1.1);
           transform: translate(50%, -50%) scale(1.1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.dockBox .dock-position .active-control-close li img {
+.active-control-close li img {
   -webkit-transform: scale(0);
           transform: scale(0);
   opacity: 1;
@@ -2206,26 +2694,26 @@
   transition: all 0.2s;
 }
 
-.dockBox .dock-position .active-control-close li:hover img {
+.active-control-close li:hover img {
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 
-.dockBox .dock-position .active-control-close li:hover:after {
+.active-control-close li:hover:after {
   -webkit-transform: translate(-50%, -50%) scale(1.1);
           transform: translate(-50%, -50%) scale(1.1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.dockBox .dock-position .active-control-close li:hover::before {
+.active-control-close li:hover::before {
   -webkit-transform: translate(-50%, -50%) scale(1.1);
           transform: translate(-50%, -50%) scale(1.1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.dockBox .dock-position .active-control-close li:after {
+.active-control-close li:after {
   width: 60px;
   height: 60px;
   max-width: 4vw;
@@ -2241,7 +2729,7 @@
   transition: all 0.2s;
 }
 
-.dockBox .dock-position .active-control-close li::before {
+.active-control-close li::before {
   width: 60px;
   height: 60px;
   max-width: 4vw;
@@ -2257,218 +2745,16 @@
   transition: all 0.2s;
 }
 
-.dockBox .dock-position .active-dock-search {
+.active-dock-search {
   background-color: rgba(110, 139, 137, 0.5);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.dockBox .dock-position .dock {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  width: calc(100% - 120px);
-  max-height: 6vw;
-  max-width: 86vw;
-  min-width: 400px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  position: absolute;
-  right: 0;
-}
-
-.dockBox .dock-position .dock::after {
+.main-section .main-box {
   width: 100%;
-  content: '';
-  height: 96px;
-  max-height: 5vw;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 12px 12px 0px 0px;
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  min-height: 70px;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-.dockBox .dock-position .dock .control-type {
-  width: 0%;
-  overflow: hidden;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.dockBox .dock-position .dock .control-type a img {
-  width: 70px;
-  max-width: 5vw;
-  min-width: 50px;
-  height: 70px;
-  max-height: 5vw;
-  min-width: 50px;
-  min-height: 50px;
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
-.dockBox .dock-position .dock .control-type:hover {
-  overflow: visible !important;
-}
-
-.dockBox .dock-position .dock .control-type:hover img {
-  width: 90px;
-  height: 90px;
-}
-
-.dockBox .dock-position .dock li {
-  list-style: none;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.dockBox .dock-position .dock li:hover::after {
-  content: attr(showhints);
-  position: absolute;
-  margin: 0px auto;
-  width: auto;
-  max-width: auto;
-  height: auto;
-  text-align: center;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  color: #000;
-  padding: 6px;
-  white-space: nowrap;
-  border-radius: 6px;
-  z-index: 999;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  top: -50px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  font-size: 16px;
-  -webkit-box-shadow: 0px 3px 6px #00000030;
-          box-shadow: 0px 3px 6px #00000030;
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .dockBox .dock-position .dock li:hover::after {
-    top: -58px;
-    font-size: 14px;
-  }
-}
-
-.dockBox .dock-position .dock li:hover:before {
-  content: "";
-  position: absolute;
-  border-top: solid 8px white;
-  border-left: solid 8px transparent;
-  border-right: solid 8px transparent;
-  top: -20px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  z-index: 2;
-}
-
-@media (max-width: 768px) {
-  .dockBox .dock-position .dock li:hover:before {
-    top: -30px;
-  }
-}
-
-.dockBox .dock-position .dock li a {
-  width: 100%;
-  display: inline-block;
-  padding-bottom: 3%;
-}
-
-.dockBox .dock-position .dock li a img {
-  width: 65px;
-  max-width: 5vw;
-  min-width: 50px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
-}
-
-@media (max-width: 768px) {
-  .dockBox .dock-position .dock li a img {
-    width: 60px;
-    max-width: 5vw;
-    min-width: 45px;
-  }
-}
-
-.dockBox .dock-position .dock li a:hover img {
-  width: 90px;
-  max-width: 8vw;
-  min-width: 75px;
-}
-
-@media (max-width: 768px) {
-  .dockBox .dock-position .dock li a:hover img {
-    width: 60px;
-    max-width: 5vw;
-    min-width: 45px;
-  }
-}
-
-.dockBox .dock-position .dock li a .active {
-  width: 75px;
-  max-width: 5vw;
-  min-width: 65px;
-}
-
-@media (max-width: 768px) {
-  .dockBox .dock-position .dock li a .active {
-    width: 60px;
-    max-width: 5vw;
-    min-width: 45px;
-  }
-}
-
-.dockBox .dock-position .dock li a .removeactive {
-  width: 65px;
-  max-width: 5vw;
-  min-width: 50px;
-}
-
-@media (max-width: 768px) {
-  .dockBox .dock-position .dock li a .removeactive {
-    width: 60px;
-    max-width: 5vw;
-    min-width: 45px;
-  }
-}
-
-.dockBox .dock-position .active-dock::after {
-  background-color: rgba(110, 139, 137, 0.5);
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-.dockBox .dock-position .active-dock li:hover::after {
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #FFFFFF;
-}
-
-.dockBox .dock-position .active-dock li:hover:before {
-  border-top: solid 8px rgba(0, 0, 0, 0.9);
+  height: 800px;
+  background-color: rosybrown;
+  border: 1px solid green;
 }
 /*# sourceMappingURL=main.css.map */

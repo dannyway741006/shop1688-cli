@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/pages/dockSearchBox.scss",
+        "../scss/mixins/_mixin.scss",
+        "../scss/mixins/_font.scss",
+        "../scss/base/_var.scss",
+        "../scss/mixins/_media.scss",
+        "../scss/mixins/_position_center.scss",
+        "../scss/mixins/_slide_bar.scss",
+        "../scss/mixins/_extend.scss",
+        "../scss/mixins/_reset.scss",
+        "../scss/mixins/_element.scss",
+        "../scss/mixins/_media.scss"
+    ],
+    "names": [],
+    "file": "dockSearchBox.css"
+}

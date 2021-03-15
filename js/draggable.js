@@ -14,7 +14,7 @@ import {
   mapMutations
 } from 'vuex';
 
-
+import DocksearchBox from "@/components/dockSearchBox.vue";
 import DockBox from "@/components/dockBox.vue";
 import SearchBox from "@/components/searchBox.vue";
 export default {
@@ -22,6 +22,7 @@ export default {
   components: {
     SearchBox,
     DockBox,
+    DocksearchBox
 
   },
   props: {
@@ -123,6 +124,20 @@ export default {
       }
       // radius: 15,
     });
+    // let draggableArea = document.querySelector("#draggableArea");
+    Draggable.create("#square6", {
+      bounds: draggableArea,
+      dragClickables: true,
+      type: "x,y",
+      edgeResistance: 0.5,
+      throwProps: true,
+      zIndex: 1,
+      onClick: () => {
+        this.controlOpen();
+
+      }
+      // radius: 15,
+    });
     if (headerRect.width >= 512) {
 
       let draggableArea = document.querySelector("#draggableArea");
@@ -172,9 +187,9 @@ export default {
         bounds: draggableArea,
         dragClickables: false,
         type: "x,y",
-        zIndex: 500,
+        zIndex: 2,
         edgeResistance: 0.5,
-        throwProps: true
+        throwProps: true,
         // radius: 15,
       });
     }
@@ -198,8 +213,58 @@ export default {
       'isMenuChange'
 
     ]),
+    controlOpen() {
+      console.log('click')
+      let test = document.querySelector('#square6')
+      test.style.zIndex = `${0}`
+      if (this.$store.state.isControlClose === true) {
+        this.$store.commit('isControlCloseChangeTrue');
+        // this.$store.commit('isLoadingChangeFalse')
+        console.log(this.$store.state.isLoading);
+        if (this.$store.state.isLoading === true) {
+          const imgScale = document.querySelector('.img-scale')
+          const controlType = document.querySelector('.control-type')
+          const windowItem = document.querySelector('.area-two-outline');
+          const areaTwo = document.querySelector('.area-two');
+          windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
+          windowItem.style.top = `${0}px`
+          windowItem.style.left = `${50}%`
+
+          areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+          windowItem.style.opacity = `1`
+          controlType.style.width = `${0}%`
+          imgScale.style.transform = ` scale(${0})`
+        } else {
+          const Area = document.querySelector('#draggableArea');
+          const headerRect = Area.getBoundingClientRect();
+          if (headerRect.width >= 512) {
+            const imgScale = document.querySelector('.img-scale')
+            const controlType = document.querySelector('.control-type')
+            const windowItem = document.querySelector('.area-two-outline');
+            const areaTwo = document.querySelector('.area-two');
+            windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
+            windowItem.style.top = `${0}px`
+            windowItem.style.left = `${50}%`
+            areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+            windowItem.style.opacity = `1`
+            controlType.style.width = `${0}%`
+            imgScale.style.transform = ` scale(${0})`
+          } else {
+            const windowItem = document.querySelector('.area-two-outline');
+            const areaTwo = document.querySelector('.area-two');
+            windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
+            windowItem.style.top = `${0}px`
+            windowItem.style.left = `${50}%`
+            areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
+            windowItem.style.opacity = `1`
+          }
+        }
+      }
+    },
     menuBtn() {
-      this.$store.commit('isMenuChange')
+      this.$store.commit('isMenuChange');
+      let rwdMenuBtn = document.querySelector('.rwd-menu-btn');
+      rwdMenuBtn.style.transform = `translate3d(0)`
       console.log(this.$store.state.isMenu);
 
     },

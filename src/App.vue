@@ -6,7 +6,11 @@
       <router-link to="/Account">Account</router-link>
     </div> -->
     <!-- <router-view /> -->
-    <HomeSection1 msg="Welcome to Your Vue.js App" />
+
+    <HomeSection1 />
+    <HomeSection2 />
+    <Test />
+    <div class="boxtwoo"></div>
   </div>
 </template>
 <style lang="scss">
@@ -14,15 +18,24 @@
 * {
   @include domReset;
 }
+.boxtwoo {
+  width: 100%;
+  height: 100vh;
+  border: 2px solid gold;
+}
 </style>
 <script>
 // @ is an alias to /src
-import HomeSection1 from "@/page/home_section1.vue";
 
+import HomeSection1 from "@/page/home_section1.vue";
+import HomeSection2 from "@/page/home_section2.vue";
+import Test from "@/page/test.vue";
 export default {
   name: "App",
   components: {
-    HomeSection1
-  }
+    HomeSection1,
+    HomeSection2,
+    Test,
+  },
 };
 </script>

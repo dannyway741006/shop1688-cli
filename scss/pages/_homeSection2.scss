@@ -1,0 +1,10 @@
+@import "../mixins/mixin";
+
+.main-section {
+  .main-box {
+    width: 100%;
+    height: 800px;
+    background-color: rosybrown;
+    border: 1px solid green;
+  }
+}

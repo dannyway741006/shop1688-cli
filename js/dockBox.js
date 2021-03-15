@@ -14,9 +14,12 @@ import {
   mapState,
   mapMutations
 } from 'vuex';
-
+import DocksearchBox from "@/components/dockSearchBox.vue";
 export default {
   name: "DockBox",
+  components: {
+    DocksearchBox
+  },
   props: {
     msg: String,
   },
@@ -34,26 +37,7 @@ export default {
 
     ]),
   },
-  mounted() {
-    const Area = document.querySelector('#draggableArea');
-    const headerRect = Area.getBoundingClientRect();
-    if (headerRect.width <= 512) {
-      let draggableArea = document.querySelector("#draggableArea");
-      Draggable.create("#square6", {
-        bounds: draggableArea,
-        dragClickables: true,
-        type: "x,y",
-        zIndex: 500,
-        edgeResistance: 0.5,
-        throwProps: true,
-        onClick: () => {
-          // console.log('asdfasdfasd')
-          this.controlOpen();
-        }
-        // radius: 15,
-      });
-    }
-  },
+
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
@@ -62,52 +46,7 @@ export default {
 
     ]),
 
-    controlOpen() {
-      console.log('asdfasdf')
-      if (this.$store.state.isControlClose === true) {
-        this.$store.commit('isControlCloseChangeTrue');
-        // this.$store.commit('isLoadingChangeFalse')
-        console.log(this.$store.state.isLoading);
-        if (this.$store.state.isLoading === true) {
-          const imgScale = document.querySelector('.img-scale')
-          const controlType = document.querySelector('.control-type')
-          const windowItem = document.querySelector('.area-two-outline');
-          const areaTwo = document.querySelector('.area-two');
-          windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
-          windowItem.style.top = `${0}px`
-          windowItem.style.left = `${50}%`
 
-          areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
-          windowItem.style.opacity = `1`
-          controlType.style.width = `${0}%`
-          imgScale.style.transform = ` scale(${0})`
-        } else {
-          const Area = document.querySelector('#draggableArea');
-          const headerRect = Area.getBoundingClientRect();
-          if (headerRect.width >= 512) {
-            const imgScale = document.querySelector('.img-scale')
-            const controlType = document.querySelector('.control-type')
-            const windowItem = document.querySelector('.area-two-outline');
-            const areaTwo = document.querySelector('.area-two');
-            windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
-            windowItem.style.top = `${0}px`
-            windowItem.style.left = `${50}%`
-            areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
-            windowItem.style.opacity = `1`
-            controlType.style.width = `${0}%`
-            imgScale.style.transform = ` scale(${0})`
-          } else {
-            const windowItem = document.querySelector('.area-two-outline');
-            const areaTwo = document.querySelector('.area-two');
-            windowItem.style.transform = `translate(-50%, 0%) scale(${1})`
-            windowItem.style.top = `${0}px`
-            windowItem.style.left = `${50}%`
-            areaTwo.style.transform = `translate(0%, 0%) scale(${1})`
-            windowItem.style.opacity = `1`
-          }
-        }
-      }
-    },
     controlSmallOpen() {
       if (this.$store.state.isLoading === true) {
         const imgScale = document.querySelector('.img-scale')
