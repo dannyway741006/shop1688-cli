@@ -1668,7 +1668,7 @@
 
 .searchBox {
   border: 2px solid #16453E;
-  height: 61px;
+  height: 60px;
   width: 720px;
   margin: 44px auto 0;
   border-radius: 200px;
@@ -1708,7 +1708,7 @@
     max-height: none;
     min-width: 100%;
     border: none;
-    background: none;
+    background: none !important;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -1882,6 +1882,7 @@
     min-width: 71vw;
     min-height: 43px;
     margin-bottom: 5vw;
+    background-color: #E6F0F0;
   }
 }
 
@@ -2006,7 +2007,8 @@
 .inputBox ul::-webkit-scrollbar-thumb {
   border-radius: 100px;
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #B2D3D2;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #B2D3D2;
 }
 
 .inputBox .inputBox-icon {
