@@ -17,55 +17,55 @@
   background-color: $searchBox-bg;
   box-shadow: inset $shadow;
 
-  #citySearch {
-    position: absolute;
-    width: 100%;
-    max-width: 50%;
-    height: 190px;
-    max-height: 9vw;
-    left: 50%;
-    top: 100%;
-    border-radius: 0 0 20px 20px;
-    background-color: #1f84e9;
-    cursor: pointer !important;
-    border: 1px solid green;
-    overflow: auto;
+  // #citySearch {
+  //   position: absolute;
+  //   width: 100%;
+  //   max-width: 50%;
+  //   height: 190px;
+  //   max-height: 9vw;
+  //   left: 50%;
+  //   top: 100%;
+  //   border-radius: 0 0 20px 20px;
+  //   background-color: #1f84e9;
+  //   cursor: pointer !important;
+  //   border: 1px solid green;
+  //   overflow: auto;
 
-    ul {
-      border: 1px solid red;
-
-
-      li {
-        border: 1px solid rgb(105, 245, 105);
-        list-style: none;
-      }
-    }
-  }
-
-  .citySearch {
-    position: absolute;
-    width: 100%;
-    max-width: 50%;
-    height: 190px;
-    max-height: 9vw;
-    left: 0%;
-    top: 100%;
-    border-radius: 0 0 20px 20px;
-    background-color: #1f84e9;
-    cursor: pointer !important;
-    border: 1px solid green;
-    overflow: auto;
-
-    ul {
-      border: 1px solid red;
+  //   ul {
+  //     border: 1px solid red;
 
 
-      li {
-        border: 1px solid rgb(105, 245, 105);
-        list-style: none;
-      }
-    }
-  }
+  //     li {
+  //       border: 1px solid rgb(105, 245, 105);
+  //       list-style: none;
+  //     }
+  //   }
+  // }
+
+  // .citySearch {
+  //   position: absolute;
+  //   width: 100%;
+  //   max-width: 50%;
+  //   height: 190px;
+  //   max-height: 9vw;
+  //   left: 0%;
+  //   top: 100%;
+  //   border-radius: 0 0 20px 20px;
+  //   background-color: #1f84e9;
+  //   cursor: pointer !important;
+  //   border: 1px solid green;
+  //   overflow: auto;
+
+  //   ul {
+  //     border: 1px solid red;
+
+
+  //     li {
+  //       border: 1px solid rgb(105, 245, 105);
+  //       list-style: none;
+  //     }
+  //   }
+  // }
 
   @include media(512px) {
     display: flex;

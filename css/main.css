@@ -1691,54 +1691,6 @@
           box-shadow: inset 0px 3px 6px #00000030;
 }
 
-.searchBox #citySearch {
-  position: absolute;
-  width: 100%;
-  max-width: 50%;
-  height: 190px;
-  max-height: 9vw;
-  left: 50%;
-  top: 100%;
-  border-radius: 0 0 20px 20px;
-  background-color: #1f84e9;
-  cursor: pointer !important;
-  border: 1px solid green;
-  overflow: auto;
-}
-
-.searchBox #citySearch ul {
-  border: 1px solid red;
-}
-
-.searchBox #citySearch ul li {
-  border: 1px solid #69f569;
-  list-style: none;
-}
-
-.searchBox .citySearch {
-  position: absolute;
-  width: 100%;
-  max-width: 50%;
-  height: 190px;
-  max-height: 9vw;
-  left: 0%;
-  top: 100%;
-  border-radius: 0 0 20px 20px;
-  background-color: #1f84e9;
-  cursor: pointer !important;
-  border: 1px solid green;
-  overflow: auto;
-}
-
-.searchBox .citySearch ul {
-  border: 1px solid red;
-}
-
-.searchBox .citySearch ul li {
-  border: 1px solid #69f569;
-  list-style: none;
-}
-
 @media (max-width: 512px) {
   .searchBox {
     display: -webkit-box;
