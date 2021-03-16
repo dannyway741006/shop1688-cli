@@ -1,7 +1,7 @@
 <template>
   <section class="logo">
     <article class="logo-w50">
-      <a><img src="../../imgShop1688/logo.png" alt="logo"/></a>
+      <a><img src="../../imgShop1688/logo.png" alt="logo" /></a>
       <div class="logo-type logo-items">
         File
         <ul class="items">
@@ -18,14 +18,10 @@
         Contact
         <ul class="items">
           <li>
-            <a href="https://www.master-mkt.com.tw/" target="_blank"
-              >大師策略行銷</a
-            >
+            <a href="https://www.master-mkt.com.tw/" target="_blank">大師策略行銷</a>
           </li>
           <li>
-            <a href="https://www.ksdon818.com/" target="_blank"
-              >凱斯東網路行銷</a
-            >
+            <a href="https://www.ksdon818.com/" target="_blank">凱斯東網路行銷</a>
           </li>
           <li>
             <a href="https://www.aosiman-marketing.com/" target="_blank"
@@ -55,4 +51,4 @@
 <style lang="scss">
 @import "../../scss/main.scss";
 </style>
-<script src="../../js/home.js"></script>
+<script src="../../js/headerLogoBar.js"></script>

@@ -7,9 +7,11 @@ export default new Vuex.Store({
   state: {
     isLoading: false,
     isControlClose: false,
-    isMenu: false
+    isMenu: false,
+    isSearchType: false,
+    isSearchCity: false,
+    isSearchMask: false
   },
-
 
   mutations: {
     isLoadingChangeTrue(state) {
@@ -20,6 +22,20 @@ export default new Vuex.Store({
     },
     isMenuChange(state) {
       state.isMenu = !state.isMenu
+    },
+    isSearchTypeChange(state) {
+      state.isSearchType = !state.isSearchType
+    },
+    isSearchCityChange(state) {
+      state.isSearchCity = !state.isSearchCity
+    },
+    isSearchMaskChange(state) {
+      state.isSearchMask = !state.isSearchMask
+    },
+    isSearchTypeFalse(state) {
+      state.isSearchType = false
+      state.isSearchCity = false
+
     }
 
 

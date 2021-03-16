@@ -7,6 +7,8 @@
   height: calc(100% - 53px);
   position: relative;
 
+
+
   .dock-phone {
     display: none;
 
@@ -260,7 +262,7 @@
     transform: translate(-50%, -50%);
     // display: none;
     transition: all 0.3s;
-
+    pointer-events: none;
 
     @include media(1280px) {
       width: 88%;
@@ -287,7 +289,7 @@
       .area-two {
         top: 0;
         left: 0;
-
+        pointer-events: auto;
 
         .header-title {
           display: flex;
@@ -542,7 +544,7 @@
           border: 1px solid black;
           border-top: none;
           background-color: #ffffff;
-          height: 67vh;
+          height: 71vh;
           // height: 654px;
           // max-height: 44vw;
           min-height: 400px;
@@ -551,13 +553,13 @@
 
 
 
-          @include media(512px) {
-            height: calc(100vh - 215px);
-          }
+          // @include media(512px) {
+          //   height: calc(100vh - 215px);
+          // }
 
-          @include media(396px) {
-            height: calc(100vh - 215px);
-          }
+          // @include media(396px) {
+          //   height: calc(100vh - 215px);
+          // }
 
           .link {
             // border: 1px solid red;
@@ -628,6 +630,22 @@
             justify-content: center;
             margin: 26px 0;
 
+
+
+            @include mediaHeight(850px) {
+              margin-bottom: 140px
+            }
+
+            @include media(512px) {
+              margin: 3% 0;
+              margin-bottom: 77px;
+            }
+
+            @include media(320px) {
+              margin: 3% 0;
+              margin-bottom: 85px;
+            }
+
             a {
               @include font-input;
               text-decoration: none;
@@ -638,9 +656,7 @@
               }
             }
 
-            @include media(512px) {
-              margin: 3% 0;
-            }
+
 
           }
 
@@ -1158,6 +1174,7 @@
       .area-two {
         // position: absolute;
         transform: translate(0%, 0%) !important;
+
 
         .header-bottom {
           .web-domin {

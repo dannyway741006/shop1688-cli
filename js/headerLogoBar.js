@@ -1,3 +1,7 @@
+import {
+  mapState,
+  mapMutations
+} from 'vuex';
 export default {
   name: "headerLogoBar",
   props: {
@@ -9,7 +13,22 @@ export default {
       nowTime: ''
     }
   },
+  computed: {
+    ...mapState([
+      'isLoading',
+      'isControlClose',
+      'isMenu',
+      'isSearchMask'
+    ]),
+  },
   methods: {
+    ...mapMutations([
+      'isLoadingChangeTrue',
+      'isControlCloseChangeTrue',
+      'isMenuChange',
+      'isSearchMaskChange'
+    ]),
+
     // 得到當下時間
     timeFormate(timeStamp) {
       let newdate = new Date(timeStamp);

@@ -7,6 +7,21 @@
   display: flex;
   max-height: 48px;
 
+  .search-mask {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    border: 5px solid green;
+    background-color: rgba(4, 4, 4, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .active-search-mask {
+    border: 4px solid gray;
+  }
+
   @include media(512px) {
     background-color: rgba($color: #000000, $alpha: 0.0);
   }

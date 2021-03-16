@@ -190,36 +190,49 @@ export default {
         zIndex: 2,
         edgeResistance: 0.5,
         throwProps: true,
+        onClick: () => {
+          this.removeAll();
+        }
         // radius: 15,
       });
     }
-
   },
 
   computed: {
     ...mapState([
       'isLoading',
       'isControlClose',
-      'isMenu'
-
+      'isMenu',
+      'isSearchMask',
+      'isSearchCity',
+      'isSearchType'
     ]),
-
   },
 
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
       'isControlCloseChangeTrue',
-      'isMenuChange'
+      'isMenuChange',
+      'isSearchMaskChange',
+      'isSearchCityChange',
+      'isSearchTypeChange',
+      'isSearchTypeFalse'
 
     ]),
+    removeAll() {
+      let type = this.$store.state.isSearchType;
+      let city = this.$store.state.isSearchCity;
+      let searchBox = document.querySelector('.searchBox');
+      searchBox.style.background = `#F1FFFD`;
+      if (type === true || city === true) {
+        this.$store.commit("isSearchTypeFalse")
+      }
+    },
     menuBtn() {
       this.$store.commit("isMenuChange");
-
-      console.log(this.$store.state.isMenu);
     },
     controlOpen() {
-      console.log('click')
       let test = document.querySelector('#square6')
       test.style.zIndex = `${0}`
       if (this.$store.state.isControlClose === true) {

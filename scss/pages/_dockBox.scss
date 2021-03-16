@@ -25,11 +25,11 @@
     max-height: 100vw;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0) !important;
     // overflow: hidden;
     border-radius: 30px;
     transition: all 0.3s;
-    opacity: 0;
+    opacity: 0 !important;
     z-index: 3;
 
   }
@@ -356,11 +356,11 @@
 }
 
 .active-dockBox {
-  opacity: 1;
+  opacity: 1 !important;
   // top: 50%;
   // left: 50%;
   z-index: 1600;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1) !important;
   position: fixed;
 
   &::after {

@@ -14,17 +14,40 @@ export default {
   },
   computed: {
     ...mapState([
-      'logoSectionMask'
-    ])
+      'isLoading',
+      'isControlClose',
+      'isMenu',
+      'isSearchType',
+      'isSearchCity',
+      'isSearchMask'
+
+    ]),
   },
   methods: {
     ...mapMutations([
-      'isLogoSectionMask'
-    ]),
-    clickMask() {
+      'isLoadingChangeTrue',
+      'isControlCloseChangeTrue',
+      'isMenuChange',
+      'isSearchTypeChange',
+      'isSearchCityChange',
+      'isSearchMaskChange'
 
-      this.$store.commit('isLogoSectionMask');
-      console.log(this.$store.state.logoSectionMask);
+    ]),
+    openCity() {
+      let searchBox = document.querySelector('.searchBox');
+      searchBox.style.background = `#EEEEEE`;
+      this.$store.commit('isSearchCityChange');
+      if (this.$store.state.isSearchType === true) {
+        this.$store.commit('isSearchTypeChange');
+      }
+    },
+    openType() {
+      let searchBox = document.querySelector('.searchBox');
+      searchBox.style.background = `#EEEEEE`;
+      this.$store.commit('isSearchTypeChange');
+      if (this.$store.state.isSearchCity === true) {
+        this.$store.commit('isSearchCityChange');
+      }
     }
   },
 }
