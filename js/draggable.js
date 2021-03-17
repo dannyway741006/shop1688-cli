@@ -109,21 +109,6 @@ export default {
 
     const Area = document.querySelector('#draggableArea');
     const headerRect = Area.getBoundingClientRect();
-
-    // let draggableArea = document.querySelector("#draggableArea");
-    // Draggable.create("#square7", {
-    //   bounds: draggableArea,
-    //   dragClickables: true,
-    //   type: "x,y",
-    //   edgeResistance: 0.5,
-    //   throwProps: true,
-
-    //   onClick: () => {
-    //     this.menuBtn();
-
-    //   }
-    //   // radius: 15,
-    // });
     let draggableArea = document.querySelector("#draggableArea");
     Draggable.create("#square6", {
       bounds: draggableArea,

@@ -157,7 +157,6 @@
       }
     }
 
-
   }
 }
 
@@ -170,7 +169,7 @@
   height: 100%;
   position: relative;
   padding: 0px 16px 0px 23px;
-  transition: all 0.2s;
+  transition: all 0.5s;
 
   @include media(1024px) {
     padding: 0px 16px 0px 10px;
@@ -188,8 +187,6 @@
 
   }
 
-
-
   .typeSearch {
     position: absolute;
     padding-bottom: 0px;
@@ -206,16 +203,14 @@
     padding: 0;
     overflow: hidden;
     box-shadow: $shadow;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
+    transition: all 0.3s cubic-bezier(0.15, 0.885, 0.32, 1.1);
 
     @include media(512px) {
 
       z-index: 3;
     }
 
-
-    ul {
+    .baseType {
       // border: 1px solid red;
       overflow: auto;
       width: 100%;
@@ -258,6 +253,8 @@
 
         &:hover {
           background-color: #ffffff;
+
+
         }
       }
     }
@@ -280,25 +277,16 @@
     }
   }
 
-  ul::-webkit-scrollbar {
+  .baseType::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
 
-  ul::-webkit-scrollbar-thumb {
+  .baseType::-webkit-scrollbar-thumb {
     border-radius: 100px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     background-color: #B2D3D2;
   }
-
-
-
-
-
-
-
-
-
 
   .inputBox-icon {
     height: 100%;
@@ -390,10 +378,11 @@
       opacity: 0;
       outline: none;
       border: 0;
+      background-color: rgba(0, 0, 0, 0);
 
-      &:hover {
-        background-color: #ffffff;
-      }
+
+
+
 
       @include media(512px) {
         @include rwd-font-btn;
@@ -404,6 +393,7 @@
     input:focus {
       height: auto;
       opacity: 1;
+
     }
 
     input:valid {
@@ -417,6 +407,7 @@
       font-size: font(1);
       color: $blue;
       font-weight: 900;
+
 
       @include media(1024px) {
         top: 10px;
@@ -452,8 +443,14 @@
     }
   }
 
+
+
   &:hover {
-    background-color: #ffffff;
+    background-color: $searchBoxItem;
     box-shadow: $shadow;
+
+    @include media(512px) {
+      background-color: #eeeeee;
+    }
   }
 }

@@ -2,6 +2,11 @@ import {
   mapState,
   mapMutations
 } from 'vuex';
+
+import {
+  db
+} from '../js/firebase';
+const documentPath = 'shop1688web/aom20190530009'
 export default {
   name: "SearchBox",
   props: {
@@ -9,8 +14,13 @@ export default {
   },
   data() {
     return {
-
+      firebaseData: null,
     };
+  },
+  firestore() {
+    return {
+      firebaseData: db.doc(documentPath)
+    }
   },
   computed: {
     ...mapState([
@@ -19,8 +29,12 @@ export default {
       'isMenu',
       'isSearchType',
       'isSearchCity',
-      'isSearchMask'
-
+      'isSearchMask',
+      'input',
+      'newTypeData',
+      'typeData',
+      'cityData',
+      'icon'
     ]),
   },
   methods: {
@@ -31,9 +45,17 @@ export default {
       'isSearchTypeChange',
       'isSearchCityChange',
       'isSearchMaskChange'
-
     ]),
+
+    typeMenu() {
+      return this.$store.state.typeData;
+    },
+    cityMenu() {
+      return this.$store.state.cityData;
+    },
+
     openCity() {
+
       let searchBox = document.querySelector('.searchBox');
       searchBox.style.background = `#EEEEEE`;
       this.$store.commit('isSearchCityChange');

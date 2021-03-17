@@ -1,0 +1,39 @@
+From 3580919e5e7e9ee848a0d6619cd5a73ea1e21269 Mon Sep 17 00:00:00 2001
+From: wilson_lin <dannyway741006@gmail.com>
+Date: Wed, 17 Mar 2021 09:33:44 +0800
+Subject: [PATCH] no message
+
+---
+ cssShop1688/main.css           | 2 +-
+ scss/pages/_draggableArea.scss | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/cssShop1688/main.css b/cssShop1688/main.css
+index f09dd09..d44c72d 100644
+--- a/cssShop1688/main.css
++++ b/cssShop1688/main.css
+@@ -438,7 +438,7 @@
+ 
+ #draggableArea {
+   width: 100%;
+-  height: calc(100% - 52px);
++  height: calc(100% - 53px);
+   position: relative;
+ }
+ 
+diff --git a/scss/pages/_draggableArea.scss b/scss/pages/_draggableArea.scss
+index 1a10c8a..6e25acc 100644
+--- a/scss/pages/_draggableArea.scss
++++ b/scss/pages/_draggableArea.scss
+@@ -4,7 +4,7 @@
+   // border: 1px solid green;
+   width: 100%;
+   // max-width: 1920px;
+-  height: calc(100% - 52px);
++  height: calc(100% - 53px);
+   position: relative;
+ 
+ 
+-- 
+2.24.1.windows.2
+
