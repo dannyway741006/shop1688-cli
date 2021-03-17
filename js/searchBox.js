@@ -17,11 +17,7 @@ export default {
       firebaseData: null,
     };
   },
-  firestore() {
-    return {
-      firebaseData: db.doc(documentPath)
-    }
-  },
+
   computed: {
     ...mapState([
       'isLoading',
@@ -37,6 +33,7 @@ export default {
       'icon'
     ]),
   },
+
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
@@ -46,7 +43,11 @@ export default {
       'isSearchCityChange',
       'isSearchMaskChange'
     ]),
-
+    firestore() {
+      return {
+        firebaseData: db.doc(documentPath)
+      }
+    },
     typeMenu() {
       return this.$store.state.typeData;
     },
@@ -55,6 +56,7 @@ export default {
     },
 
     openCity() {
+      console.log(this.firestore())
 
       let searchBox = document.querySelector('.searchBox');
       searchBox.style.background = `#EEEEEE`;

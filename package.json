@@ -13,8 +13,6 @@
     "firebase": "^8.3.0",
     "gsap": "^3.6.0",
     "vue": "^2.6.11",
-    "vue-drag-resize": "^1.4.2",
-    "vue-parallax-js": "^0.2.3",
     "vue-router": "^3.2.0",
     "vuefire": "^2.2.5",
     "vuetify": "^2.4.7",

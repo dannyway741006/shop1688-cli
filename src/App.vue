@@ -6,7 +6,7 @@
       <router-link to="/Account">Account</router-link>
     </div> -->
     <!-- <router-view /> -->
-    {{ firebaseData }}
+
     <HomeSection1 />
     <HomeSection2 />
     <MenuBtn />
