@@ -108,11 +108,6 @@ export default {
     }
   },
   created() {
-
-
     this.fireData();
-
-
-
   }
 }
