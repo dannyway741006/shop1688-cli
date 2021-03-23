@@ -6,7 +6,7 @@ import {
 import
 firebase
   from 'firebase';
-console.log(firebase)
+// console.log(firebase)
 
 
 const firebaseConfig = {
@@ -22,11 +22,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 let db = firebase.firestore()
 
-
-
-
-
-
 export default {
   name: "SearchBox",
   props: {
@@ -34,8 +29,10 @@ export default {
   },
   data() {
     return {
-      firebaseData: null,
+
       fireItems: [],
+      filterItem: [],
+      allShop: [],
     };
   },
 
@@ -66,7 +63,7 @@ export default {
     ]),
     fireData() {
 
-      console.log(db.collection)
+      // console.log(db.collection)
       db.collection('shop1688web')
         // .limit(246)
         .get()
@@ -75,9 +72,15 @@ export default {
           querySnapshot.forEach(doc => {
             // console.log(i++)
             console.log(i++, doc.data().名稱);
-
             this.fireItems.push(doc.data());
+            let temp = {
+              title: '',
+              cat: ''
+            };
 
+            temp.title = doc.data().名稱;
+            temp.cat = doc.data().分類[0];
+            this.allShop.push(temp);
           });
         })
     },

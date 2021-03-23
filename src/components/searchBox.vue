@@ -1,6 +1,5 @@
 <template>
   <article class="searchBox">
-    {{ firebaseData }}
     <div class="inputBox inputBox-type">
       <div
         id="baseSearch"
