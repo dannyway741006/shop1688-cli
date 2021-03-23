@@ -2927,4 +2927,10 @@
     height: 63%;
   }
 }
+
+.sectionTitle {
+  width: 100%;
+  height: 200px;
+  border: 2px solid green;
+}
 /*# sourceMappingURL=main.css.map */
