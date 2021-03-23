@@ -1,0 +1,25 @@
+@import "../mixins/mixin";
+
+.sectionTitle {
+  width: 100%;
+  height: 200px;
+  border: 5px solid green;
+
+  .title-bg {
+    width: 353px;
+    height: 171px;
+    max-width: 26vw;
+    max-height: 13vw;
+    position: relative;
+  }
+
+  .title_bg::after {
+    position: absolute;
+    content: '熱門商家';
+    @include font-h3;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+
+  }
+}
