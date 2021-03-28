@@ -9,5 +9,10 @@ export default {
     HomeSection2,
     MenuBtn,
   },
+  data() {
+    return {
+
+    }
+  },
 
 };

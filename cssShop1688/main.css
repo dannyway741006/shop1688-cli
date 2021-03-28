@@ -1668,7 +1668,7 @@
 
 .searchBox {
   border: 2px solid #16453E;
-  height: 60px;
+  height: 61px;
   width: 720px;
   margin: 44px auto 0;
   border-radius: 200px;
@@ -1708,7 +1708,7 @@
     max-height: none;
     min-width: 100%;
     border: none;
-    background: none;
+    background: none !important;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -1863,8 +1863,8 @@
   height: 100%;
   position: relative;
   padding: 0px 16px 0px 23px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 @media (max-width: 1024px) {
@@ -1882,6 +1882,7 @@
     min-width: 71vw;
     min-height: 43px;
     margin-bottom: 5vw;
+    background-color: #E6F0F0;
   }
 }
 
@@ -1901,8 +1902,8 @@
   overflow: hidden;
   -webkit-box-shadow: 0px 3px 6px #00000030;
           box-shadow: 0px 3px 6px #00000030;
-  -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.3s cubic-bezier(0.15, 0.885, 0.32, 1.1);
+  transition: all 0.3s cubic-bezier(0.15, 0.885, 0.32, 1.1);
 }
 
 @media (max-width: 512px) {
@@ -1911,13 +1912,13 @@
   }
 }
 
-.inputBox .typeSearch ul {
+.inputBox .typeSearch .baseType {
   overflow: auto;
   width: 100%;
   height: 100%;
 }
 
-.inputBox .typeSearch ul button {
+.inputBox .typeSearch .baseType button {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1941,12 +1942,12 @@
 }
 
 @media (max-width: 512px) {
-  .inputBox .typeSearch ul button {
+  .inputBox .typeSearch .baseType button {
     padding: 5px 0px 5px 4vw;
   }
 }
 
-.inputBox .typeSearch ul button img {
+.inputBox .typeSearch .baseType button img {
   width: 32px;
   height: 32px;
   max-width: 3vw;
@@ -1957,12 +1958,12 @@
 }
 
 @media (max-width: 512px) {
-  .inputBox .typeSearch ul button img {
+  .inputBox .typeSearch .baseType button img {
     margin-right: 3vw;
   }
 }
 
-.inputBox .typeSearch ul button p {
+.inputBox .typeSearch .baseType button p {
   font-size: 16px;
   letter-spacing: 0.6px;
   font-weight: 600;
@@ -1970,12 +1971,12 @@
 }
 
 @media (max-width: 320px) {
-  .inputBox .typeSearch ul button p {
+  .inputBox .typeSearch .baseType button p {
     font-size: 12px;
   }
 }
 
-.inputBox .typeSearch ul button:hover {
+.inputBox .typeSearch .baseType button:hover {
   background-color: #ffffff;
 }
 
@@ -1998,15 +1999,16 @@
   }
 }
 
-.inputBox ul::-webkit-scrollbar {
+.inputBox .baseType::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-.inputBox ul::-webkit-scrollbar-thumb {
+.inputBox .baseType::-webkit-scrollbar-thumb {
   border-radius: 100px;
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #B2D3D2;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #B2D3D2;
 }
 
 .inputBox .inputBox-icon {
@@ -2127,10 +2129,7 @@
   opacity: 0;
   outline: none;
   border: 0;
-}
-
-.inputBox .inputBox-input input:hover {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 @media (max-width: 512px) {
@@ -2209,9 +2208,15 @@
 }
 
 .inputBox:hover {
-  background-color: #ffffff;
+  background-color: #E6F0F0;
   -webkit-box-shadow: 0px 3px 6px #00000030;
           box-shadow: 0px 3px 6px #00000030;
+}
+
+@media (max-width: 512px) {
+  .inputBox:hover {
+    background-color: #eeeeee;
+  }
 }
 
 .dockBox {
@@ -2921,5 +2926,11 @@
     width: 63%;
     height: 63%;
   }
+}
+
+.sectionTitle {
+  width: 100%;
+  height: 200px;
+  border: 5px solid green;
 }
 /*# sourceMappingURL=main.css.map */

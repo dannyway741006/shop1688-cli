@@ -1909,8 +1909,8 @@
   height: 100%;
   position: relative;
   padding: 0px 16px 0px 23px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 @media (max-width: 1024px) {
@@ -1929,6 +1929,131 @@
     min-height: 43px;
     margin-bottom: 5vw;
   }
+}
+
+.inputBox .typeSearch {
+  position: absolute;
+  padding-bottom: 0px;
+  min-height: 0;
+  width: 100%;
+  height: 0;
+  max-height: 0;
+  left: 0%;
+  top: 115%;
+  border-radius: 0 0 10px 10px;
+  background-color: #E6F0F0;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 3px 6px #00000030;
+          box-shadow: 0px 3px 6px #00000030;
+  -webkit-transition: all 0.3s cubic-bezier(0.15, 0.885, 0.32, 1.1);
+  transition: all 0.3s cubic-bezier(0.15, 0.885, 0.32, 1.1);
+}
+
+@media (max-width: 512px) {
+  .inputBox .typeSearch {
+    z-index: 3;
+  }
+}
+
+.inputBox .typeSearch .baseType {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.inputBox .typeSearch .baseType button {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0px 5px 1.5vw;
+  -webkit-transition: all;
+  transition: all;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media (max-width: 512px) {
+  .inputBox .typeSearch .baseType button {
+    padding: 5px 0px 5px 4vw;
+  }
+}
+
+.inputBox .typeSearch .baseType button img {
+  width: 32px;
+  height: 32px;
+  max-width: 3vw;
+  max-height: 3vw;
+  min-width: 30px;
+  min-height: 30px;
+  margin-right: 0.5vw;
+}
+
+@media (max-width: 512px) {
+  .inputBox .typeSearch .baseType button img {
+    margin-right: 3vw;
+  }
+}
+
+.inputBox .typeSearch .baseType button p {
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #121212;
+}
+
+@media (max-width: 320px) {
+  .inputBox .typeSearch .baseType button p {
+    font-size: 12px;
+  }
+}
+
+.inputBox .typeSearch .baseType button:hover {
+  background-color: #ffffff;
+}
+
+.inputBox .active-citySearch {
+  padding-bottom: 10px;
+  min-height: 0;
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 190px;
+  max-height: 10vw;
+  min-height: 130px;
+  width: 100%;
+}
+
+@media (max-width: 512px) {
+  .inputBox .active-citySearch {
+    min-height: 150px;
+  }
+}
+
+.inputBox .baseType::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.inputBox .baseType::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #B2D3D2;
 }
 
 .inputBox .inputBox-icon {
@@ -2049,10 +2174,7 @@
   opacity: 0;
   outline: none;
   border: 0;
-}
-
-.inputBox .inputBox-input input:hover {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 @media (max-width: 512px) {
@@ -2131,9 +2253,15 @@
 }
 
 .inputBox:hover {
-  background-color: #ffffff;
+  background-color: #E6F0F0;
   -webkit-box-shadow: 0px 3px 6px #00000030;
           box-shadow: 0px 3px 6px #00000030;
+}
+
+@media (max-width: 512px) {
+  .inputBox:hover {
+    background-color: #eeeeee;
+  }
 }
 
 .dockBox {
@@ -2843,5 +2971,11 @@
     width: 63%;
     height: 63%;
   }
+}
+
+.sectionTitle {
+  width: 100%;
+  height: 200px;
+  border: 5px solid green;
 }
 /*# sourceMappingURL=main.css.map */

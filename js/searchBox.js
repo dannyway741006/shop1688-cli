@@ -2,6 +2,26 @@ import {
   mapState,
   mapMutations
 } from 'vuex';
+
+import
+firebase
+  from 'firebase';
+// console.log(firebase)
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAdmPOeMl_kYvy0SpuSN4jmhWgtgBgizEs",
+  authDomain: "shop1688mkt.firebaseapp.com",
+  databaseURL: "https://shop1688mkt.firebaseio.com",
+  projectId: "shop1688mkt",
+  storageBucket: "shop1688mkt.appspot.com",
+  messagingSenderId: "359212500160",
+  appId: "1:359212500160:web:0eee6dfb29983add"
+};
+
+firebase.initializeApp(firebaseConfig)
+let db = firebase.firestore()
+
 export default {
   name: "SearchBox",
   props: {
@@ -10,8 +30,12 @@ export default {
   data() {
     return {
 
+      fireItems: [],
+      filterItem: [],
+      allShop: [],
     };
   },
+
   computed: {
     ...mapState([
       'isLoading',
@@ -19,10 +43,15 @@ export default {
       'isMenu',
       'isSearchType',
       'isSearchCity',
-      'isSearchMask'
-
+      'isSearchMask',
+      'input',
+      'newTypeData',
+      'typeData',
+      'cityData',
+      'icon'
     ]),
   },
+
   methods: {
     ...mapMutations([
       'isLoadingChangeTrue',
@@ -31,9 +60,40 @@ export default {
       'isSearchTypeChange',
       'isSearchCityChange',
       'isSearchMaskChange'
-
     ]),
+    fireData() {
+
+      // console.log(db.collection)
+      db.collection('shop1688web')
+        // .limit(246)
+        .get()
+        .then(querySnapshot => {
+          let i = 1;
+          querySnapshot.forEach(doc => {
+            // console.log(i++)
+            console.log(i++, doc.data().名稱);
+            this.fireItems.push(doc.data());
+            let temp = {
+              title: '',
+              cat: ''
+            };
+
+            temp.title = doc.data().名稱;
+            temp.cat = doc.data().分類[0];
+            this.allShop.push(temp);
+          });
+        })
+    },
+    typeMenu() {
+      return this.$store.state.typeData;
+    },
+    cityMenu() {
+      return this.$store.state.cityData;
+    },
+
     openCity() {
+
+
       let searchBox = document.querySelector('.searchBox');
       searchBox.style.background = `#EEEEEE`;
       this.$store.commit('isSearchCityChange');
@@ -50,4 +110,7 @@ export default {
       }
     }
   },
+  created() {
+    this.fireData();
+  }
 }
