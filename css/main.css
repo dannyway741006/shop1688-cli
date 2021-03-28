@@ -2978,4 +2978,24 @@
   height: 200px;
   border: 5px solid green;
 }
+
+.sectionTitle .title-bg {
+  width: 353px;
+  height: 171px;
+  max-width: 26vw;
+  max-height: 13vw;
+  position: relative;
+}
+
+.sectionTitle .title_bg::after {
+  position: absolute;
+  content: '熱門商家';
+  font-size: 38px;
+  letter-spacing: 0.6px;
+  font-weight: 900;
+  color: #121212;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+}
 /*# sourceMappingURL=main.css.map */

@@ -1689,8 +1689,54 @@
   background-color: #F1FFFD;
   -webkit-box-shadow: inset 0px 3px 6px #00000030;
           box-shadow: inset 0px 3px 6px #00000030;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+}
+
+.searchBox #citySearch {
+  position: absolute;
+  width: 100%;
+  max-width: 50%;
+  height: 190px;
+  max-height: 9vw;
+  left: 50%;
+  top: 100%;
+  border-radius: 0 0 20px 20px;
+  background-color: #1f84e9;
+  cursor: pointer !important;
+  border: 1px solid green;
+  overflow: auto;
+}
+
+.searchBox #citySearch ul {
+  border: 1px solid red;
+}
+
+.searchBox #citySearch ul li {
+  border: 1px solid #69f569;
+  list-style: none;
+}
+
+.searchBox .citySearch {
+  position: absolute;
+  width: 100%;
+  max-width: 50%;
+  height: 190px;
+  max-height: 9vw;
+  left: 0%;
+  top: 100%;
+  border-radius: 0 0 20px 20px;
+  background-color: #1f84e9;
+  cursor: pointer !important;
+  border: 1px solid green;
+  overflow: auto;
+}
+
+.searchBox .citySearch ul {
+  border: 1px solid red;
+}
+
+.searchBox .citySearch ul li {
+  border: 1px solid #69f569;
+  list-style: none;
 }
 
 @media (max-width: 512px) {
@@ -1886,6 +1932,7 @@
   }
 }
 
+<<<<<<< HEAD
 .inputBox .typeSearch {
   position: absolute;
   padding-bottom: 0px;
@@ -2011,6 +2058,8 @@
   background-color: #B2D3D2;
 }
 
+=======
+>>>>>>> d6f5b0c81ba593636c86e076f3c5cb245f0359b0
 .inputBox .inputBox-icon {
   height: 100%;
   width: 45px;
