@@ -2834,8 +2834,9 @@
 
 .main-section .main-box {
   width: 100%;
-  height: 800px;
-  background-color: rosybrown;
+  max-width: 1440px;
+  height: auto;
+  margin: auto;
   border: 1px solid green;
 }
 
@@ -2930,7 +2931,101 @@
 
 .sectionTitle {
   width: 100%;
-  height: 200px;
-  border: 5px solid green;
+  height: auto;
+  margin: auto;
+  max-width: 1440px;
+  margin-top: 72px;
+  margin-bottom: 74px;
+}
+
+.sectionTitle .title-bg {
+  width: 353px;
+  max-width: 18vw;
+  max-height: 9vw;
+  height: 171px;
+  background-image: url("../../imgShop1688/icon/title_bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+
+.sectionTitle .title-bg:after {
+  content: '熱門商家';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 45px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow: -0.1em -0.05em #004204;
+}
+
+.section2_content {
+  width: 100%;
+  height: 100%;
+}
+
+.section2_content .web_content {
+  width: 690px;
+}
+
+.section2_content .web_content .webTitle {
+  width: 100%;
+  height: 30px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px 5px 0 0;
+}
+
+.section2_content .web_content .webTitle .web_title_name {
+  width: calc(100% - 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(#F6EFEF), to(#AEAEAE)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #F6EFEF 0%, #AEAEAE 100%) 0% 0% no-repeat padding-box;
+  padding-left: 10px;
+}
+
+.section2_content .web_content .webTitle .web_title_name h3 {
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  font-weight: 900;
+  color: #121212;
+  display: inline-block;
+}
+
+.section2_content .web_content .webTitle .web_icon {
+  border-left: 1px solid black;
+  width: 30px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #B1B1B1;
+}
+
+.section2_content .web_content .webTitle .web_icon img {
+  width: 16px;
+  height: 16px;
 }
 /*# sourceMappingURL=main.css.map */

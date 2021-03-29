@@ -1,7 +1,5 @@
-console.log("sectionTitle")
-
 export default {
-  name: "sectionTitle",
+  name: "section2_content",
   props: {
     msg: String,
   },
