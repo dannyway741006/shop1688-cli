@@ -12,6 +12,8 @@
     .webTitle {
       width: 100%;
       height: 30px;
+      max-width: 56vw;
+      max-height: 20vw;
       border: 1px solid black;
       display: flex;
       border-radius: 5px 5px 0 0;
@@ -48,5 +50,112 @@
       }
     }
 
+    .web_inside {
+      width: 100%;
+      max-width: 56vw;
+      height: 592px;
+      max-height: 48vw;
+      border: 1px solid black;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+      display: flex;
+      position: relative;
+
+      .web_shop_img {
+        width: 50%;
+        height: 100%;
+        border: 1px solid green;
+        background-image: url("../../imgShop1688/bg.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .link_map {
+          width: 110px;
+          height: 30px;
+          max-height: 3vw;
+          background-color: #ffffff;
+          max-width: 9vw;
+          display: flex;
+          // border: 1px solid red;
+          border-radius: 5px;
+          text-decoration: none;
+          @include web-shop-map;
+          justify-content: center;
+          align-items: center;
+          top: 7.5%;
+          left: 5%;
+          position: absolute;
+
+          img {
+            width: 23.38px;
+            height: 23.38px;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      .web_shop_title {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        // border: 1px solid red;
+        .shop_title {
+          width: 304px;
+          height: 491px;
+          max-height: 33vw;
+          max-width: 21vw;
+          border: 2px solid #B9D8D3;
+          border-left: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          padding-left: 7%;
+
+          h3 {
+            @include font-tab-title;
+          }
+
+          .shop_icon_box {
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+
+            img {
+              width: 40px;
+              height: 40px;
+            }
+
+            .icon_type {
+              margin-right: 15%;
+            }
+          }
+        }
+      }
+
+      .shop_img {
+        width: 360px;
+        height: 360px;
+        // border: 1px solid gold;
+        max-width: 28vw;
+        max-height: 28vw;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 }

@@ -1,17 +1,42 @@
 <template>
   <section class="section2_content">
-  <article class="web_content">
-    <div class="webTitle">
-      <div class="web_title_name">
-       <h3>川老爺麻辣鍋</h3>
-     </div> 
-     <div class="web_icon">
-       <img  src="../../imgShop1688/Group 92.png" alt="web-icon">
-         
-     </div>
-    </div>
-  </article>
-  <article></article>
+    <article class="web_content">
+      <div class="webTitle">
+        <div class="web_title_name">
+          <h3>川老爺麻辣鍋</h3>
+        </div>
+        <div class="web_icon">
+          <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+        </div>
+      </div>
+      <div class="web_inside">
+        <div class="web_shop_img">
+          <a href="#" class="link_map">
+            <img src="../../imgShop1688/map-24px.png" alt="mapIcon" />
+            <p>查看地圖</p>
+          </a>
+          <div class="shop_img">
+            <img src="../../imgShop1688/shop-img.png" alt="商家圖片" />
+          </div>
+        </div>
+        <div class="web_shop_title">
+          <div class="shop_title">
+            <h3>川老爺麻辣鍋</h3>
+            <div class="shop_icon_box">
+              <div class="icon_type">
+                <img src="../../imgShop1688/icon/coffee.png" alt="iconType" />
+                <p>旅遊美食</p>
+              </div>
+              <div class="icon_city">
+                <img src="../../imgShop1688/icon/map.png" alt="iconCity" />
+                <p>台北市</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article></article>
   </section>
 </template>
 <style scoped lang="scss">
