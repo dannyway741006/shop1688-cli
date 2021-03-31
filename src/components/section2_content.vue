@@ -21,7 +21,10 @@
         </div>
         <div class="web_shop_title">
           <div class="shop_title">
-            <h3>川老爺麻辣鍋</h3>
+            <div class="testline">
+              <h3>川老爺麻辣鍋</h3>
+            </div>
+
             <div class="shop_icon_box">
               <div class="icon_type">
                 <img src="../../imgShop1688/icon/coffee.png" alt="iconType" />
@@ -32,11 +35,22 @@
                 <p>台北市</p>
               </div>
             </div>
+            <a href="#" class="web_button">
+              <img src="../../imgShop1688/icon/searchBtn.png" alt="webSearch" />
+              <p>查看商家</p>
+            </a>
           </div>
         </div>
       </div>
     </article>
-    <article></article>
+    <article class="web_scroll_page">
+      <!-- <div id="drag_scrollbar_range" class="drag_scrollbar_range">
+        <div id="drag_bar" class="drag_bar"></div>
+       
+      </div> -->
+      <input class="input_range" type="range" v-model="valueNumber" />
+      <div>{{ valueNumber }}</div>
+    </article>
   </section>
 </template>
 <style scoped lang="scss">

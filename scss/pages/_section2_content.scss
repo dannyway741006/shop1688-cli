@@ -3,17 +3,19 @@
 .section2_content {
   width: 100%;
   height: 100%;
-  // border: 5px solid green;
+  border: 5px solid green;
+  display: flex;
+  justify-content: space-between;
 
   .web_content {
+    max-width: 47vw;
     width: 690px;
-    // border: 3px solid blue;
+    border: 3px solid blue;
 
     .webTitle {
       width: 100%;
       height: 30px;
-      max-width: 56vw;
-      max-height: 20vw;
+      max-height: 5vw;
       border: 1px solid black;
       display: flex;
       border-radius: 5px 5px 0 0;
@@ -31,6 +33,7 @@
           @include web-font-title;
           // border: 6px solid gold;
           display: inline-block;
+
         }
       }
 
@@ -52,9 +55,9 @@
 
     .web_inside {
       width: 100%;
-      max-width: 56vw;
+
       height: 592px;
-      max-height: 48vw;
+      max-height: 37vw;
       border: 1px solid black;
       border-top: none;
       border-radius: 0 0 5px 5px;
@@ -102,6 +105,7 @@
         justify-content: flex-start;
         align-items: center;
 
+
         // border: 1px solid red;
         .shop_title {
           width: 304px;
@@ -116,17 +120,35 @@
           display: flex;
           padding-left: 7%;
 
-          h3 {
-            @include font-tab-title;
+          .testline {
+            display: inline-block;
+
+            h3 {
+              @include font-tab-title;
+              display: inline;
+              background-image: linear-gradient(#F6EFEF 0%, #ffe49b 80%);
+              background-position: left 90%;
+              background-size: 0% 8px;
+              background-repeat: no-repeat;
+              transition: background-size 0.15s;
+
+              &:hover {
+                background-size: 100% 8px;
+              }
+            }
           }
 
+
+
           .shop_icon_box {
-            border: 1px solid red;
+            // border: 1px solid red;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-
+            margin: 20% 0;
+            @include link-font;
+            color: #20443D;
 
             img {
               width: 40px;
@@ -135,6 +157,76 @@
 
             .icon_type {
               margin-right: 15%;
+
+            }
+          }
+
+          .web_button {
+            width: 153px;
+            height: 39px;
+            // border: 1px solid red;
+            position: relative;
+            background: transparent linear-gradient(1deg, #88BEB6 0%, #CADFDC 100%) 0% 0% no-repeat padding-box;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              @include link-font;
+            }
+
+            img {
+              width: 23px;
+              height: 23px;
+              margin-right: 2%;
+            }
+
+            &:after {
+              position: absolute;
+              content: '';
+              // border: 1px solid green;
+              width: 7px;
+              height: 40px;
+              top: 3px;
+              left: -7px;
+              transform: skewY(-45deg);
+              transition: all 0.2s;
+              background-color: #77A89F;
+            }
+
+            &:before {
+              position: absolute;
+              content: '';
+              // border: 1px solid green;
+              width: 153px;
+              height: 7px;
+              bottom: -7px;
+              right: 3px;
+              transform: skewX(-45deg);
+              transition: all 0.2s;
+              background-color: #356158;
+            }
+
+            &:active {
+              transform: translate(-7px, 7px);
+
+              &:after {
+                width: 0px;
+                height: 38px;
+                top: 0.5px;
+                left: 0px;
+                transform: skewY(-45deg);
+              }
+
+              &:before {
+                width: 151px;
+                height: 0px;
+                bottom: 0px;
+                right: 1.5px;
+                transform: skewX(-45deg);
+              }
             }
           }
         }
@@ -144,8 +236,8 @@
         width: 360px;
         height: 360px;
         // border: 1px solid gold;
-        max-width: 28vw;
-        max-height: 28vw;
+        max-width: 23vw;
+        max-height: 23vw;
         position: absolute;
         top: 50%;
         left: 5%;
@@ -158,4 +250,27 @@
       }
     }
   }
+
+  .web_scroll_page {
+    width: 692px;
+    border: 2px solid violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .drag_scrollbar_range {
+      width: 80%;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 5px;
+
+      .drag_bar {
+        width: 100px;
+        height: 90%;
+        background-color: wheat;
+
+      }
+    }
+  }
+
 }
