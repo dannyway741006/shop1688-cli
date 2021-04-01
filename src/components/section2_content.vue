@@ -44,12 +44,14 @@
       </div>
     </article>
     <article class="web_scroll_page">
-      <!-- <div id="drag_scrollbar_range" class="drag_scrollbar_range">
-        <div id="drag_bar" class="drag_bar"></div>
-       
-      </div> -->
-      <input class="input_range" type="range" v-model="valueNumber" />
-      <div>{{ valueNumber }}</div>
+      <div id="target2">This Moves</div>
+      <button id="resume1">resume</button>
+      <div id="volume-bar">
+        <div id="knob2" class="knob2"></div>
+        <div id="range2" class="range2"></div>
+      </div>
+
+      <button id="movebox">move</button>
     </article>
   </section>
 </template>

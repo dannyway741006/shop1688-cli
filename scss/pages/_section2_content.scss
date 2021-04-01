@@ -258,19 +258,49 @@
     justify-content: center;
     align-items: center;
 
-    .drag_scrollbar_range {
-      width: 80%;
-      height: 30px;
-      border: 1px solid black;
-      border-radius: 5px;
+    #target2 {
 
-      .drag_bar {
-        width: 100px;
-        height: 90%;
-        background-color: wheat;
-
-      }
+      margin: 50px;
+      background: yellow;
+      line-height: 100px;
+      width: 100px;
+      height: 100px;
     }
+
+    .range2 {
+      height: 10px;
+      bottom: 14px;
+      border-radius: 5px;
+      background-color: #f1f1f1;
+      position: relative;
+      width: 0;
+    }
+
+
+    #volume-bar {
+      background-color: #757575;
+      height: 10px;
+      float: left;
+      overflow: visible;
+      padding: 0;
+      position: relative;
+      width: 400px;
+      margin-top: 20px;
+      margin-left: 15px;
+      border-radius: 5px;
+    }
+
+    .knob2 {
+      text-align: center;
+      width: 15px;
+      height: 15px;
+      position: relative;
+      bottom: 2px;
+      z-index: 2;
+      border-radius: 50%;
+      background-color: #bdbdbd;
+    }
+
   }
 
 }

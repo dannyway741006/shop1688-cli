@@ -3314,16 +3314,44 @@
           align-items: center;
 }
 
-.section2_content .web_scroll_page .drag_scrollbar_range {
-  width: 80%;
-  height: 30px;
-  border: 1px solid black;
+.section2_content .web_scroll_page #target2 {
+  margin: 50px;
+  background: yellow;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.section2_content .web_scroll_page .range2 {
+  height: 10px;
+  bottom: 14px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  position: relative;
+  width: 0;
+}
+
+.section2_content .web_scroll_page #volume-bar {
+  background-color: #757575;
+  height: 10px;
+  float: left;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  width: 400px;
+  margin-top: 20px;
+  margin-left: 15px;
   border-radius: 5px;
 }
 
-.section2_content .web_scroll_page .drag_scrollbar_range .drag_bar {
-  width: 100px;
-  height: 90%;
-  background-color: wheat;
+.section2_content .web_scroll_page .knob2 {
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  bottom: 2px;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: #bdbdbd;
 }
 /*# sourceMappingURL=main.css.map */
