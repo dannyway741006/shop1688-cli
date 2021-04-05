@@ -257,8 +257,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    overflow: hidden;
 
-    #target2 {
+    .target2 {
 
       margin: 50px;
       background: yellow;
@@ -267,40 +269,15 @@
       height: 100px;
     }
 
-    .range2 {
-      height: 10px;
-      bottom: 14px;
-      border-radius: 5px;
-      background-color: #f1f1f1;
-      position: relative;
-      width: 0;
+    .input_box {
+      border: 1px solid green;
+      width: 100%;
+
+      .rangeInput {
+        width: 70%;
+      }
     }
 
-
-    #volume-bar {
-      background-color: #757575;
-      height: 10px;
-      float: left;
-      overflow: visible;
-      padding: 0;
-      position: relative;
-      width: 400px;
-      margin-top: 20px;
-      margin-left: 15px;
-      border-radius: 5px;
-    }
-
-    .knob2 {
-      text-align: center;
-      width: 15px;
-      height: 15px;
-      position: relative;
-      bottom: 2px;
-      z-index: 2;
-      border-radius: 50%;
-      background-color: #bdbdbd;
-    }
 
   }
-
 }

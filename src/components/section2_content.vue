@@ -43,15 +43,26 @@
         </div>
       </div>
     </article>
-    <article class="web_scroll_page">
-      <div id="target2">This Moves</div>
-      <button id="resume1">resume</button>
-      <div id="volume-bar">
-        <div id="knob2" class="knob2"></div>
-        <div id="range2" class="range2"></div>
-      </div>
 
-      <button id="movebox">move</button>
+    <article class="web_scroll_page">
+      <div
+        id="target2"
+        class="target2"
+        :style="{ transform: `translateX(${currentValue}px)` }"
+      >
+        This Moves
+      </div>
+      <div class="input_box">
+        <button id="up" class="up" @click="noAdd(10)">up</button>
+        <input
+          class="rangeInput"
+          type="range"
+          min="0"
+          max="600"
+          v-model="currentValue"
+        />
+        <button id="next" class="next" @click="add(10)">next</button>
+      </div>
     </article>
   </section>
 </template>
