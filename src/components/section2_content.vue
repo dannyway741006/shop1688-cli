@@ -45,25 +45,133 @@
     </article>
 
     <article class="web_scroll_page">
-      <div
-        id="target2"
-        class="target2"
-        :style="{ transform: `translateX(${currentValue}px)` }"
-      >
-        This Moves
-      </div>
-      <div class="input_box">
-        <button id="up" class="up" @click="noAdd(10)">up</button>
-        <input
-          class="rangeInput"
-          type="range"
-          min="0"
-          max="600"
-          v-model="currentValue"
-        />
-        <button id="next" class="next" @click="add(10)">next</button>
+      <div id="inSide_page" class="inSide_page">
+        <div class="scroll_items">
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+        </div>
+        <div class="scroll_items">
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+        </div>
+        <div class="scroll_items">
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+        </div>
+        <div class="scroll_items">
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+          <div class="shopItems">
+            <div class="shopTitle">
+              <div class="shop_title_name">
+                <h3>川老爺麻辣鍋</h3>
+              </div>
+              <div class="shop_icon">
+                <img src="../../imgShop1688/Group 92.png" alt="web-icon" />
+              </div>
+            </div>
+            <div class="shopImg">
+              <img src="../../imgShop1688/item.png" alt="nail" />
+            </div>
+          </div>
+        </div>
       </div>
     </article>
+    <!-- <div
+      id="target2"
+      class="target2"
+      :style="{ transform: `translateX(${currentValue}px)` }"
+    >
+      This Moves
+    </div>
+    <div class="input_box">
+      <button id="up" class="up" @click.stop="noAdd(10)">up</button>
+      <input class="rangeInput" type="range" min="0" max="600" v-model="currentValue" />
+      <button id="next" class="next" @click.stop="add(10)">next</button>
+    </div> -->
   </section>
 </template>
 <style scoped lang="scss">

@@ -1,4 +1,3 @@
-
 export default {
   name: "section2_content",
   props: {
@@ -6,22 +5,21 @@ export default {
   },
   data() {
     return {
-      currentValue: 0
+      // currentValue: 0
     };
   },
-  methods: {
-    add(num) {
-      if (this.currentValue < 600) {
-        return this.currentValue += num
-      }
-    },
-    noAdd(number) {
-
-      if (this.currentValue > 0) {
-        return this.currentValue -= number
-      }
-    },
-  }
-
+  // methods: {
+  //   add(num) {
+  //     this.currentValue = parseInt(this.currentValue)
+  //     if (this.currentValue < 600) {
+  //       return this.currentValue += num
+  //     }
+  //   },
+  //   noAdd(number) {
+  //     if (this.currentValue > 0) {
+  //       return this.currentValue -= number
+  //     }
+  //   },
+  // }
 
 }
