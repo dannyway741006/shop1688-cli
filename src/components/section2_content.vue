@@ -21,7 +21,7 @@
         </div>
         <div class="web_shop_title">
           <div class="shop_title">
-            <div class="testline">
+            <div class="textLine">
               <h3>川老爺麻辣鍋</h3>
             </div>
 
@@ -45,7 +45,11 @@
     </article>
 
     <article class="web_scroll_page">
-      <div id="inSide_page" class="inSide_page">
+      <div
+        id="inSide_page"
+        class="inSide_page"
+        :style="{ transform: `translateX(${currentValue}px)` }"
+      >
         <div class="scroll_items">
           <div class="shopItems">
             <div class="shopTitle">
@@ -158,20 +162,20 @@
             </div>
           </div>
         </div>
+        <div class="minRange"></div>
+      </div>
+      <div class="scrollBar_section" id="scrollBar_section">
+        <button id="down" class="down" @click.stop="noAdd()"></button>
+        <input
+          class="rangeInput"
+          type="range"
+          :min="numMin"
+          max="0"
+          v-model="currentValue"
+        />
+        <button id="next" class="next" @click.stop="add()"></button>
       </div>
     </article>
-    <!-- <div
-      id="target2"
-      class="target2"
-      :style="{ transform: `translateX(${currentValue}px)` }"
-    >
-      This Moves
-    </div>
-    <div class="input_box">
-      <button id="up" class="up" @click.stop="noAdd(10)">up</button>
-      <input class="rangeInput" type="range" min="0" max="600" v-model="currentValue" />
-      <button id="next" class="next" @click.stop="add(10)">next</button>
-    </div> -->
   </section>
 </template>
 <style scoped lang="scss">

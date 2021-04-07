@@ -5,21 +5,37 @@ export default {
   },
   data() {
     return {
-      // currentValue: 0
+      currentValue: -0,
+      numMin: 0
     };
   },
-  // methods: {
-  //   add(num) {
-  //     this.currentValue = parseInt(this.currentValue)
-  //     if (this.currentValue < 600) {
-  //       return this.currentValue += num
-  //     }
-  //   },
-  //   noAdd(number) {
-  //     if (this.currentValue > 0) {
-  //       return this.currentValue -= number
-  //     }
-  //   },
-  // }
 
+  mounted() {
+    let scrollPage = document.querySelector('.minRange').getBoundingClientRect().width;
+    return this.numMin = "-" + scrollPage
+  },
+  methods: {
+
+
+    add() {
+      this.currentValue = parseInt(this.currentValue)
+      let scrollPage = document.querySelector('.minRange').getBoundingClientRect().width;
+      if ((this.currentValue - this.numMin) > scrollPage / 10) {
+        return this.currentValue -= scrollPage / 10
+      } else {
+        return this.currentValue = this.numMin
+      }
+    },
+    noAdd() {
+      this.currentValue = parseInt(this.currentValue)
+      let scrollPage = document.querySelector('.minRange').getBoundingClientRect().width;
+      if (this.currentValue) {
+        if (this.currentValue < -(scrollPage / 10)) {
+          return this.currentValue += scrollPage / 10
+        } else {
+          return this.currentValue = 0
+        }
+      }
+    },
+  }
 }

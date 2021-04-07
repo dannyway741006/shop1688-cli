@@ -24,6 +24,7 @@ $logo-type-hover:#B1B1B1;
 $logo-items-hover:#A7D0C9;
 $searchBox-bg:#F1FFFD;
 $searchBoxItem:#E6F0F0;
+$sliderBarColor:#ADD3CD;
 
 //側面欄寬
 $slideBar: 250px;
@@ -98,6 +99,10 @@ $rwd-header-title:19px;
   letter-spacing: 0.6px;
   font-weight: 900;
   color: $dark;
+
+  @include media(1280px) {
+    font-size: 24px;
+  }
 
   @include media(396px) {
     font-size: 24px;

@@ -21,7 +21,7 @@
 .boxtwoo {
   width: 100%;
   height: 100vh;
-  border: 2px solid gold;
+  // border: 2px solid gold;
 }
 </style>
 <script src="../js/app.js">
