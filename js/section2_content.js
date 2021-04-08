@@ -1,3 +1,15 @@
+import {
+  gsap
+} from 'gsap';
+import {
+  CSSPlugin
+} from 'gsap/CSSPlugin'
+gsap.registerPlugin(CSSPlugin);
+import {
+  Draggable
+} from "gsap/Draggable.js";
+gsap.registerPlugin(Draggable);
+
 export default {
   name: "section2_content",
   props: {
@@ -11,8 +23,10 @@ export default {
   },
 
   mounted() {
+
     let scrollPage = document.querySelector('.minRange').getBoundingClientRect().width;
-    return this.numMin = "-" + scrollPage
+    return this.numMin = "-" + scrollPage;
+
   },
   methods: {
 

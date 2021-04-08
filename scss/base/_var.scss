@@ -78,6 +78,10 @@ $rwd-header-title:19px;
   font-weight: 600;
   color: $white;
   white-space: nowrap;
+
+  @include media(1480px) {
+    font-size: 3vmax;
+  }
 }
 
 @mixin font-tab-title-active {

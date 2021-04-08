@@ -9,6 +9,10 @@
   margin-top: 72px;
   margin-bottom: 74px;
 
+  @include media(1480px) {
+    padding-left: 10%;
+  }
+
   .title-bg {
     width: 353px;
     max-width: 18vw;
