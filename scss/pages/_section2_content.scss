@@ -316,11 +316,11 @@
   .web_scroll_page {
     width: 715px;
     max-width: 48vw;
-    // border: 2px solid violet;
+    border: 2px solid violet;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     height: 750px;
     max-height: 51vw;
@@ -332,7 +332,7 @@
     }
 
     #inSide_page {
-      // border: 5px solid green;
+      border: 5px solid green;
       position: absolute;
       top: 0;
       left: 0;
@@ -349,7 +349,7 @@
 
       .scroll_items {
         height: 100%;
-        // border: 1px solid red;
+        border: 1px solid red;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -476,7 +476,7 @@
       justify-content: center;
       align-items: center;
       // border: 3px solid gray;
-      position: absolute;
+      // position: absolute;
       width: 100%;
       bottom: 0;
       left: 0;
@@ -530,6 +530,7 @@
         background-color: $sliderBarColor;
         border-radius: 2px;
         border: 1px solid $dark;
+
       }
     }
   }

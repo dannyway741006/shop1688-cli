@@ -3405,6 +3405,7 @@
 .section2_content .web_scroll_page {
   width: 715px;
   max-width: 48vw;
+  border: 2px solid violet;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3414,7 +3415,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   height: 750px;
   max-height: 51vw;
@@ -3429,6 +3430,7 @@
 }
 
 .section2_content .web_scroll_page #inSide_page {
+  border: 5px solid green;
   position: absolute;
   top: 0;
   left: 0;
@@ -3452,6 +3454,7 @@
 
 .section2_content .web_scroll_page #inSide_page .scroll_items {
   height: 100%;
+  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3610,7 +3613,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
   width: 100%;
   bottom: 0;
   left: 0;

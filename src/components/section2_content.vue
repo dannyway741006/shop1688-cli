@@ -49,6 +49,7 @@
         id="inSide_page"
         class="inSide_page"
         :style="{ transform: `translateX(${currentValue}px)` }"
+        @mousemove="dropMove"
       >
         <div class="scroll_items">
           <div class="shopItems">
@@ -164,6 +165,8 @@
         </div>
         <div class="minRange"></div>
       </div>
+    </article>
+    <article>
       <div class="scrollBar_section" id="scrollBar_section">
         <button id="down" class="down" @click.stop="noAdd()"></button>
         <input
