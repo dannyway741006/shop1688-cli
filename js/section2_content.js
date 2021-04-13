@@ -17,70 +17,98 @@ export default {
   },
   data() {
     return {
-      currentValue: -0,
-      numMin: 0,
+      // currentValue: -0,
+
+      scrollValue: 0,
+      maxRange: 0,
+      isDrag: false,
+      startMouse: {
+        x: 0,
+        y: 0
+      },
+      mouse: {
+        x: 0,
+        y: 0
+      }
 
     };
   },
-
+  computed: {
+    transformStyle() {
+      return {
+        transform: `translateX(-${this.scrollValue}px) `
+      }
+    },
+  },
   mounted() {
+    this.maxRange = this.$refs.cards.clientWidth - this.$refs.container.clientWidth
+    let webScrollPage = document.querySelector('.web_scroll_page')
 
-    let scrollPage = document.querySelector('.minRange').getBoundingClientRect().width;
-    return this.numMin = "-" + scrollPage;
+
+
+    Draggable.create("#inSide_page", {
+      bounds: webScrollPage,
+      dragClickables: true,
+      type: 'x',
+      edgeResistance: 0.5,
+      throwProps: true,
+      onPress: function ({
+        clientX
+
+      }) {
+
+        this.isDrag = true
+        this.x = clientX
+
+        console.log(parseInt(this.scrollValue));
+        this.tempScrollValue = parseInt(this.scrollValue)
+      },
+      onDrag: function ({
+        clientX
+      }) {
+        console.log(clientX);
+        this.x = clientX
+
+        if (this.isDrag) {
+          const diffX = this.startMouse.x - this.mouse.x
+          // const diffY = this.startMouse.y - this.mouse.y
+          this.scrollValue = Math.max(Math.min(this.tempScrollValue + diffX, this.maxRange), 0)
+          // console.log(this.scrollValue, '轉字串')
+        }
+      }
+      // radius: 15,
+    });
+
 
   },
   methods: {
-    dropMove() {
-      const slider = document.querySelector('.web_scroll_page');
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        // slider.classList.add('active');
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-
-      });
-      slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        // slider.classList.remove('active');
-      });
-      slider.addEventListener('mouseup', () => {
-        isDown = false;
-        // slider.classList.remove('active');
-      });
-      slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
-        slider.scrollLeft = scrollLeft - walk;
-        console.log(walk);
-
-      });
+    mousedown({
+      clientX,
+      clientY
+    }) {
+      console.log(clientX, 'mousedown clientX')
+      this.isDrag = true
+      this.startMouse.x = clientX
+      this.startMouse.y = clientY
+      console.log(parseInt(this.scrollValue));
+      this.tempScrollValue = parseInt(this.scrollValue)
     },
-
-    add() {
-      this.currentValue = parseInt(this.currentValue)
-      let scrollPage = document.querySelector('.minRange').getBoundingClientRect().width;
-      if ((this.currentValue - this.numMin) > scrollPage / 10) {
-        return this.currentValue -= scrollPage / 10
-      } else {
-        return this.currentValue = this.numMin
+    mousemove({
+      clientX,
+      clientY
+    }) {
+      console.log(clientX);
+      this.mouse.x = clientX
+      this.mouse.y = clientY
+      if (this.isDrag) {
+        const diffX = this.startMouse.x - this.mouse.x
+        // const diffY = this.startMouse.y - this.mouse.y
+        this.scrollValue = Math.max(Math.min(this.tempScrollValue + diffX, this.maxRange), 0)
+        // console.log(this.scrollValue, '轉字串')
       }
     },
-    noAdd() {
-      this.currentValue = parseInt(this.currentValue)
-      let scrollPage = document.querySelector('.minRange').getBoundingClientRect().width;
-      if (this.currentValue) {
-        if (this.currentValue < -(scrollPage / 10)) {
-          return this.currentValue += scrollPage / 10
-        } else {
-          return this.currentValue = 0
-        }
-      }
+    mouseup() {
+      this.isDrag = false
     },
-  }
+  },
 }

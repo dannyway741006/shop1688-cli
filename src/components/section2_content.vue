@@ -43,14 +43,15 @@
         </div>
       </div>
     </article>
-
-    <article class="web_scroll_page">
-      <div
-        id="inSide_page"
-        class="inSide_page"
-        :style="{ transform: `translateX(${currentValue}px)` }"
-        @mousemove="dropMove"
-      >
+    <article
+      class="web_scroll_page"
+      ref="container"
+      @mousedown="mousedown"
+      @mousemove="mousemove"
+      @mouseup="mouseup"
+      @mouseleave="mouseup"
+    >
+      <div id="inSide_page" class="inSide_page" :style="transformStyle" ref="cards">
         <div class="scroll_items">
           <div class="shopItems">
             <div class="shopTitle">
@@ -166,19 +167,17 @@
         <div class="minRange"></div>
       </div>
     </article>
-    <article>
-      <div class="scrollBar_section" id="scrollBar_section">
-        <button id="down" class="down" @click.stop="noAdd()"></button>
-        <input
-          class="rangeInput"
-          type="range"
-          :min="numMin"
-          max="0"
-          v-model="currentValue"
-        />
-        <button id="next" class="next" @click.stop="add()"></button>
-      </div>
-    </article>
+    <div class="scrollBar_section" id="scrollBar_section">
+      <!-- <button id="down" class="down" @click.stop="noAdd()"></button> -->
+      <input
+        class="rangeInput"
+        type="range"
+        v-model="scrollValue"
+        min="0"
+        :max="maxRange"
+      />
+      <!-- <button id="next" class="next" @click.stop="add()"></button> -->
+    </div>
   </section>
 </template>
 <style scoped lang="scss">

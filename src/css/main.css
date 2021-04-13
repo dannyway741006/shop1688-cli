@@ -2998,6 +2998,7 @@
   .section2_content {
     width: 95%;
     margin: 0 auto;
+    border: 10px solid rebeccapurple;
   }
 }
 
@@ -3415,7 +3416,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   height: 750px;
   max-height: 51vw;
@@ -3613,6 +3614,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 3px solid gray;
   position: absolute;
   width: 100%;
   bottom: 0;
